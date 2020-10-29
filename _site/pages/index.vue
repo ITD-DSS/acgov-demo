@@ -2,10 +2,13 @@
   <!--#include virtual="/ssi/header2.htm" >>> LOCATED IN HEADER COMPONENT NOW -->
   <div id="bodysection">
     <!--#include virtual="/ece/banner.htm"-->
+    <ece-banner />
+    <div style="clear: both"></div>
 
     <div id="main">
       <div id="sidebar">
         <!--#include virtual="/ece/sidebar.htm"-->
+        <ece-sidebar />
       </div>
 
       <div id="column3" role="region" aria-labelledby="col3-content">
