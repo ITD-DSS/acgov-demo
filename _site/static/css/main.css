@@ -1,5 +1,6 @@
 /* Include County Standard Stylesheet  */
-@import url(header.css);
+/* MOVED TO Header component located in layout/default.vue */
+/* @import url(header.css); */
 /* *********************************** */
 #acgovheadermenubar {
 	background-color:#eee;
