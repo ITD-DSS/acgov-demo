@@ -5,25 +5,36 @@ export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
-
   // <link type="text/css" rel="stylesheet" href="/ece/main.css" />
-	// <script src="/acgov.js" type="text/javascript"></script>
-	// <script src="/ece/main.js" type="text/javascript"></script>
+  // <script src="/acgov.js" type="text/javascript"></script>
+  // <script src="/ece/main.js" type="text/javascript"></script>
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'Early Care & Education Planning Council - Alameda County',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Alameda County General Services Agency Childcare Home Page' },
-      { name: 'keywords', content: 'Alameda County Early Care & Education Planning Council, Council, Planning, Childhood, Early Childhood,  Needs, School, Schools, Proposition 10, Subsidized, Kids, Children, Commission, Community, Child, Child Care, Partnership, Ala-ASCC, Alameda Access to Subsidized Child Care, LINCC, Local Investment in Child Care, UASCC, Universal Access to Subsidized Child Care' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Alameda County General Services Agency Childcare Home Page',
+      },
+      {
+        name: 'keywords',
+        content:
+          'Alameda County Early Care & Education Planning Council, Council, Planning, Childhood, Early Childhood,  Needs, School, Schools, Proposition 10, Subsidized, Kids, Children, Commission, Community, Child, Child Care, Partnership, Ala-ASCC, Alameda Access to Subsidized Child Care, LINCC, Local Investment in Child Care, UASCC, Universal Access to Subsidized Child Care',
+      },
+    ],
+    link: [
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+      },
     ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-    '~/static/css/main.css'
-  ],
+  css: ['~/static/css/main.css'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   // plugins: [],
@@ -47,7 +58,7 @@ export default {
   ],
 
   sanity: {
-    projectId: 'ehhijqba'
+    projectId: 'ehhijqba',
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
