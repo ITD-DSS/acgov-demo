@@ -1,5 +1,5 @@
 <template>
-  
+	<header></header>
 	<!--#include virtual="/ssi/header2.htm"-->
 
 	<div id="bodysection">
@@ -333,6 +333,8 @@
 	</div>
 
 	<!--#include virtual="/ssi/footer2.htm"-->
+	<footer></footer>
+
 
 </template>
 
