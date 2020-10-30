@@ -93,7 +93,7 @@ img {
 #newacgovheader {
   width: 100%;
   // background-color: #8fadca;
-  background-image: url(@static/images/banner/deptheaderbg.jpg);
+  background-image: url(/images/banner/deptheaderbg.jpg);
   text-align: left;
   min-width: 970px;
   /*position: relative;*/
@@ -105,7 +105,7 @@ img {
   margin: 0px;
   height: 52px;
   width: 411px;
-  background-image: url(@static/images/banner/deptheaderbgright.jpg);
+  background-image: url(/images/banner/deptheaderbgright.jpg);
   background-repeat: no-repeat;
   background-position: top right;
   text-align: right;
@@ -127,7 +127,7 @@ img {
 #newacgovbanner {
   height: 52px;
   width: 410px;
-  background-image: url(@static/images/banner/deptheaderbgleft.jpg);
+  background-image: url(/images/banner/deptheaderbgleft.jpg);
   background-repeat: no-repeat;
   background-position: top left;
 }
@@ -160,7 +160,7 @@ img {
 #newacgovheader #googlemenu #acgovsearchbox {
   z-index: 90;
   background-color: #e5e5e5;
-  /*background-image: url(@static/images/banner/navbarbg.jpg);
+  /*background-image: url(/images/banner/navbarbg.jpg);
 	background-repeat:repeat-x;
 	background-position:bottom left;*/
   height: 5.5em;
@@ -193,7 +193,7 @@ img {
 #newacgovheader #acgovsearchbox #googlebox {
   width: 454px;
   height: 35px;
-  background-image: url(@static/images/banner/searchbg.png);
+  background-image: url(/images/banner/searchbg.png);
   background-repeat: no-repeat;
   background-position: bottom;
   background-color: transparent;
@@ -222,7 +222,7 @@ img {
   margin: 0;
   width: 40px;
   text-indent: -9999px;
-  background-image: url(@static/images/banner/searchbg.png);
+  background-image: url(/images/banner/searchbg.png);
   background-position: bottom right;
   background-color: transparent;
 }
@@ -272,7 +272,7 @@ img {
 #newacgovheader #newacgovquickmenu #newacgovquicklinks {
   z-index: 90;
   background-color: #e5e5e5;
-  /*background-image: url(@static/images/banner/navbarbg.jpg);
+  /*background-image: url(/images/banner/navbarbg.jpg);
 	background-repeat:repeat-x;
 	background-position:bottom left;*/
   height: 17em;

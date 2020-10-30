@@ -1,6 +1,9 @@
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: true,
+  static: {
+    prefix: false,
+  },
 
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
