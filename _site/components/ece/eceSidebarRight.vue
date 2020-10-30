@@ -2,10 +2,7 @@
   <div id="column3" role="region" aria-labelledby="col3-content">
     <div id="col3-content">
       <div id="btn-ad1" style="padding-top: 10px">
-        <img
-          src="@/static/images/ChildCare.svg"
-          alt="How to find Child Care Logo"
-        />
+        <img src="images/ChildCare.svg" alt="How to find Child Care Logo" />
         <p>Have a question about child care or afterschool resources?</p>
         <a
           class="btn-action"
@@ -17,7 +14,7 @@
 
       <!-- <div>
 						<a href="/ece/learn_the_signs.htm">
-							<img src="@/static/images/Learns_the_signs.gif" width="220" height="291" alt="Learn the Signs Ad" /> </a>
+							<img src="images/Learns_the_signs.gif" width="220" height="291" alt="Learn the Signs Ad" /> </a>
 					</div> -->
 
       <br />

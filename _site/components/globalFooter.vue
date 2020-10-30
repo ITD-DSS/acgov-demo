@@ -15,7 +15,7 @@
     <p style="padding: 0px; margin: 0px; display: inline">
       <img
         style="vertical-align: middle; margin: 0px 5px"
-        src="@/static@/static/images/banner/footerlogo.png"
+        src="/images/banner/footerlogo.png"
         width="22"
         height="22"
         alt="Alameda County seal"

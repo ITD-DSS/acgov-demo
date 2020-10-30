@@ -4,7 +4,7 @@
       <img
         role="presentation"
         class="left"
-        src="@/static/images/childcare_banner.jpg"
+        src="images/childcare_banner.jpg"
         width="700"
         height="98"
         alt="childcare banner"
@@ -14,7 +14,7 @@
       <img
         role="presentation"
         class="left"
-        src="@/static/images/childcare_banner_pic1.gif"
+        src="images/childcare_banner_pic1.gif"
         width="167"
         height="98"
         alt="childcare banner"
