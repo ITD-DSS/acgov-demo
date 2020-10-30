@@ -64,6 +64,9 @@ export default {
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
 
+  buildDir: 'ece-test',
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    // publicPath: '/ece-test',
+  },
 }
