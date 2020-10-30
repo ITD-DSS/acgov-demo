@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header />
+    <global-header />
     <div id="bodysection">
       <!--#include virtual="/ece/banner.htm"-->
       <ece-banner />
@@ -17,7 +17,7 @@
         <Nuxt />
       </div>
     </div>
-    <footer />
+    <global-footer />
   </div>
 </template>
 <script>

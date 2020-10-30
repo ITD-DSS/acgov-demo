@@ -1,91 +1,62 @@
 <template>
-  <header
-    id="newacgovheader"
-    aria-labelledby="newacgovheader"
-    style="
-      width: 100%;
-      background-color: #dddddd;
-      background-image: none;
-      text-align: left;
-      min-width: 970px;
-      border-bottom: 1px solid #333;
-    "
-  >
-    <ul id="acgovheadermenu" style="display: none">
-      <li class="acquick" />
-    </ul>
-    <!-- SHOW IF ON TEST SERVER -->
-    <!--#include virtual="/ssi/server.htm"-->
-    <div
-      style="
-        color: #fff;
-        font-weight: bold;
-        font-size: 150%;
-        top: 5px;
-        left: 600px;
-        position: absolute;
-        visibility: visible;
-        z-index: 100;
-        padding: 0px 40px;
-        background-color: red;
-      "
-    >
-      TEST SERVER
-    </div>
-    <div
-      style="
-        float: right;
-        padding: 0px;
-        margin: 0px;
-        height: 52px;
-        width: 411px;
-        text-align: right;
-      "
-    >
-      <a href="#mainsite" style="font-size: 70%; padding: 10px"
-        >Skip County Header</a
-      ><br />
-
-      <!-- <div id="google_translate_element"></div>
-
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
-}
-</script>
-
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
-    </div>
-
-    <!-- <div style="float: right;padding:0px;margin:0px;height:52px;width:411px;text-align:right;"><a href="#mainsite" style="font-size: 70%;padding: 10px;">Skip County Header</a></div> -->
+  <!-- id="newacgovheader" -->
+  <header class="acgov-header" aria-labelledby="newacgovheader">
     <div>
       <a href=""
         ><img
           style="margin: 3px"
-          src="/img/new-acgov-logo-standard-header.png"
+          src="/images/new-acgov-logo-standard-header.png"
           alt="Alameda County, CA, acgov.org"
           width="180"
           height="44"
       /></a>
     </div>
-    <!--<span style="display:block;text-align: center;margin: 10px; color:red; padding: 10px 0px;font-size: 18px;background-color: #ffffcc;">Alameda County websites may experience intermittent down times this Sunday, July 26, from 6:00 a.m. to 12:00 p.m. due to maintenance.</span></div>-->
+    <!-- SHOW IF ON TEST SERVER -->
 
-    <div style="clear: both; padding: 0px; margin: 0px" />
-    <div
-      id="mainsite"
-      aria-labelledby="mainsite"
-      style="clear: both; padding-top: 0px"
-    />
+    <div class="env-tag">TEST SERVER</div>
+
+    <div style="grid-area: right; justify-self: center">
+      <a href="#main">Skip County Header</a>
+    </div>
   </header>
 </template>
 
 <script>
 export default {
-  name: 'Header',
+  name: 'GlobalHeader',
 }
 </script>
 
-<style>
+<style lang="scss">
+header.acgov-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 'left center right';
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+  width: 100%;
+  background-color: #dddddd;
+  background-image: none;
+  text-align: left;
+  min-width: 970px;
+  border-bottom: 1px solid #333;
+}
+div.env-tag {
+  color: #fff;
+  font-weight: bold;
+  font-size: 150%;
+  // top: 5px;
+  // left: 600px;
+  // position: absolute;
+  visibility: visible;
+  z-index: 100;
+  padding: 0px 40px;
+  background-color: red;
+  // text-align: center;
+  grid-area: center;
+  justify-self: center;
+}
 /* ************************************************************************
 HEADER
 *************************************************************************** */
@@ -121,7 +92,7 @@ img {
 /*END CSS RESET ********************************************/
 #newacgovheader {
   width: 100%;
-  background-color: #8fadca;
+  // background-color: #8fadca;
   background-image: url(/images/banner/deptheaderbg.jpg);
   text-align: left;
   min-width: 970px;
@@ -434,4 +405,7 @@ img {
 /* ************************************************************************
 END HEADER
 *************************************************************************** */
+a {
+  color: #0000ee;
+}
 </style>

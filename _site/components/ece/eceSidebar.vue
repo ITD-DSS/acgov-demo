@@ -3,7 +3,7 @@
     <ul id="nav">
       <li><a href="/ece/index.htm">Home</a></li>
       <!-- <li><a href="/ras_app/SubscriptionListServlet?agy=GSA-ChildCare">E-mail List Subscriptions</a></li> -->
-      <!--li><a href="/ece/crisis/" id="crisis"><img src="/ece/images/blue_arrow_icon.gif" width="12" height="20" alt="arrow to open more links" />County ECE Crisis</a>
+      <!--li><a href="/ece/crisis/" id="crisis"><img src="/images/blue_arrow_icon.gif" width="12" height="20" alt="arrow to open more links" />County ECE Crisis</a>
 		<ul>
 			 <li><a href="/ece/crisis/index.htm">Fact Sheet</a></li>
 			 <li><a href="/ece/crisis/sessions.htm">Listening Sessions</a></li>
@@ -29,7 +29,7 @@
       <li>
         <a id="calendar">
           <span class="material-icons nav-icon"> play_arrow </span>
-          <!-- <img src="/ece/images/blue_arrow_icon.gif" width="12" height="20" alt="arrow to open more links" /> -->
+          <!-- <img src="/images/blue_arrow_icon.gif" width="12" height="20" alt="arrow to open more links" /> -->
           Committee Meetings</a
         >
         <ul>
@@ -47,7 +47,7 @@
       <li>
         <a id="projects" href="/ece/active-committees.htm">
           <span class="material-icons nav-icon"> play_arrow </span>
-          <!-- <img src="/ece/images/blue_arrow_icon.gif" width="12" height="20" alt="arrow to open more links" /> -->
+          <!-- <img src="/images/blue_arrow_icon.gif" width="12" height="20" alt="arrow to open more links" /> -->
           Committees &amp; Projects</a
         >
         <ul>
@@ -94,7 +94,7 @@
       <li>
         <a id="resources" href="/ece/resources.htm">
           <span class="material-icons nav-icon"> play_arrow </span>
-          <!-- <img src="/ece/images/blue_arrow_icon.gif" width="12" height="20" alt="arrow to open more links" /> -->
+          <!-- <img src="/images/blue_arrow_icon.gif" width="12" height="20" alt="arrow to open more links" /> -->
           Resources for Business</a
         >
         <ul>
@@ -136,7 +136,7 @@
         <a
           href="https://twitter.com/AlaCoChildCare?original_referer=http%3A%2F%2Facgovt.acgov.org%2Fece%2Findex.htm&profile_id=414378764&query=null&related=null&tw_p=embeddedtimeline&tw_w=349601872815980545"
           ><img
-            src="/ece/images/childcare-twitter.png"
+            src="/images/childcare-twitter.png"
             width="120"
             height="36"
             alt="ECEPC Twitter logo"
@@ -145,7 +145,7 @@
       <div style="margin: 0px 0px 10px 35px">
         <a href="https://www.youtube.com/channel/UCJ2G3YXzbouhj96TmhADKZA"
           ><img
-            src="/ece/images/childcare-youtube.png"
+            src="/images/childcare-youtube.png"
             width="120"
             height="36"
             alt="ECEPC YouTube logo"

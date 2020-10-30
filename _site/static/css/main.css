@@ -26,7 +26,7 @@ body {
   margin: 0px;
   padding: 0px;
   background-repeat: repeat-y;
-  background-image: url(/ece/images/sidebar_bg.gif);
+  background-image: url(/images/sidebar_bg.gif);
   float: left;
   width: 100%;
   text-align: left;
@@ -34,7 +34,7 @@ body {
 }
 
 #banner {
-  background-image: url(/ece/images/banner_bg.jpg);
+  background-image: url(/images/banner_bg.jpg);
   background-color: #11a9bb;
   float: left;
   width: 100%;
@@ -366,7 +366,7 @@ body {
   float: right;
   margin: 0px;
   padding: 0px;
-  background-image: url(/ece/images/rightsidebg.gif);
+  background-image: url(/images/rightsidebg.gif);
 }
 #council-meetings {
   width: 220px;

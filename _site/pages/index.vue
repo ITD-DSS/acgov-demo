@@ -10,7 +10,7 @@
     </p>
     <p>
       Read More About the Early Care and Education Planning Council
-      <a href="/ece/documents/ECEPC-Overview.pdf" target="_blank">here</a>.
+      <a href="/documents/ECEPC-Overview.pdf" target="_blank">here</a>.
       <span class="pdf">*(PDF)</span>
     </p>
     <div id="newbox">
@@ -23,7 +23,7 @@
       </h3>
       <p>
         <a
-          href="/ece/documents/ACEmergencyChildCareResponseSystemOverview.pdf"
+          href="/documents/ACEmergencyChildCareResponseSystemOverview.pdf"
           target="_blank"
           >Alameda County Emergency Child Care Response System Overview</a
         >
@@ -32,17 +32,17 @@
       <h3>Planners:</h3>
       <p>
         <a
-          href="/ece/documents/ACEmergencyChildCareResponseDataDashoboard10.16.20.pdf"
+          href="/documents/ACEmergencyChildCareResponseDataDashoboard10.16.20.pdf"
           target="_blank"
           >Emergency Child Care System Dashboard: Updated Monthly</a
         >
         <span class="pdf">*(PDF)</span>
       </p>
       <h3>Families:</h3>
-      <!-- <p><a href="/ece/documents/FlyerforEssentialWorkers.pdf" target="_blank">Child care referrals available for COVID-19 Essential Workers and vulnerable families</a> <span class="pdf">*(PDF)</span></p> -->
+      <!-- <p><a href="/documents/FlyerforEssentialWorkers.pdf" target="_blank">Child care referrals available for COVID-19 Essential Workers and vulnerable families</a> <span class="pdf">*(PDF)</span></p> -->
       <p>
         <a
-          href="/ece/documents/ACPHDCOVID-19TipSheet-FamiliesReturningtoChildcareandCamps.pdf"
+          href="/documents/ACPHDCOVID-19TipSheet-FamiliesReturningtoChildcareandCamps.pdf"
           target="_blank"
           >Alameda County Public Health Department COVID-19 Tip Sheet for
           Families Returning to Childcare and Camps</a
@@ -52,7 +52,7 @@
 
       <h3>Parents and ECE Programs:</h3>
       <p>
-        <a href="/ece/documents/2020AlamedaCountyRR.pdf" target="_blank"
+        <a href="/documents/2020AlamedaCountyRR.pdf" target="_blank"
           >Get Help Finding Child Care</a
         >
       </p>
@@ -68,13 +68,13 @@
         Free Child Care ECE Program Mental Health Program Overview and Intake
         Form:
         <a
-          href="/ece/documents/MentalHealthFlyer05.14.20-English.pdf"
+          href="/documents/MentalHealthFlyer05.14.20-English.pdf"
           target="_blank"
           >English</a
         >
         |
         <a
-          href="/ece/documents/MentalHealthFlyer05.14.20-Spanish.pdf"
+          href="/documents/MentalHealthFlyer05.14.20-Spanish.pdf"
           target="_blank"
           >Spanish</a
         >
@@ -82,15 +82,15 @@
       <p>
         Health Heroes for Child Care: Free Health & Safety Support from Public
         Health Nurses - Flyer:
-        <a href="/ece/documents/English-HHCCPFlyer09.09.20.pdf" target="_blank"
+        <a href="/documents/English-HHCCPFlyer09.09.20.pdf" target="_blank"
           >English</a
         >
         |
-        <a href="/ece/documents/Spanish-HHCCPFlyer09.09.20.pdf" target="_blank"
+        <a href="/documents/Spanish-HHCCPFlyer09.09.20.pdf" target="_blank"
           >Spanish</a
         >
         |
-        <a href="/ece/documents/Chinese-HHCCPFlyer09.09.20.pdf" target="_blank"
+        <a href="/documents/Chinese-HHCCPFlyer09.09.20.pdf" target="_blank"
           >Chinese</a
         >
       </p>
@@ -126,7 +126,7 @@
       <p>
         <strong>*NEW*</strong
         ><a
-          href="/ece/documents/AirFiltrationStratgiesforChildCarePrograms-10.12.20.pdf"
+          href="/documents/AirFiltrationStratgiesforChildCarePrograms-10.12.20.pdf"
           target="_blank"
           >Overview of Air Filtration Strategies for Child Care Programs</a
         >
@@ -134,7 +134,7 @@
       <p>
         <strong>*NEW*</strong
         ><a
-          href="/ece/documents/AirPurifierSizeTipsheet-English-10.26.20.pdf"
+          href="/documents/AirPurifierSizeTipsheet-English-10.26.20.pdf"
           target="_blank"
           >Tip Sheet: Determine the Right Air Purifier for Your Child Care
           Space</a
@@ -161,7 +161,7 @@
         <div class="column-img">
           <div class="photobox">
             <img
-              src="/ece/images/appreciation_reception.jpg"
+              src="/images/appreciation_reception.jpg"
               alt="Photo of Veronica Ufoegbune, Council Chair and Margaret jerene, Council members, along with Susan Muranishi, County Administrator"
             />
             <p>
@@ -175,7 +175,7 @@
         <div class="column-img">
           <div class="photobox">
             <img
-              src="/ece/images/CCPCreception6.jpg"
+              src="/images/CCPCreception6.jpg"
               alt="photo of Child Care Planning Council members"
             />
             <p>
@@ -190,14 +190,14 @@
     <!-- <div class="social-box">
 
 						<div class="photobox">
-							<img src="/ece/images/appreciation_reception.jpg" alt="Photo of Veronica Ufoegbune, Council Chair and Margaret jerene, Council members, along with Susan Muranishi, County Administrator" />
+							<img src="/images/appreciation_reception.jpg" alt="Photo of Veronica Ufoegbune, Council Chair and Margaret jerene, Council members, along with Susan Muranishi, County Administrator" />
 							<p>Pictured are Veronica Ufoegbune, former Council Chair and Margaret Jerene, Council member, along with Susan
 								Muranishi,
 								County Administrator.</p>
 						</div>
 						
 						<div class="photobox">
-							<img src="/ece/images/CCPCreception6.jpg" alt="photo of Child Care Planning Council members" />
+							<img src="/images/CCPCreception6.jpg" alt="photo of Child Care Planning Council members" />
 							<p>Early Care & Education Planning Council members at a June, 2012 reception for County Boards and Commissions.</p>
 						</div>
 
@@ -217,7 +217,7 @@
           October 15, 2020 -
           <a
             aria-label="Alameda County LPC & QC Needs Assessment Introduction"
-            href="/ece/documents/2020NeedsAssessmentIntroduction.pdf"
+            href="/documents/2020NeedsAssessmentIntroduction.pdf"
             target="_blank"
             >View the document</a
           ><span class="pdf">*(PDF)</span>
@@ -236,7 +236,7 @@
           Sept 21, 2020 -
           <a
             aria-label="Overview of Recent State and Federal ECE Policy and Budget Updates"
-            href="/ece/documents/State_FederalECEPolicy_BudgetUpdates9.21.2020.pdf"
+            href="/documents/State_FederalECEPolicy_BudgetUpdates9.21.2020.pdf"
             target="_blank"
             >View the document</a
           ><span class="pdf">*(PDF)</span>
@@ -258,7 +258,7 @@
           Sept 9, 2020 -
           <a
             aria-label="Apply for Alameda County’s Workforce Pathways Project"
-            href="/ece/documents/WorkforcePathwaysFlyerFinal.pdf"
+            href="/documents/WorkforcePathwaysFlyerFinal.pdf"
             target="_blank"
             >View the document</a
           ><span class="pdf">*(PDF)</span>
@@ -275,7 +275,7 @@
           Oct 26, 2020 -
           <a
             aria-label="Overview of Current Priority CA and Federal Legislation"
-            href="/ece/documents/2020ACECELegislationOverview-10.26.20.pdf"
+            href="/documents/2020ACECELegislationOverview-10.26.20.pdf"
             target="_blank"
             >View the document</a
           ><span class="pdf">*(PDF)</span>
@@ -293,7 +293,7 @@
           Sept 9, 2020 -
           <a
             aria-label="Overview of Alameda County ECE Program’s Dual Language Learner Work"
-            href="/ece/documents/DLLACHistoryTimelinereportoutInfographic2020.pdf"
+            href="/documents/DLLACHistoryTimelinereportoutInfographic2020.pdf"
             target="_blank"
             >View the document</a
           ><span class="pdf">*(PDF)</span>
@@ -310,7 +310,7 @@
           Sept 9, 2020 -
           <a
             aria-label="Analysis of CA 2020-2021 Budget Impact on ECE"
-            href="/ece/documents/FY20-21FinalBudgetSummary-9.9.20.pdf"
+            href="/documents/FY20-21FinalBudgetSummary-9.9.20.pdf"
             target="_blank"
             >View the document</a
           ><span class="pdf">*(PDF)</span>
@@ -364,7 +364,7 @@
           Sept 9, 2020 -
           <a
             aria-label="Early Care & Education Public Funding Landscape, Updated August 2020"
-            href="/ece/documents/ACECE-PublicFunding2020.pdf"
+            href="/documents/ACECE-PublicFunding2020.pdf"
             target="_blank"
             >View the document.</a
           ><span class="pdf">*(PDF)</span>
@@ -387,7 +387,7 @@
           Sept 9, 2020 -
           <a
             aria-label="Alameda County Zip Code Priorities & Waitlist Review"
-            href="/ece/documents/LPCZipCodePriorities2020.pdf"
+            href="/documents/LPCZipCodePriorities2020.pdf"
             target="_blank"
             >2020 Profile of Data</a
           >
@@ -403,7 +403,7 @@
         <p>
           Sept 9, 2020 -
           <a
-            href="/ece/documents/IncreasedAccessQualityECEPerformanceMeasures.pdf"
+            href="/documents/IncreasedAccessQualityECEPerformanceMeasures.pdf"
             target="_blank"
             >Increased Access to Quality ECE Performance Measures</a
           ><span class="pdf">*(PDF - 174kB)</span>
@@ -419,7 +419,7 @@
         </p>
         <p>
           Sept 9, 2020 -
-          <a href="/ece/documents/ListofAcronymsCY2020.pdf" target="_blank"
+          <a href="/documents/ListofAcronymsCY2020.pdf" target="_blank"
             >click here</a
           >
         </p>
@@ -430,25 +430,25 @@
       <!-- <div class="column-half">
 						<h2><img src="./images/new.png" alt="new tag"> Apply for Alameda County's Workforce Pathways Project / Aplique aqu&iacute; para el Proyecto de Desarrollo para la Fuerza Laboral del Condado de Alameda</h2>
 						<p><a aria-label="Apply for Alameda County’s Workforce Pathways Project" 
-							href="/ece/documents/WorkforcePathwaysFlyerFinal.pdf" target="_blank">View the document</a>
+							href="/documents/WorkforcePathwaysFlyerFinal.pdf" target="_blank">View the document</a>
 							<span class="pdf">*(PDF)</span></p>
 					</div> -->
       <!-- <div class="column-half">
 						<h2><img src="./images/new.png" alt="new tag"> Overview of Current Priority CA and Federal Legislation</h2>
 						<p><a aria-label="Overview of Current Priority CA and Federal Legislation" 
-							href="/ece/documents/2020ACECELegislationOverview-Final9.3.20.pdf" target="_blank">View the document</a>
+							href="/documents/2020ACECELegislationOverview-Final9.3.20.pdf" target="_blank">View the document</a>
 							<span class="pdf">*(PDF)</span></p>
 					</div> -->
       <!-- <div class="column-half">
 						<h2><img src="./images/new.png" alt="new tag"> Overview of Alameda County ECE Program's Dual Language Learner Work</h2>
 						<p><a aria-label="Overview of Alameda County ECE Program’s Dual Language Learner Work" 
-							href="/ece/documents/DLLACHistoryTimelinereportoutInfographic2020.pdf" target="_blank">View the document</a>
+							href="/documents/DLLACHistoryTimelinereportoutInfographic2020.pdf" target="_blank">View the document</a>
 							<span class="pdf">*(PDF)</span></p>
 					</div> -->
       <!-- <div class="column-half">
 						<h2>Analysis of CA 2020-2021 Budget Impact on ECE (Updated 9/9/20)</h2>
 						<p><a aria-label="Analysis of CA 2020-2021 Budget Impact on ECE" 
-							href="/ece/documents/FY20-21FinalBudgetSummary-9.9.20.pdf" target="_blank">View the document</a>
+							href="/documents/FY20-21FinalBudgetSummary-9.9.20.pdf" target="_blank">View the document</a>
 							<span class="pdf">*(PDF)</span></p>
 					</div> -->
       <!-- <div class="column-half">
@@ -465,7 +465,7 @@
 					</div> -->
       <!-- <div class="column-half">
 						<h2>2020 Alameda County Early Childhood Education Funding Overview</h2>
-						<p><a aria-label="Early Care & Education Public Funding Landscape, Updated August 2020" href="/ece/documents/ACECE-PublicFunding2020.pdf" target="_blank">View the document.</a>
+						<p><a aria-label="Early Care & Education Public Funding Landscape, Updated August 2020" href="/documents/ACECE-PublicFunding2020.pdf" target="_blank">View the document.</a>
 							<span class="pdf">*(PDF)</span>
 						</p>
 					</div> -->
@@ -473,14 +473,14 @@
 						<h2>2020 Overview of Zip Code Priorities</h2>
 						<p>In order for Alameda County to be considered for expansion funding for General Child Care and State Preschool Program, the Early Care and Education Planning Council must identify the most underserved areas in our county by zip code. The priority zip codes are determined on the basis of a demand and supply analysis performed with California Department of Education (CDE), California Department of Social Services (CDSS), Early Head Start and Head Start (EHS/HS), American Institutes for Research (AIR) and census data. The 2020 Zip Code Priorities are pending approval by the County Board of Supervisors.
 						</p>
-						<p><a aria-label="Alameda County Zip Code Priorities & Waitlist Review" href="/ece/documents/LPCZipCodePriorities2020.pdf" target="_blank">2020 Profile of Data</a>
+						<p><a aria-label="Alameda County Zip Code Priorities & Waitlist Review" href="/documents/LPCZipCodePriorities2020.pdf" target="_blank">2020 Profile of Data</a>
 							<span class="pdf">*(PDF)</span>
 						</p>
 					</div> -->
       <!-- <div class="column-half">
 						<h2>ECE Planning Council Performance Measures</h2>
 						<p>
-							<a href="/ece/documents/IncreasedAccessQualityECEPerformanceMeasures.pdf" target="_blank">Increased Access to
+							<a href="/documents/IncreasedAccessQualityECEPerformanceMeasures.pdf" target="_blank">Increased Access to
 								Quality ECE Performance Measures</a>
 							<span class="pdf">*(PDF - 174kB)</span>
 						</p>
@@ -488,7 +488,7 @@
       <!-- <div class="column-half">
 						<h2>List of Early Care and Education Acronyms</h2>
 						<p>Our field often uses a multitude of acronyms. This document has recently been updated and a few more acronyms have been added to the list. Please check this out and use it as your handy guide for all your acronym needs.
-							<a href="/ece/documents/ListofAcronymsCY2020.pdf" target="_blank">click here</a>.</p>
+							<a href="/documents/ListofAcronymsCY2020.pdf" target="_blank">click here</a>.</p>
 					</div> -->
     </div>
     <!-- class row ends here -->
