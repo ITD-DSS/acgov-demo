@@ -5,7 +5,7 @@
       <a href=""
         ><img
           style="margin: 3px"
-          src="/images/new-acgov-logo-standard-header.png"
+          src="@/static/images/new-acgov-logo-standard-header.png"
           alt="Alameda County, CA, acgov.org"
           width="180"
           height="44"

@@ -141,7 +141,7 @@
         >
       </p>
     </div>
-    <!-- <img src="./images/new.png" alt="new tag"> -->
+    <!-- <img src=".@/static/images/new.png" alt="new tag"> -->
     <!--a href="crisis/"><img style="width:690px; margin: 0px 30px 0px 10px;" src="images/crisis-banner.png" alt="little boy pointing to Bay with the caption Click here to learn about Alameda County Child Care and Early Education Crisis"></a-->
 
     <div class="meeting-box">
@@ -161,7 +161,7 @@
         <div class="column-img">
           <div class="photobox">
             <img
-              src="/images/appreciation_reception.jpg"
+              src="@/static/images/appreciation_reception.jpg"
               alt="Photo of Veronica Ufoegbune, Council Chair and Margaret jerene, Council members, along with Susan Muranishi, County Administrator"
             />
             <p>
@@ -175,7 +175,7 @@
         <div class="column-img">
           <div class="photobox">
             <img
-              src="/images/CCPCreception6.jpg"
+              src="@/static/images/CCPCreception6.jpg"
               alt="photo of Child Care Planning Council members"
             />
             <p>
@@ -190,14 +190,14 @@
     <!-- <div class="social-box">
 
 						<div class="photobox">
-							<img src="/images/appreciation_reception.jpg" alt="Photo of Veronica Ufoegbune, Council Chair and Margaret jerene, Council members, along with Susan Muranishi, County Administrator" />
+							<img src="@/static/images/appreciation_reception.jpg" alt="Photo of Veronica Ufoegbune, Council Chair and Margaret jerene, Council members, along with Susan Muranishi, County Administrator" />
 							<p>Pictured are Veronica Ufoegbune, former Council Chair and Margaret Jerene, Council member, along with Susan
 								Muranishi,
 								County Administrator.</p>
 						</div>
 						
 						<div class="photobox">
-							<img src="/images/CCPCreception6.jpg" alt="photo of Child Care Planning Council members" />
+							<img src="@/static/images/CCPCreception6.jpg" alt="photo of Child Care Planning Council members" />
 							<p>Early Care & Education Planning Council members at a June, 2012 reception for County Boards and Commissions.</p>
 						</div>
 
@@ -428,19 +428,19 @@
 
     <div class="row">
       <!-- <div class="column-half">
-						<h2><img src="./images/new.png" alt="new tag"> Apply for Alameda County's Workforce Pathways Project / Aplique aqu&iacute; para el Proyecto de Desarrollo para la Fuerza Laboral del Condado de Alameda</h2>
+						<h2><img src=".@/static/images/new.png" alt="new tag"> Apply for Alameda County's Workforce Pathways Project / Aplique aqu&iacute; para el Proyecto de Desarrollo para la Fuerza Laboral del Condado de Alameda</h2>
 						<p><a aria-label="Apply for Alameda County’s Workforce Pathways Project" 
 							href="/documents/WorkforcePathwaysFlyerFinal.pdf" target="_blank">View the document</a>
 							<span class="pdf">*(PDF)</span></p>
 					</div> -->
       <!-- <div class="column-half">
-						<h2><img src="./images/new.png" alt="new tag"> Overview of Current Priority CA and Federal Legislation</h2>
+						<h2><img src=".@/static/images/new.png" alt="new tag"> Overview of Current Priority CA and Federal Legislation</h2>
 						<p><a aria-label="Overview of Current Priority CA and Federal Legislation" 
 							href="/documents/2020ACECELegislationOverview-Final9.3.20.pdf" target="_blank">View the document</a>
 							<span class="pdf">*(PDF)</span></p>
 					</div> -->
       <!-- <div class="column-half">
-						<h2><img src="./images/new.png" alt="new tag"> Overview of Alameda County ECE Program's Dual Language Learner Work</h2>
+						<h2><img src=".@/static/images/new.png" alt="new tag"> Overview of Alameda County ECE Program's Dual Language Learner Work</h2>
 						<p><a aria-label="Overview of Alameda County ECE Program’s Dual Language Learner Work" 
 							href="/documents/DLLACHistoryTimelinereportoutInfographic2020.pdf" target="_blank">View the document</a>
 							<span class="pdf">*(PDF)</span></p>
