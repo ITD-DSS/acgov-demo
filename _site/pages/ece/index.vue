@@ -500,7 +500,9 @@
 </template>
 
 <script>
-export default {}
+export default {
+  layout: 'ece-home',
+}
 </script>
 
 <style>
