@@ -502,6 +502,29 @@
 <script>
 export default {
   layout: 'ece-home',
+  head: {
+    title: 'Early Care & Education Planning Council - Alameda County',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Alameda County General Services Agency Childcare Home Page',
+      },
+      {
+        name: 'keywords',
+        content:
+          'Alameda County Early Care & Education Planning Council, Council, Planning, Childhood, Early Childhood,  Needs, School, Schools, Proposition 10, Subsidized, Kids, Children, Commission, Community, Child, Child Care, Partnership, Ala-ASCC, Alameda Access to Subsidized Child Care, LINCC, Local Investment in Child Care, UASCC, Universal Access to Subsidized Child Care',
+      },
+    ],
+    link: [
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+      },
+    ],
+  },
 }
 </script>
 
