@@ -1,0 +1,671 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	background-image: url(/img/wallpaper-merritt-adj2.jpg);
+	background-position: center -100px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	background-color: #333;
+}
+ol, ul {
+    padding: 0px;
+    margin-left: 25px;
+}
+a:hover {
+			cursor:pointer;
+		}
+		
+.row { margin: 30px 10px; }
+.row-title { margin: 20px 10px; }
+.row.regular, .row.full-width {
+	margin: 0px;
+}
+.row.featured {
+	margin-top: 0px;
+}
+.sharethis-block-desktop {
+	margin-bottom: 20px;
+}
+.sharethis-block-mobile {
+	margin: 20px 0px;
+	display:none;
+}
+
+/* GOOGLE MATERIAL ICONS */
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-60 { font-size: 60px; }
+.material-icons.md-72 { font-size: 72px; }
+.material-icons.md-84 { font-size: 84px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+.material-icons.md-vertical-middle {
+	vertical-align:middle;
+}
+.material-icons.md-vertical-bottom {
+	vertical-align:bottom;
+}
+.material-icons.required-field {
+	color: rgb(204,0,0);
+}
+.icon-18 {max-width: 18px;width: 100%;}
+.icon-24 {max-width: 24px;width: 100%;}
+.icon-36 {max-width: 36px;width: 100%;}
+.icon-48 {max-width: 48px;width: 100%;}
+.icon-60 {max-width: 60px;width: 100%;}
+.icon-72 {max-width: 72px;width: 100%;}
+.icon-84 {max-width: 84px;width: 100%;}
+
+.icon-sm {
+	margin: 0px 10px 20px 10px;
+}
+/* Department Summaries */
+.dept-phone, .dept-map, .dept-email {
+	float: right;
+	margin-left: 10px;
+}
+a.dept-link {
+	display:block;
+}
+h5.deptlinks {
+	margin-left: 20px;
+}
+
+.rounded-corners-2 {
+	border-radius: 2px;
+	-moz-box-border-radius: 2px;
+	-webkit-box-border-radius: 2px;
+}
+.rounded-corners-4 {
+	border-radius: 4px;
+	-moz-box-border-radius: 4px;
+	-webkit-box-border-radius: 4px;
+}
+.rounded-corners-6 {
+	border-radius: 6px;
+	-moz-box-border-radius: 6px;
+	-webkit-box-border-radius: 6px;
+}
+.rounded-corners-8 {
+	border-radius: 8px;
+	-moz-box-border-radius: 8px;
+	-webkit-box-border-radius: 8px;
+}
+.rounded-corners-10 {
+	border-radius: 10px;
+	-moz-box-border-radius: 10px;
+	-webkit-box-border-radius: 10px;
+}
+/* Branding */
+.branding, #acgov-branding-scroll {
+	background-color: #fff;
+	margin: 0px;
+	padding: 0px;
+	opacity: 1;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 10;
+	-moz-box-shadow: #000 0px 2px 15px;
+	-webkit-box-shadow: #000 0px 2px 15px;
+	box-shadow: #000 0px 2px 15px;
+}
+.branding .row {
+	margin: 10px auto;
+}
+#acgov-branding-scroll {
+	display:none;
+}
+.acgov-logo {
+	width: 300px;
+}
+.material-icons.go-back {
+	color: #336699;
+}
+.material-icons.go-back:hover {
+	cursor:pointer;
+}
+.material-icons.search { 
+	text-shadow: #000 2px 2px;  
+	-moz-text-shadow: #000 2px 2px;
+	-webkit-text-shadow: #000 2px 2px;
+    transition-property: width,height,transform,background,font-size,opacity;
+    transition-duration: .25s,.25s,.25s,.25s,.25s,.25s;
+}
+
+.material-icons.search { 
+	text-shadow: none;  
+}
+.searchbox {
+	margin-top: 100px;
+	padding: 0px;
+}
+.logo {text-align:left;}
+.tagline {text-align:right;margin-top: 10px;font-size:2.5rem;}
+#logo-scroll {padding-left: 0px;}
+.tagline-scroll {text-align:right;margin-top: 5px;font-size:1.2rem;padding-right: 0px;}
+.sub-title {
+	margin-top: 0px;
+}
+.report-thumb {
+	float: right;
+	padding: 0px 10px 10px 10px;
+	max-width: 300px;
+	width: 100%;
+}
+.external-link:after {
+	content: url(/img/new-window.png);
+	width: 2px;
+}
+a[href*=".pdf"]:after {
+    content: url(/img/pdf.png);
+	width: 2px;
+}
+a.no-pdf-icon[href*=".pdf"]:after {
+    content: none;
+}
+.form-control.search-input {
+	font-size:24px;
+	/*padding: 30px 20px;*/
+	height: 75px;
+}
+.search-button {
+	height:73px;
+}
+
+.input-group-addon {
+	padding:0px;
+}
+.material-icons.search {
+	padding: 0px 20px;
+	
+}
+.material-icons.search:hover {
+	font-size: 43px;
+	font-weight:600;
+}
+#basic-addon2:hover {
+	cursor:pointer;
+	color: #fff;
+}
+/* URGENT NOTIFICATIONS */
+.urgent { margin: 20px auto 40px auto; background-color: rgba(255,255,255,0.9); border-radius: 0px; }
+.urgent p {
+	color: #FB0307;
+	font-size:18px;
+	text-align:center;
+}
+/* INFORMATIONAL NOTIFICATIONS */
+.info-msg { margin: 20px auto 40px auto; background-color: rgba(255,223,191,0.9); border-radius: 0px; }
+.info-msg p {
+	color: #b25900;
+	font-size:18px;
+	text-align:center;
+}
+
+.content {
+	background-color:#fff;
+	background: rgba(255,255,255,.9);
+	border-radius: 0px;
+	margin-bottom: 40px;
+	padding-bottom: 30px;
+	min-height: 400px;
+}
+
+h1.pagetitle {
+	color: #336699;
+	margin: 0px;
+	display:inline-block;
+	float:left;
+}
+ul.list-group {
+	margin-left: 0px;
+}
+.accordian-button-block {
+	display: block;
+}
+.panel-default > .panel-heading {
+	background-color: #699BCD;
+	color: #fff;
+	text-align:center;
+}
+
+.panel-group .panel+.panel {
+    margin-top: 0px;
+}
+.side-column {
+	padding-right: 0px;
+}
+.side-column.bordered {
+	border-left: 1px solid #999;
+}
+.side-column div:first-child h2 {
+	margin-top: 0px;
+}
+.side-column .action-icon {
+	margin: 0px 0px 0px 10px;
+	float: right;
+}
+	
+.heroimage {
+	margin-bottom: 20px;
+}
+.stnd-img-ad {
+	float: right;
+	margin: 0px 0px 10px 10px;
+	max-width: 250px;
+	width: 100%;
+}
+.input-group {
+	width:100%;
+
+}
+button a {
+			color: #fff;
+			text-decoration:none;
+		}
+		button a:hover {
+			color: #fff;
+			text-decoration:none;
+		}
+		
+/* Footer */
+.footer {
+	background-color: rgba(255,255,255,1);
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	z-index: 10;
+	-moz-box-shadow: #000 0px 2px 15px;
+	-webkit-box-shadow: #000 0px 2px 15px;
+	box-shadow: #000 0px 2px 15px;
+	}
+.footer .row {
+	margin: 0px;
+	padding: 10px 0px;
+}
+.footer .row p {
+	padding: 0px;
+	margin: 0px;
+}
+
+.img-responsive.img-alignment {
+    vertical-align:middle;
+    margin:auto;
+    display:inline-block;
+    padding:10px;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+.img-responsive.img-alignment.lg-img {
+	vertical-align:middle;
+    margin:auto;
+    display:inline-block;
+    padding:20px;
+    margin-left:20px;
+    margin-right:20px;
+	width:250px;
+	height:250px;
+}
+
+.container.branding.affix {
+	max-width:100%;
+}
+
+.trans-icon{
+	display: inline-block;
+	float:right;
+	padding-right:20px;
+}
+.footer img.social-icon {
+	max-width: 40px;
+	margin: 10px;
+}
+
+@media (max-width: 767px) {
+body {
+		background-image: none !important;
+	}
+.branding .row.container {
+	padding: 0px;
+}
+
+.btn-responsive {
+	padding: 4px 9px;
+	font-size:95%;
+	line-height:2;
+	white-space:normal;
+}
+
+.acgov-logo {
+	margin: 0px auto;
+}
+.content {
+	padding: 0px 0px 30px 0px;
+	background-color: rgba(255,255,255,1);
+	margin-bottom: 0px;
+}
+.row-title {
+	background-color: #336699;
+	margin: 0px;
+	border-bottom: 1px solid #fff;
+	position:relative;
+}
+.row-title h1 {
+		margin: 20px;
+		color: #fff;
+		margin-right:50px;
+}
+.logo {text-align:center;}
+
+.tagline {text-align:center;margin-top: 0px;font-size:1.5rem;}
+/*.branding {
+	background-color: #eee;
+}*/
+.acgov-logo {
+	margin: 0px auto;
+}
+.form-control.search-input  {
+	font-size:18px;
+	padding: 30px 20px;
+	color: #666;
+}
+
+.search-button {
+	height:73px;
+}
+
+.panel-heading {
+	padding: 15px 10px;
+}
+
+.embed-responsive.embed-responsive-16by9.embed-map {
+	width:90%;
+	margin: 0px auto;
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 13px; }
+.material-icons.md-24 { font-size: 17px; }
+.material-icons.md-36 { font-size: 26px; }
+.material-icons.md-48 { font-size: 35px; }
+.material-icons.md-60 { font-size: 43px; }
+.material-icons.md-72 { font-size: 52px; }
+.material-icons.md-84 { font-size: 60px; }
+
+.material-icons.md-36.app-icons { font-size: 36px; }
+
+.material-icons.go-back {
+	font-size: 48px;
+}
+
+/* URGENT NOTIFICATIONS */
+.urgent { margin: 0px auto 20px auto; background-color: #C02C2E; border-radius: 0px; }
+.urgent p {
+	color: #fff;
+	font-size:14px;
+	text-align:center;
+}
+.urgent p a {
+	color:#fff;
+	text-decoration: underline;
+}
+.row.regular {
+	margin: 10px 0px 0px 0px;
+}
+.regular.hero {
+	margin: 0px 0px 0px 0px;
+}
+
+.row.full-width .main-column {
+	padding: 0px;
+}
+.row.full-width .main-column p {
+	padding: 0px 10px;
+}
+.heroimage {
+	margin-bottom: 10px;
+}
+.report-thumb {
+	padding: 10px;
+}
+p.after-thumb {
+	padding-top: 10px !important;
+}
+.side-column {
+	padding: 0px;
+	margin: 0px;
+}
+.side-column .action-icon {
+	margin: 10px;
+}
+/*
+#trending {
+	background-color:#d5e3cd;
+	padding: 10px;
+	border-top: 1px solid #CCC;
+}
+#departments {
+	background-color:#d5e3cd;
+	padding: 10px;
+	border-top: 1px solid #e5e2c2;
+}
+#resources {
+	background-color:#eee;
+	padding: 10px;
+	border-top: 1px solid #CCC;
+}
+#questions {
+	background-color:#ffc;
+	padding: 10px;
+	border-top: 1px solid #CCC;
+}
+#related {
+	background-color:#CAE4FF;
+	padding: 10px;
+	border-top: 1px solid #CCC;
+}
+*/
+#questions, #related, #resources, #departments, #trending, #hotlines {
+	background-color: #fff;
+	padding: 0px;
+	border-top: 0px;
+}
+#questions h2 {
+	background-color: #0080FF;
+	padding: 15px;
+	color: #fff;
+	margin: 0px;
+}
+.side-column p {
+	margin: 0px;
+	padding: 15px;
+	display: block;	
+}
+.side-column h3 {
+	padding: 0px 10px;
+	
+}
+
+.side-column h3.link-list-header {
+	background-color: #eee;
+	margin: 0px;
+	padding: 10px;
+}
+.side-column ul {
+	margin: 0px;
+}
+.side-column ul li {
+	margin: 0px;
+	padding: 0px;
+	list-style-type:none;
+}
+.side-column ul li a {
+	margin: 0px;
+	padding: 15px;
+	display: block;
+	border-bottom: 1px solid #ccc;
+
+}
+
+.side-column #hotlines p {
+	border-bottom: 1px solid #ccc;
+
+}
+/*.side-column ol, .side-column ul {
+	margin-left: 30px;
+	
+}*/
+
+.side-column ul li a.with-desc {
+	border: 0;
+	padding-bottom:0;
+}
+.side-column p.desc {
+	padding-top:0;
+	border-bottom: 1px solid #ccc;
+}
+#related h2 {
+	background-color: #FCAB03;
+	padding: 15px;
+	color: #fff;
+	margin: 0px;
+}
+#resources h2 {
+	background-color: #B9B973;
+	padding: 15px;
+	color: #fff;
+	margin: 0px;
+}
+#departments h2 {
+	background-color: #007575;
+	padding: 15px;
+	color: #fff;
+	margin: 0px;
+}
+#trending h2 {
+	background-color: #85B200;
+	padding: 15px;
+	color: #fff;
+	margin: 0px;
+}
+#hotlines h2 {
+	background-color: #b20000;
+	padding: 15px;
+	color: #fff;
+	margin: 0px;
+}
+
+.ads-featured {
+	margin-bottom: 10px;
+}
+.side-column.bordered {
+	border-left: 0px solid #999;
+}
+.trans-icon{
+	color:white;
+	display: inline-block;
+    float: right;
+    position: absolute;
+    top: 10px;
+    right: 2px;
+    margin: 10px 15px 15px 0px;
+    padding-right:0px;
+}
+.sharethis-block-desktop {
+	display:none;
+}
+.sharethis-block-mobile {
+	display:block;
+}
+
+}
+
+
+@media (max-width: 600px) {
+.form-control.search-input  {
+	font-size:14px;
+	padding: 30px 10px;
+}
+
+.search-button {
+
+	height:73px;
+}
+
+.stnd-img-ad {
+	float: none;
+	padding: 0px 0px 20px 0px;
+	margin: 0px;
+}
+.trans-icon{
+	display: inline-block;
+    float: right;
+    position: absolute;
+    top: 10px;
+    right: 2px;
+    margin: 10px 15px 15px 0px;
+}
+}
+
+@media (max-width: 500px) {
+.form-control.search-input  {
+	font-size:12px;
+}
+
+.search-button {
+
+	height:73px;
+
+}
+
+.report-thumb {
+	float: none;
+	padding: 0px;
+	max-width:none;
+}
+.report-thumb-a {
+	height: 200px;
+	overflow:hidden;
+	display:block;
+}
+.trans-icon{
+	display: inline-block;
+    float: right;
+    position: absolute;
+    top: 10px;
+    right: 2px;
+    margin: 10px 15px 15px 0px;
+}
+}
+@media (max-width: 480px) {
+.back {
+	padding: 0px;
+}
+.search-button {
+	height:73px;
+}
+
+}
+@media (max-width: 400px) {
+.form-control.search-input  {
+	font-size:10px;
+}
+.material-icons.go-back {
+	font-size: 32px;
+}
+
+}

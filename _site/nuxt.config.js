@@ -1,23 +1,32 @@
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: true,
+  static: {
+    prefix: false,
+  },
 
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'site',
+    //   title: 'Early Care & Education Planning Council - Alameda County',
     meta: [
       { charset: 'utf-8' },
+      // <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    //   link: [
+    //     {
+    //       rel: 'stylesheet',
+    //       href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+    //     },
+    //   ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [],
+  css: ['~/static/ece/css/main.css'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   // plugins: [],
@@ -41,12 +50,18 @@ export default {
   ],
 
   sanity: {
-    projectId: 'ehhijqba'
+    minimal: true,
+    projectId: 'ehhijqba',
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
-
+  generate: {
+    dir: 'ece-test',
+  },
+  // buildDir: 'ece-test',
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    // publicPath: '/ece-test',
+  },
 }
