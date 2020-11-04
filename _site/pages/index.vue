@@ -1,242 +1,32 @@
 <template>
   <div>
     <!-- Google Tag Manager (noscript) -->
-    <noscript
+    <!-- <noscript
       ><iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-MW6VWCK"
         height="0"
         width="0"
         style="display: none; visibility: hidden"
       ></iframe
-    ></noscript>
+    ></noscript> -->
     <!-- End Google Tag Manager (noscript) -->
 
-    <div class="container-fluid branding">
-      <div class="row container resp">
-        <div class="col-sm-6 col-xs-12 logo">
-          <img class="img-responsive acgov-logo" src="/img/brandingPROD.png" />
-        </div>
-        <div class="col-sm-6 col-xs-12 tagline">County of Alameda, CA</div>
-      </div>
-    </div>
+    <name-banner />
 
-    <div class="container searchbox">
-      <!--<div class="container urgent">
-    <div class="row">
-      <p><span class="material-icons md-48 md-vertical-middle">warning</span>Alameda County websites may experience intermittent down times this Sunday, July 26, from 6:00 a.m. to 12:00 p.m. due to maintenance.</p>
-    </div>
-</div>-->
-      <div class="row">
-        <form
-          id="search-form"
-          style="margin: auto; width: 90%"
-          method="get"
-          action="https://acsearch.acgov.org/s/search.html?"
-          target="_parent"
-          type="external"
-        >
-          <div class="input-group">
-            <label
-              for="funnelbackinput"
-              style="visibility: hidden; position: absolute"
-              class="sr-only"
-              >Search</label
-            >
+    <search-box />
 
-            <input
-              id="funnelbackinput"
-              type="search"
-              name="query"
-              class="form-control search-input"
-              placeholder="What can we help you find today?"
-              aria-describedby="basic-addon2"
-            />
-            <span class="input-group-addon">
-              <button
-                type="submit"
-                class="btn search-button"
-                name="btnG"
-                value="Search"
-              >
-                <span class="material-icons md-36 md-dark search"
-                  >&#xE8B6;</span
-                >
-              </button>
-            </span>
-          </div>
-          <input type="hidden" name="collection" value="acgov" />
-          <input type="hidden" name="profile" value="acgov" />
-          <input type="hidden" name="form" value="acgov" />
-        </form>
-      </div>
-    </div>
     <!-- Google Translate the Pages --------------------------------->
-    <div
-      id="modal-trans"
-      class="modal fade"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="Disclaimer Info"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h3 id="myModalLabel" class="modal-title">Translate this Page</h3>
-          </div>
-          <div class="modal-body deptinfo">
-            <h4>Disclaimer</h4>
-            <p>
-              Translation of pages on ACGOV.org is performed by Google
-              Translate, a third party service which Alameda County has no
-              control over. The service provides automated computer translations
-              that are only an approximation of the websites' original content.
-            </p>
-
-            <p />
-            <p>
-              Alameda County does not warrant the accuracy, reliability, or
-              timeliness of any information translated by Google Translate.
-              These translations should not be considered exact renderings of
-              the original ACGOV.org site. Some portions of the site will not be
-              translated at all, which includes but is not limited to buttons,
-              graphics, photos, and video content.
-            </p>
-
-            <br />
-            <div id="google_translate_element" style=""></div>
-            <br />
-          </div>
-        </div>
-      </div>
-    </div>
+    <google-translate />
 
     <!--CHATBOT CODE-->
-    <div id="maincontainer" style="display: none">
-      <div id="headingpanel">
-        <div id="togglebuttonx" style="display: none">
-          <button id="endwebchat" onclick="toggleWebChat()">
-            <img
-              src="/img/close-button.png"
-              alt="Click this button to close the chat window about COCID-19."
-            />
-          </button>
-        </div>
-        <span class="name">CACHe</span><br />
-        <span class="title">County of Alameda Community Helper</span>
-      </div>
-      <div id="webchat" role="main"></div>
-    </div>
+    <covid-chatbot />
     <!--CHATBOT CODE END-->
 
     <div class="container content">
-      <div class="row icons">
-        <div class="col-sm-3 col-xs-6 text-center icon-button">
-          <a href="services/" class="iconlink icon-services">
-            <i class="material-icons md-84 md-light settings">&#xE8B8;</i>
-            <br />
-            <span class="icon-title">Services</span>
-          </a>
-        </div>
-        <div class="col-sm-3 col-xs-6 text-center icon-button">
-          <a href="careers.htm" class="iconlink icon-careers">
-            <i class="material-icons md-84 md-light business_center"
-              >&#xEB3F;</i
-            >
-            <br />
-            <span class="icon-title">Careers</span>
-          </a>
-        </div>
-        <div class="col-sm-3 col-xs-6 text-center icon-button">
-          <a href="government/connected/" class="iconlink icon-connect">
-            <i class="material-icons md-84 md-light forum">&#xE0BF;</i>
-            <br />
-            <span class="icon-title">Connect</span>
-          </a>
-        </div>
-        <div class="col-sm-3 col-xs-6 text-center icon-button">
-          <a href="participate.htm" class="iconlink icon-participate">
-            <i class="material-icons md-84 md-light thumbs_up_down">&#xE8DD;</i>
-            <br />
-            <span class="icon-title">Participate</span>
-          </a>
-        </div>
-      </div>
-      <div
-        class="visible-xs"
-        style="padding: 5px 15px 0px 15px; text-align: center"
-      >
-        <a
-          href="#"
-          data-toggle="modal"
-          data-target="#modal-trans"
-          class="translate"
-        >
-          <i
-            class="material-icons md-48"
-            style="display: inline-block; padding-top: 5px"
-            >&#xE927;</i
-          >
-          <span
-            style="
-              vertical-align: middle;
-              display: inline-block;
-              padding-bottom: 20px;
-              font-size: 20px;
-            "
-          >
-            Translate</span
-          >
-        </a>
-      </div>
+      <nav-icons />
+
+      <translate-modal />
       <!--PAGEWATCH CODE="CAALAME_1_20080723_151631_en"-->
-      <style>
-        @media screen and (max-width: 767px) {
-          #covid19img {
-            content: url('/img/coronavirus-updates-small.png');
-            max-width: 100%;
-            align-content: center;
-            margin: 15px auto;
-            display: block;
-          }
-        }
-        #covid19img {
-          max-width: 100%;
-        }
-        .twitterfeeds {
-          float: left;
-          margin-bottom: 5%;
-        }
-
-        .prepared {
-          float: left;
-        }
-
-        @media only screen and (min-width: 768px) {
-          .twitterfeeds {
-            width: 24%;
-          }
-        }
-
-        @media only screen and (max-width: 767px) {
-          .twitterfeeds {
-            width: 100%;
-            border: 1px solid #eee;
-            border-radius: 5px;
-          }
-
-          .prepared {
-            float: none;
-          }
-        }
-      </style>
 
       <!-- ACVOTE BOX -->
       <div class="row stories">
@@ -1174,477 +964,137 @@ and enforcement. To learn more about what this means for Alameda County resident
       </div>
       <!--/PAGEWATCH-->
 
-      <div class="row gov">
-        <div class="col-sm-6 board-photo">
-          <a href="#" data-toggle="modal" data-target="#modal-bos">
-            <img
-              id="bos"
-              class="img-responsive center-block"
-              src="/img/bos.jpg"
-              alt="Photo collage of the Board of Supervisors showing: Scott Haggerty-District 1, Richard Valle-District 2, Wilma Cha-District 3, Nate Miley-District 4, Keith Carson-District 5. "
-            />
-          </a>
-        </div>
-        <div class="col-sm-6 gov-links">
-          <ul>
-            <li>
-              <a href="government/departments.htm"
-                >Agencies &amp; Departments</a
-              >
-            </li>
-            <li>
-              <a href="/board/broadcast.htm"
-                >Board of Supervisors Meetings / Broadcasts / Current Meeting
-                Agenda</a
-              >
-            </li>
-            <li>
-              <a href="/cda/planning/meetings/broadcast.htm"
-                >Planning Department Meeting Broadcasts</a
-              >
-            </li>
-            <!--<li><a href="/government/boards.htm">Boards &amp; Commissions</a></li>-->
-            <li>
-              <a href="#" data-toggle="modal" data-target="#modal-cao"
-                >County Administrator's Office</a
-              >
-            </li>
-            <li>
-              <a href="government/elected.htm">Elected Officials</a>
-            </li>
-            <li>
-              <a href="government/programs.htm">Programs &amp; Initiatives</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div
-      id="modal-govd"
-      class="modal fade"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="Email subscription sign-up"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h3 id="myModalLabel" class="modal-title">
-              <i class="material-icons md-36 md-vertical-middle">&#xE0be;</i>
-              Get Email Updates
-            </h3>
-          </div>
-          <div class="modal-body deptinfo">
-            <form
-              id="GD-snippet-form"
-              action="https://public.govdelivery.com/accounts/CAALAME/subscribers/qualify"
-              accept-charset="UTF-8"
-              method="post"
-            >
-              <input name="utf8" type="hidden" value="✓" />
-              <input
-                type="hidden"
-                name="authenticity_token"
-                value="Og1izipZAapbmVioBvav08Yp6RF2enmpMVaUvFUWIgWjE8h632WdH4pZz4jP0NJoSB6RtqPGddhUnED3QpqZSQ=="
-              />
-              <input
-                id="topic_id"
-                type="hidden"
-                name="topic_id"
-                value="CAALAME_1"
-              />
-              <fieldset>
-                <div>
-                  <p>Stay connected.</p>
-                  <p>Stay informed.</p>
-                  <p>
-                    Get an email whenever County news is updated. To sign up for
-                    updates or to access your subscriber preferences, please
-                    enter your contact information below.
-                  </p>
-                </div>
-                <br />
-                <ol class="form">
-                  <li class="email_fields" style="display: block">
-                    <label for="email">Email Address</label>
-                    <input id="email" type="text" name="email" class="long" />
-                  </li>
-                </ol>
-                <div class="button_panel">
-                  <input
-                    type="submit"
-                    name="commit"
-                    value="Subscribe"
-                    class="form_button"
-                  />
-                </div>
-              </fieldset>
-            </form>
-          </div>
-        </div>
-      </div>
+      <gov-info />
     </div>
 
-    <div
-      class="hidden-xs"
-      style="width: 100%; height: 0px; float: right; background-color: red"
-    >
-      <!--text-align:center;">-->
-      <div style="top: 5px; position: relative">
-        <a
-          class="trans_button"
-          href="#"
-          data-toggle="modal"
-          data-target="#modal-trans"
-        >
-          <i class="material-icons md-36 translate" style="color: #336699"
-            >&#xE927;</i
-          >
-        </a>
-      </div>
-    </div>
+    <modal-govdelivery />
+
+    <translate-button />
     <!-- County Administrator's Office --------------------------------->
-    <div
-      id="modal-cao"
-      class="modal fade"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="County Administrator's Office Info"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h3 id="myModalLabel" class="modal-title">
-              County Administrator's Office
-            </h3>
-          </div>
-          <div class="modal-body deptinfo">
-            <a class="dept-phone" href="tel:510-272-6984"
-              ><i class="material-icons md-48">&#xE0cd;</i></a
-            ><a
-              class="dept-map"
-              target="_blank"
-              href="https://goo.gl/maps/qSGNz3QdGsJ2"
-              ><i class="material-icons md-48">&#xE52E;</i></a
-            >
-            <p class="dept-address">
-              1221 Oak Street, Room 555<br />
-              Oakland, CA 94612<br />
-              510.272.6984
-            </p>
-            <h4 class="deptlinks">
-              <i class="material-icons md-36 md-vertical-middle">&#xE157;</i>
-              Links
-            </h4>
-            <ul>
-              <li>
-                <a class="dept-link" href="https://cao.acgov.org/index.page"
-                  >Department Website</a
-                >
-              </li>
-            </ul>
-            <h4 class="deptlinks">
-              <i class="material-icons md-36 md-vertical-middle">&#xE323;</i>
-              Online Services
-            </h4>
-            <ul>
-              <li>
-                <a
-                  class="dept-link external-link"
-                  href="http://budget.acgov.org/"
-                  target="_blank"
-                  >Budget Portal</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    <modal-cao />
+    <modal-bos />
 
-    <div
-      id="modal-bos"
-      class="modal fade"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="Board of Supervisors District 1 Info"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h3 id="myModalLabel" class="modal-title">Board of Supervisors</h3>
-          </div>
-          <div class="modal-body deptinfo">
-            <a class="dept-phone" href="tel:510-272-6984"
-              ><i class="material-icons md-48">&#xE0cd;</i></a
-            ><a
-              class="dept-map"
-              target="_blank"
-              href="https://goo.gl/maps/ASWeNCXLefr"
-              ><i class="material-icons md-48">&#xE52E;</i></a
-            >
-            <p class="dept-address">
-              County Office<br />
-              1221 Oak Street, Room 536<br />
-              Oakland, CA 94612<br />
-              510.272.6984
-            </p>
-            <h4 class="deptlinks">
-              <i class="material-icons md-36 md-vertical-middle">&#xE157;</i>
-              Links
-            </h4>
-            <ul>
-              <li>
-                <a class="dept-link" href="/board/"
-                  >Board of Supervisors Website</a
-                >
-              </li>
-              <li>
-                <a class="dept-link" href="/board/district1/"
-                  >District 1 Website</a
-                >
-              </li>
-              <li>
-                <a class="dept-link" href="/board/district2/"
-                  >District 2 Website</a
-                >
-              </li>
-              <li>
-                <a class="dept-link" href="/board/district3/"
-                  >District 3 Website</a
-                >
-              </li>
-              <li>
-                <a class="dept-link" href="/board/district4/"
-                  >District 4 Website</a
-                >
-              </li>
-              <li>
-                <a class="dept-link" href="/board/district5/"
-                  >District 5 Website</a
-                >
-              </li>
-            </ul>
-            <h4 class="deptlinks">
-              <i class="material-icons md-36 md-vertical-middle">&#xE323;</i>
-              Online Services
-            </h4>
-            <ul>
-              <li>
-                <a class="dept-link" href="/ms/addresslookup/Default.aspx"
-                  >Lookup Your District</a
-                >
-              </li>
-              <li>
-                <a class="dept-link" href="/board/broadcast.htm"
-                  >Watch Board Meetings</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-fluid footer">
-      <div class="row text-center">
-        <p>
-          <a class="cu" href="/government/contactus.htm">Contact Us</a> |
-          <a class="acc" href="/government/accessibility.htm">Accessibility</a>
-          | <a class="ld" href="/government/legal.htm">Legal / Disclaimers</a> |
-          <a class="ps" href="/government/legal.htm">Privacy Statement</a> |
-          <a class="gu" href="/government/guidelines.htm">Website Guidelines</a>
-          | <a class="sb" href="/government/sb272.htm"> SB 272 </a> |
-          <a class="sm" href="/sitemap.htm">Site Map</a>
-          <br />
-          <a href="https://www.facebook.com/AlamedaCounty" target="_blank"
-            ><img
-              class="social-icon"
-              src="/img/facebook200x200.png"
-              alt="facbook icon"
-          /></a>
-          <a href="https://twitter.com/AlamedaCounty" target="_blank"
-            ><img
-              class="social-icon"
-              src="/img/twitter200x200.png"
-              alt="Twitter icon"
-          /></a>
-          <a href="https://www.youtube.com/user/AlamedaCountyCA" target="_blank"
-            ><img
-              class="social-icon"
-              src="/img/youtube200x200.png"
-              alt="YouTube icon"
-          /></a>
-          <a href="https://www.flickr.com/photos/alamedacounty" target="_blank"
-            ><img
-              class="social-icon"
-              src="/img/flickr200x200.png"
-              alt="Flickr icon"
-          /></a>
-          <a href="/government/connected/rss.htm"
-            ><img class="social-icon" src="/img/rss200x200.png" alt="RSS icon"
-          /></a>
-          <a
-            href="https://public.govdelivery.com/accounts/CAALAME/subscriber/new"
-            target="_blank"
-            ><img
-              class="social-icon"
-              src="/img/govdelivery200x200.png"
-              alt="GovDelivery icon"
-          /></a>
-          <br />
-          <a href="http://www.adobe.com/go/getreader" target="_blank">
-            <img
-              alt="Get Adobe Reader"
-              style="padding: 10px"
-              src="/img/get-reader.png"
-          /></a>
-          <br />
-          <span class="material-icons md-18" style="vertical-align: bottom"
-            >&#xE90C;</span
-          >
-          2019 Alameda County
-        </p>
-      </div>
-    </div>
+    <home-footer />
 
     <!-- Bootstrap core JavaScript
 ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          {
-            pageLanguage: 'en',
-            includedLanguages:
-              'af,am,ar,de,es,fa,fr,gu,hi,id,ja,km,ko,pt,ru,so,sw,tl,ur,vi,yo,zh-CN,zh-TW',
-          },
-          'google_translate_element'
-        )
-      }
-    </script>
-    <script
-      type="text/javascript"
-      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    ></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>
-      window.jQuery ||
-        document.write('<script src="/acgov-js/jquery.min.js"><\/script>')
-    </script>
-    <script src="/acgov-js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/acgov-js/ie10-viewport-bug-workaround.js"></script>
-    <!-- Google Analytics code -->
-    <script>
-      ;(function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r
-        ;(i[r] =
-          i[r] ||
-          function () {
-            ;(i[r].q = i[r].q || []).push(arguments)
-          }),
-          (i[r].l = 1 * new Date())
-        ;(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])
-        a.async = 1
-        a.src = g
-        m.parentNode.insertBefore(a, m)
-      })(
-        window,
-        document,
-        'script',
-        '//www.google-analytics.com/analytics.js',
-        'ga'
-      )
-
-      ga('create', 'UA-48660008-1', 'acgov.org')
-      ga('send', 'pageview')
-    </script>
-    <!-- UserSnap Code -->
-    <script type="text/javascript">
-      ;(function () {
-        var s = document.createElement('script')
-        s.type = 'text/javascript'
-        s.async = true
-        s.src =
-          '//api.usersnap.com/load/' + '4331c1dc-9b6c-418d-ac74-3574f46db338.js'
-        var x = document.getElementsByTagName('script')[0]
-        x.parentNode.insertBefore(s, x)
-      })()
-    </script>
-
-    <!-- Siteimprove Analytics Code -->
-    <script type="text/javascript">
-      /*<![CDATA[*/
-      ;(function () {
-        var sz = document.createElement('script')
-        sz.type = 'text/javascript'
-        sz.async = true
-        sz.src = '//siteimproveanalytics.com/js/siteanalyze_10984.js'
-        var s = document.getElementsByTagName('script')[0]
-        s.parentNode.insertBefore(sz, s)
-      })()
-      /*]]>*/
-    </script>
-
-    <script type="text/javascript" src="/js/bos-agenda-update.js"></script>
-
-    <!-- Chatbot Code -->
-    <div id="togglebutton" style="display: none">
-      <button id="beginwebchat" onclick="toggleWebChat()">
-        <img
-          src="/img/covid-chat.png"
-          alt="Click this chat icon to open a chat window about COCID-19."
-        />
-      </button>
-    </div>
-
-    <script
-      crossorigin="anonymous"
-      src="https://cdn.botframework.com/botframework-webchat/latest/webchat-es5.js"
-    ></script>
-    <script src="/chatbot/wchat.js?v=18"></script>
-    <link href="/chatbot/wchat.css?v=18" rel="stylesheet" />
-    <!-- Chatbot Code End-->
   </div>
 </template>
 
 <script>
+// TODO: Integrate Inline JS
+
+//
+//     function googleTranslateElementInit() {
+//       new google.translate.TranslateElement(
+//         {
+//           pageLanguage: 'en',
+//           includedLanguages:
+//             'af,am,ar,de,es,fa,fr,gu,hi,id,ja,km,ko,pt,ru,so,sw,tl,ur,vi,yo,zh-CN,zh-TW',
+//         },
+//         'google_translate_element'
+//       )
+//     }
+//
+//
+//     type="text/javascript"
+//     src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+//
+
+//    src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
+//
+//     window.jQuery ||
+//       document.write('<script src="/acgov-js/jquery.min.js"')
+//
+//   src="/acgov-js/bootstrap.min.js"
+//   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+//  src="/acgov-js/ie10-viewport-bug-workaround.js"
+//   <!-- Google Analytics code -->
+//
+//     ;(function (i, s, o, g, r, a, m) {
+//       i['GoogleAnalyticsObject'] = r
+//       ;(i[r] =
+//         i[r] ||
+//         function () {
+//           ;(i[r].q = i[r].q || []).push(arguments)
+//         }),
+//         (i[r].l = 1 * new Date())
+//       ;(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])
+//       a.async = 1
+//       a.src = g
+//       m.parentNode.insertBefore(a, m)
+//     })(
+//       window,
+//       document,
+//       'script',
+//       '//www.google-analytics.com/analytics.js',
+//       'ga'
+//     )
+
+//     ga('create', 'UA-48660008-1', 'acgov.org')
+//     ga('send', 'pageview')
+//
+//   <!-- UserSnap Code -->
+//
+//     ;(function () {
+//       var s = document.createElement('script')
+//       s.type = 'text/javascript'
+//       s.async = true
+//       s.src =
+//         '//api.usersnap.com/load/' + '4331c1dc-9b6c-418d-ac74-3574f46db338.js'
+//       var x = document.getElementsByTagName('script')[0]
+//       x.parentNode.insertBefore(s, x)
+//     })()
+//
+
+//   Siteimprove Analytics Code
+//
+//     ;(function () {
+//       var sz = document.createElement('script')
+//       sz.type = 'text/javascript'
+//       sz.async = true
+//       sz.src = '//siteimproveanalytics.com/js/siteanalyze_10984.js'
+//       var s = document.getElementsByTagName('script')[0]
+//       s.parentNode.insertBefore(sz, s)
+//     })()
+
+//
+
+//   src="/js/bos-agenda-update.js"
+
+//   Chatbot Code
+//   <div id="togglebutton" style="display: none">
+//     <button id="beginwebchat" onclick="toggleWebChat()">
+//       <img
+//         src="/img/covid-chat.png"
+//         alt="Click this chat icon to open a chat window about COCID-19."
+//       />
+//     </button>
+//   </div>
+
+//
+//     crossorigin="anonymous"
+//     src="https://cdn.botframework.com/botframework-webchat/latest/webchat-es5.js"
+//
+//    src="/chatbot/wchat.js?v=18"
+//   <link href="/chatbot/wchat.css?v=18" rel="stylesheet" />
+//   Chatbot Code End
+
 // TODO: Google Tag Manager Module
 
-//          <!-- Google Tag Manager -->
-// (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-// new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-// j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-// 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-// })(window,document,'script','dataLayer','GTM-MW6VWCK');
-// <!-- End Google Tag Manager -->
+/** 
+ * 
+         <!-- Google Tag Manager -->
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MW6VWCK');
+<!-- End Google Tag Manager -->
+
+*/
+
 export default {
   methods: {
     submitsearch() {
@@ -1963,6 +1413,44 @@ text-shadow:none;
     padding-right: 15px;
     /* float: right; */
     bottom: -20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #covid19img {
+    content: url('/img/coronavirus-updates-small.png');
+    max-width: 100%;
+    align-content: center;
+    margin: 15px auto;
+    display: block;
+  }
+}
+#covid19img {
+  max-width: 100%;
+}
+.twitterfeeds {
+  float: left;
+  margin-bottom: 5%;
+}
+
+.prepared {
+  float: left;
+}
+
+@media only screen and (min-width: 768px) {
+  .twitterfeeds {
+    width: 24%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .twitterfeeds {
+    width: 100%;
+    border: 1px solid #eee;
+    border-radius: 5px;
+  }
+
+  .prepared {
+    float: none;
   }
 }
 </style>
