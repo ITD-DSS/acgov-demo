@@ -29,107 +29,68 @@
       <!--PAGEWATCH CODE="CAALAME_1_20080723_151631_en"-->
 
       <!-- ACVOTE BOX -->
-      <div class="row stories">
-        <!-- <div class="col-sm-12 primary-stories center-block">
-		
-		<a id="covid19img" href="http://www.acphd.org/2019-ncov.aspx" target="_blank"><img class="img-responsive center-block ads" alt="Alameda County Coronavirus COVID-19 Updates" 
-			src="/img/coronavirus-updates.png" width="100%"/></a>
-</div> -->
+      <story-row>
+        <story left>
+          <img-link
+            img-src="/acvote/images/Election_11202.png"
+            img-alt="november 3, 2020 general election"
+            link-to="https://www.acvote.org/index"
+          />
+        </story>
 
-        <!-- LEFT COLUMN STORIES -->
-        <div class="col-sm-6 primary-stories">
-          <!-- <a href="https://www.acvote.org/covid">
-			<img class="img-responsive center-block ads" src="/acvote/images/covidvoting-sm.png" alt="november 3, 2020 general election coronavirus voting updates" />
-		</a>
-		<a href="https://www.acgov.org/rovapps/maps/ballotdropbox_map.htm">
-			<img class="img-responsive center-block ads" src="/acvote/images/ballotdropbox.png" alt="24-hour postage free ballot drop box locations" />
-		</a>
-		<a href="https://www.acgov.org/rovresults/241/indexA.htm">
-			<img class="img-responsive center-block ads" src="/acvote/images/Election_1120.png" alt="november 3, 2020 general election results" />
-		</a> -->
-          <a href="https://www.acvote.org/index" target="_blank">
-            <img
-              class="img-responsive center-block ads"
-              src="/acvote/images/Election_11202.png"
-              alt="november 3, 2020 general election"
-            />
-          </a>
-        </div>
-        <!-- LEFT COLUMN STORIES END -->
+        <story right>
+          <!-- TODO: Styling issues -->
+          <news-story
+            :category="'Elections'"
+            :headline="'November 3 General Election'"
+          >
+            <p>
+              Quick links for the November 3 General Election. For full election
+              information, visit:
+              <a href="https://www.acvote.org/index" target="_blank"
+                >acvote.org</a
+              >.
+            </p>
+            <ul>
+              <li>
+                <a
+                  href="https://www.acgov.org/rovmvp_app/mvp.do"
+                  target="_blank"
+                  >My Voter Profile</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.acgov.org/rovapps/maps/avl/"
+                  target="_blank"
+                  >Accessible Voting Locations</a
+                >
+              </li>
+              <li>
+                <a href="https://acvote.ballottrax.net/voter/" target="_blank"
+                  >Track Your Ballot</a
+                >
+              </li>
+              <li>
+                <a href="https://www.acvote.org/covid" target="_blank"
+                  >Coronavirus Voting Updates</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.acgov.org/rovapps/maps/ballotdropbox_map.htm"
+                  target="_blank"
+                  >Ballot Drop Box Locations</a
+                >
+              </li>
+            </ul>
+          </news-story>
+        </story>
+      </story-row>
 
-        <!-- RIGHT COLUMN STORIES -->
-        <div class="col-sm-6 secondary-stories">
-          <!--GOV DELIVERY SUSCRIPTION LINK-->
-          <!-- <a data-toggle="modal" data-target="#modal-govd">
-							<img class="img-responsive govd-news" src="/img/get-email-updates.png"
-								alt="GovDelivery icon with text saying Get Email Updates">
-						</a> -->
-          <!--/END-->
-
-          <p class="news-stories">
-            <span class="category">Elections</span>
-            <br />
-            <span class="headline">November 3 General Election</span>
-            <br />
-            <span class="story">
-              <p>
-                Quick links for the November 3 General Election. For full
-                election information, visit:
-                <a href="https://www.acvote.org/index" target="_blank"
-                  >acvote.org</a
-                >.
-              </p>
-              <ul>
-                <li>
-                  <a
-                    href="https://www.acgov.org/rovmvp_app/mvp.do"
-                    target="_blank"
-                    >My Voter Profile</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://www.acgov.org/rovapps/maps/avl/"
-                    target="_blank"
-                    >Accessible Voting Locations</a
-                  >
-                </li>
-                <li>
-                  <a href="https://acvote.ballottrax.net/voter/" target="_blank"
-                    >Track Your Ballot</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.acvote.org/covid" target="_blank"
-                    >Coronavirus Voting Updates</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://www.acgov.org/rovapps/maps/ballotdropbox_map.htm"
-                    target="_blank"
-                    >Ballot Drop Box Locations</a
-                  >
-                </li>
-                <!-- <li><a href="" target="_blank"></a></li> -->
-              </ul>
-            </span>
-          </p>
-        </div>
-      </div>
-
-      <div class="row stories">
-        <div class="col-sm-12 primary-stories center-block">
-          <!--<p class="news-stories" style="background-color: #ffffcc;text-align: center;margin-top: 10px;padding: 10px;">
-			<span class="headline">Curfew Order Rescinded</span>
-			<br />
-			<span class="story">
-				Effective immediately, the Alameda County Sheriff has rescinded the temporary emergency curfew order for the County. Please check with your local jurisdiction for curfew restrictions pertaining to individual cities in Alameda County.
-				Our Sheriff's Department has proclaimed a local emergency and issued a curfew order. The curfew is imposed Countywide, including unincorporated and incorporated areas, in order to preserve public safety. The hours of the curfew are between 8:00 p.m. and 5:00 a.m. the following day. Please note that <b>County employees are exempt from this order while conducting official business as necessary during the local and public health emergencies, including travel to and from our offices and worksites.</b><br/><br/>
-				<a href="https://www.alamedacountysheriff.org/files/2020-06-01CurfewOrderRescission.pdf" target="_blank">Rescission of Curfew Order</a><br/>
-			<a href="https://www.alamedacountysheriff.org/files/2020-06-01-EmergencyProclamation.pdf" target="_blank">Local Emergency Proclamation Still in Place</a>
-			</span>
-		</p>-->
+      <story-row>
+        <story full>
+          <img-link img-src="" img-alt="" link-to="" />
           <a
             id="covid19img"
             href="http://www.acphd.org/2019-ncov.aspx"
@@ -140,20 +101,23 @@
               src="/img/coronavirus-updates.png"
               width="100%"
           /></a>
-        </div>
+        </story>
         <!-- LEFT COLUMN STORIES -->
-        <div class="col-sm-6 primary-stories">
+        <story left>
           <!---->
+          <img-link img-src="" img-alt="" link-to="" />
           <img
             class="img-responsive center-block ads"
             src="/img/mask-on-alameda-county-ad.png"
             alt="Mask On Alameda County. Show your mask pride! Tweet a photo of you in your mask. Tag @Dare2BWell and use MaskOnAlamedaCounty."
           />
+          <img-link img-src="" img-alt="" link-to="" />
           <img
             class="img-responsive center-block ads"
             src="/img/covid-thank-you2.png"
             alt="Alameda County Board of Supervisors and County Administrator Susan S. Muranishi offer thanks to our health care workers, first responders, and County employees. They express their appreciation for all their dedication and commitment."
           />
+          <img-link img-src="" img-alt="" link-to="" />
           <a href="/government/news/covid-19-county-staff.htm">
             <img
               class="img-responsive center-block ads"
@@ -376,11 +340,11 @@
               </ul>
             </span>
           </p>
-        </div>
+        </story>
         <!-- LEFT COLUMN STORIES END -->
 
         <!-- RIGHT COLUMN STORIES -->
-        <div class="col-sm-6 secondary-stories">
+        <story right>
           <!--GOV DELIVERY SUSCRIPTION LINK-->
           <a data-toggle="modal" data-target="#modal-govd">
             <img
@@ -667,11 +631,11 @@
               </ul>
             </span>
           </p>
-        </div>
+        </story>
         <!-- RIGHT COLUMN STORIES END -->
 
         <!-- FULL COLUMN TWITTER FEEDS STARTS -->
-        <div class="col-sm-12 primary-stories center-block">
+        <story full>
           <div>
             <div class="twitterfeeds">
               <a
@@ -735,34 +699,33 @@
             </div>
           </div>
           <div style="clear: both"></div>
-        </div>
+        </story>
         <!-- FULL COLUMN TWITTER FEEDS ENDS -->
-      </div>
+      </story-row>
       <!-- SECOND NEWS SECTION BEGINS -->
-      <div class="row stories">
+      <story-row>
         <!-- LEFT COLUMN STORIES -->
-        <div class="col-sm-6 primary-stories">
-          <a href="https://acgovcares.org" target="_blank"
-            ><img
-              class="img-responsive center-block ads"
-              src="/img/acgovcares-promo.jpg"
-              alt="ACGOV Cares volunteer opportunites, employee stories, donation options and more."
-          /></a>
-          <a href="/government/news/artsawards.htm"
-            ><img
-              class="img-responsive center-block ads"
-              src="/government/news/images/2020ALWphotos.jpg"
-              alt="2020 Alameda County Arts Leadership Awards"
-          /></a>
+        <story left>
+          <img-link
+            img-src="/img/acgovcares-promo.jpg"
+            img-alt="ACGOV Cares volunteer opportunites, employee stories, donation options and more."
+            link-to="https://acgovcares.org"
+          />
 
+          <img-link
+            img-src="/government/news/images/2020ALWphotos.jpg"
+            img-alt="2020 Alameda County Arts Leadership Awards"
+            link-to="/government/news/artsawards.htm"
+          />
           <br />
-          <!--a href="http://www.acgov.org/ready/"><img class="img-responsive center-block ads" src="/img/promo-ready.jpg" alt="Access ACGOV's Disaster Preparedness Website" /></a-->
-        </div>
+        </story>
         <!-- LEFT COLUMN STORIES END -->
 
         <!-- RIGHT COLUMN STORIES -->
-        <div class="col-sm-6 secondary-stories">
+        <story right>
           <!--GOV DELIVERY SUSCRIPTION LINK-->
+          <img-link img-src="" img-alt="" link-to="" />
+          <!-- TODO: imgLink component needs to be able to take data toggle and data-target -->
           <a data-toggle="modal" data-target="#modal-govd">
             <img
               class="img-responsive govd-news"
@@ -780,67 +743,44 @@
 				<a href="http://bit.ly/alcoyla2020 ">Learn more and apply...</a>
 			</span>
 		</p>-->
-          <p class="news-stories">
-            <span class="category">Local</span>
-            <br />
-            <span class="headline"
-              >SRJ ADA Self-Evaluation & Transition Plan</span
-            >
-            <br />
-            <span class="story"
-              >The County of Alameda is committed to providing seamless access
-              to all its programs, services and activities for qualified
-              individuals with disabilities. To ensure appropriate access
-              exists, as well as compliance with State and Federal disability
-              rights laws, a Self-Evaluation and Transition Plan (SRJ SETP) for
-              Santa Rita Jail has been prepared to fulfill the requirements set
-              forth in Title II of the ADA.
-              <a href="/government/news/srjada.htm">Learn more...</a>
-            </span>
-          </p>
-          <p class="news-stories">
-            <span class="category">Local</span>
-            <br />
-            <span class="headline">Census 2020</span>
-            <br />
-            <span class="story"
-              >We are gearing up for Census 2020. We are committed to counting
-              all members of our community. Learn more about what we are doing
-              and why the Census is so important.
-              <a href="/census2020/">Learn more...</a>
-            </span>
-          </p>
-          <p class="news-stories">
-            <span class="category">Newsletter</span>
-            <br />
-            <span class="headline">Community Connection</span>
-            <br />
-            <span class="story"
-              >Download our bi-monthly newsletter to learn more about the
-              County.
-              <a href="/government/connections.htm">Check it out...</a>
-            </span>
-          </p>
-          <p class="news-stories">
-            <span class="category">Official Announcements</span>
-            <br />
-            <span class="headline">Press Releases</span>
-            <br />
-            <span class="story"
-              >View of list of official press releases issued by the County.
-              <a href="/government/pressreleases.htm">View...</a>
-            </span>
-          </p>
-          <p class="news-stories">
-            <span class="category">Video</span>
-            <br />
-            <span class="headline">What We've Been Up To</span>
-            <br />
-            <span class="story"
-              >Check out this video that describes what we're working on and
-              celebrates our recent accomplishments.</span
-            >
-          </p>
+          <news-story
+            category="Local"
+            headline="SRJ ADA Self-Evaluation & Transition Plan"
+            >The County of Alameda is committed to providing seamless access to
+            all its programs, services and activities for qualified individuals
+            with disabilities. To ensure appropriate access exists, as well as
+            compliance with State and Federal disability rights laws, a
+            Self-Evaluation and Transition Plan (SRJ SETP) for Santa Rita Jail
+            has been prepared to fulfill the requirements set forth in Title II
+            of the ADA.
+            <a href="/government/news/srjada.htm">Learn more...</a></news-story
+          >
+
+          <news-story category="Local" headline="Census 2020">
+            We are gearing up for Census 2020. We are committed to counting all
+            members of our community. Learn more about what we are doing and why
+            the Census is so important.
+            <a href="/census2020/">Learn more...</a>
+          </news-story>
+
+          <news-story category="Newsletter" headline="Community Connection"
+            >Download our bi-monthly newsletter to learn more about the County.
+            <a href="/government/connections.htm">Check it out...</a>
+          </news-story>
+
+          <news-story
+            category="Official Announcements"
+            headline="Press Releases"
+            >View of list of official press releases issued by the County.
+            <a href="/government/pressreleases.htm">View...</a>
+          </news-story>
+
+          <news-story category="Video" headline="What We've Been Up To"
+            >Check out this video that describes what we're working on and
+            celebrates our recent accomplishments.</news-story
+          >
+
+          <!-- TODO: VIDEO STORY COMPONENT -->
           <div
             class="embed-responsive embed-responsive-16by9"
             style="margin: 20px 0px 10px 0px"
@@ -853,7 +793,7 @@
             ></iframe>
           </div>
           <br />
-        </div>
+        </story>
         <!-- RIGHT COLUMN STORIES END -->
 
         <!-- ******** ARCHIVED STORIES ******** -->
@@ -961,7 +901,7 @@ and enforcement. To learn more about what this means for Alameda County resident
 				<br/><br/><a class="btn btn-success" role="button" href="https://acgreatplates.acgov.org" target="_blank">APPLY ONLINE</a><br/><br/> To contact us, email <a href="mailto:ACGreatPlates@acgov.org">ACGreatPlates@acgov.org</a>, or call (925) 803-7943.
 			</span> -->
         <!-- ******** END ARCHIVE ******** -->
-      </div>
+      </story-row>
       <!--/PAGEWATCH-->
 
       <gov-info />
