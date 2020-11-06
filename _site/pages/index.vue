@@ -105,41 +105,31 @@
         <!-- LEFT COLUMN STORIES -->
         <story left>
           <!---->
-          <img-link img-src="" img-alt="" link-to="" />
-          <img
-            class="img-responsive center-block ads"
-            src="/img/mask-on-alameda-county-ad.png"
-            alt="Mask On Alameda County. Show your mask pride! Tweet a photo of you in your mask. Tag @Dare2BWell and use MaskOnAlamedaCounty."
+          <img-link
+            img-src="/img/mask-on-alameda-county-ad.png"
+            img-alt="Mask On Alameda County. Show your mask pride! Tweet a photo of you in your mask. Tag @Dare2BWell and use MaskOnAlamedaCounty."
+            link-to=""
           />
-          <img-link img-src="" img-alt="" link-to="" />
-          <img
-            class="img-responsive center-block ads"
-            src="/img/covid-thank-you2.png"
-            alt="Alameda County Board of Supervisors and County Administrator Susan S. Muranishi offer thanks to our health care workers, first responders, and County employees. They express their appreciation for all their dedication and commitment."
+
+          <img-link
+            img-src="/img/covid-thank-you2.png"
+            img-alt="Alameda County Board of Supervisors and County Administrator Susan S. Muranishi offer thanks to our health care workers, first responders, and County employees. They express their appreciation for all their dedication and commitment."
           />
-          <img-link img-src="" img-alt="" link-to="" />
-          <a href="/government/news/covid-19-county-staff.htm">
-            <img
-              class="img-responsive center-block ads"
-              src="/img/covid19-staff-ad-rectangle.png"
-              alt="Alameda County Employees Stay Connect and Informed"
-            />
-          </a>
-          <p class="news-stories">
-            <span class="category">Videos</span>
-            <br />
-            <span class="headline">COVID-19 PSAs</span>
-            <br />
-            <span class="story"
-              >Our Health Care Services Agency and Public Health Department have
-              produced several public service announcements (PSAs).
-              <a
-                href="https://www.youtube.com/playlist?list=PLtCRVnIRI3TX5M5VFsrFr9Kz0j7-hsmOk"
-                target="_blank"
-                >View all PSAs.</a
-              ></span
-            >
-          </p>
+
+          <img-link
+            img-src="/img/covid19-staff-ad-rectangle.png"
+            img-alt="Alameda County Employees Stay Connect and Informed"
+            link-to="/government/news/covid-19-county-staff.htm"
+          />
+          <news-story category="Videos" headline="COVID-19 PSAs"
+            >Our Health Care Services Agency and Public Health Department have
+            produced several public service announcements (PSAs).
+            <a
+              href="https://www.youtube.com/playlist?list=PLtCRVnIRI3TX5M5VFsrFr9Kz0j7-hsmOk"
+              target="_blank"
+              >View all PSAs.</a
+            ></news-story
+          >
           <div
             class="embed-responsive embed-responsive-16by9"
             style="margin: 20px 0px 10px 0px"
@@ -155,13 +145,13 @@
           <!--<a href="https://www.acgov.org/gsa_app/gsa/purchasing/bid_content/contractingdetail.jsp?BID_ID=2240">
 			<img class="img-responsive center-block ads" src="/img/hotelbids.png" alt="COVID-19 Hotels Contracting Opportunity" />
 		</a> -->
-          <a href="http://eastbayeda.org/default.page" target="_blank">
-            <img
-              class="img-responsive center-block ads"
-              src="/img/coronavirus-businesses.png"
-              alt="COVID-19 Resources for Businesses"
-            />
-          </a>
+          <img-link
+            img-src="/img/coronavirus-businesses.png"
+            img-alt="COVID-19 Resources for Businesses"
+            link-to="http://eastbayeda.org/default.page"
+          />
+
+          <img-link img-src="" img-alt="" link-to="" />
           <a
             href="https://www.acgov.org/form_app/feedback/feedback.jsp?id=SHRFcovid"
             target="_blank"
