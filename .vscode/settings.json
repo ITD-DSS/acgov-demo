@@ -29,5 +29,9 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
+  "gitflow4code.init": {
+    "develop": "development",
+    "master": "production"
+  },
   "githubIssues.createIssueTriggers": ["TODO", "BUG", "FIXME", "ISSUE", "HACK"]
 }
