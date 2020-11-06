@@ -33,5 +33,17 @@
     "develop": "development",
     "master": "production"
   },
-  "githubIssues.createIssueTriggers": ["TODO", "BUG", "FIXME", "ISSUE", "HACK"]
+  "githubIssues.createIssueTriggers": [
+    "TODO",
+    "BUG",
+    "FIXME",
+    "ISSUE",
+    "HACK"
+  ],
+  "gitflow4code.features": [
+    {
+      "name": "feature/content-component-structuring",
+      "base": "development"
+    }
+  ]
 }
