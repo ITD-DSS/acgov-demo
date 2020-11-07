@@ -1,5 +1,5 @@
 <template>
-  <section class="row stories">
+  <section class="">
     <slot />
   </section>
 </template>
@@ -10,4 +10,9 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.story-section {
+  /* margin: 20px auto 40px auto;
+  background-color: rgba(255, 255, 255, 0.9); */
+}
+</style>
