@@ -1,7 +1,7 @@
 <template>
-  <div class="row stories">
+  <section class="row stories">
     <slot />
-  </div>
+  </section>
 </template>
 
 <script>
