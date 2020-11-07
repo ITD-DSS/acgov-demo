@@ -44,6 +44,10 @@
     {
       "name": "feature/content-component-structuring",
       "base": "development"
+    },
+    {
+      "name": "feature/tailwind-layout",
+      "base": "feature/content-component-structuring"
     }
   ]
 }
