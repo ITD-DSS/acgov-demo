@@ -974,22 +974,22 @@ export default {
         },
       ],
       link: [
-        {
-          rel: 'stylesheet',
-          href: 'acgov-css/bootstrap.min.css',
-        },
-        {
-          rel: 'stylesheet',
-          href: 'acgov-css/ie10-viewport-bug-workaround.css',
-        },
-        {
-          rel: 'stylesheet',
-          href: 'acgov-css/custom.css',
-        },
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
-        },
+        // {
+        //   rel: 'stylesheet',
+        //   href: 'acgov-css/bootstrap.min.css',
+        // },
+        // {
+        //   rel: 'stylesheet',
+        //   href: 'acgov-css/ie10-viewport-bug-workaround.css',
+        // },
+        // {
+        //   rel: 'stylesheet',
+        //   href: 'acgov-css/custom.css',
+        // },
+        // {
+        //   rel: 'stylesheet',
+        //   href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+        // },
       ],
     }
   },
@@ -1012,7 +1012,9 @@ export default {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
+
 /* NEW TEMP SEARCH BOX */
+/*
 td.gsc-search-button {
   padding-right: 5px;
 }
@@ -1028,7 +1030,7 @@ td.gsib_a {
   width: 18px;
   height: 18px;
 }
-/*Media Querry*/
+
 @media (max-width: 767px) {
   td.gsc-input {
     width: 20%;
@@ -1040,8 +1042,8 @@ td.gsib_a {
   padding: 0px;
 }
 
-/* ICONS */
-
+/* Icons */
+/*
 .row.icons .col-sm-3 {
   margin: 20px 0px;
 }
@@ -1049,7 +1051,7 @@ td.gsib_a {
 .icons {
   margin: 0px auto;
   background-color: rgba(255, 255, 255, 0);
-  /*border-radius: 10px;*/
+  border-radius: 10px;
   padding: 20px 0px;
   min-height: 230px;
 }
@@ -1081,7 +1083,7 @@ td.gsib_a {
 }
 
 /* NEWS STORIES */
-
+/*
 .stories .ads {
   margin: 15px auto;
 }
@@ -1231,7 +1233,7 @@ text-shadow:none;
 .material-icons.thumbs_up_down, .icon-participate .icon-title {
 color: #690;
 text-shadow:none;
-}*/
+}
 }
 
 .translate {
@@ -1242,18 +1244,18 @@ text-shadow:none;
   display: inline-block;
   padding-top: 3px;
   padding-right: 10px;
-  /* float: right; */
+  float: right;
   bottom: -20px;
 }
 
-/* No greater than 900px, no less than 400px */
+No greater than 900px, no less than 400px
 
 @media (max-width: 850px) and (min-width: 768px) {
   .trans_button {
     display: inline-block;
     padding-top: 25px;
     padding-right: 15px;
-    /* float: right; */
+    float: right;
     bottom: -20px;
   }
 }
@@ -1294,5 +1296,6 @@ text-shadow:none;
   .prepared {
     float: none;
   }
-}
+} 
+*/
 </style>
