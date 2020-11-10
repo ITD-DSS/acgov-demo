@@ -57,7 +57,7 @@ export default {
 
   sanity: {
     minimal: true,
-    projectId: 'ehhijqba',
+    // projectId: 'ehhijqba',
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
