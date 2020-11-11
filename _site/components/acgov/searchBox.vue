@@ -42,7 +42,7 @@ width: 90%; -->
           id="funnelbackinput"
           type="search"
           name="query"
-          class="text-2xl w-full h-20 text-gray-500"
+          class="text-2xl w-full h-20 text-gray-500 border border-solid border-gray-400 shadow-inner pl-4"
           placeholder="What can we help you find today?"
           aria-describedby="basic-addon2"
         />
@@ -77,7 +77,7 @@ width: 90%; -->
         border-left: 0;
    -->
         <span
-          class="border-separate box-border table-cell whitespace-no-wrap align-middle leading-4 text-gray-500 text-center bg-gray-300 rounded"
+          class="border-separate box-border table-cell whitespace-no-wrap align-middle leading-4 text-gray-500 text-center bg-gray-300 rounded-r"
         >
           <!-- <span class="input-group-addon"> -->
           <!-- 
