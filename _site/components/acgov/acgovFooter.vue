@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid footer">
+  <footer class="container-fluid footer">
     <div class="row text-center">
       <p>
         <a class="cu" href="/government/contactus.htm">Contact Us</a> |
@@ -59,12 +59,12 @@
         2019 Alameda County
       </p>
     </div>
-  </div>
+  </footer>
 </template>
 
 <script>
 export default {
-  name: 'HomeFooter',
+  name: 'AcgovFooter',
 }
 </script>
 
