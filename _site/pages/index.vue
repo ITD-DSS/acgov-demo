@@ -1,20 +1,8 @@
 <template>
-  <div>
-    <name-banner />
+  <div class="w-screen">
+    <acgov-header />
 
-    <search-box />
-
-    <!-- Google Translate the Pages --------------------------------->
-    <google-translate />
-
-    <!--CHATBOT CODE-->
-    <covid-chatbot />
-    <!--CHATBOT CODE END-->
-
-    <div class="container content">
-      <nav-icons />
-
-      <translate-modal />
+    <main class="container content">
       <!--PAGEWATCH CODE="CAALAME_1_20080723_151631_en"-->
 
       <!-- ACVOTE BOX -->
@@ -802,16 +790,17 @@ and enforcement. To learn more about what this means for Alameda County resident
       <!--/PAGEWATCH-->
 
       <gov-info />
-    </div>
+    </main>
 
-    <modal-govdelivery />
+    <!-- <modal-govdelivery /> -->
 
-    <translate-button />
+    <!-- <translate-button /> -->
+
     <!-- County Administrator's Office --------------------------------->
-    <modal-cao />
-    <modal-bos />
+    <!-- <modal-cao /> -->
+    <!-- <modal-bos /> -->
 
-    <home-footer />
+    <acgov-footer />
 
     <!-- Bootstrap core JavaScript
 ================================================== -->
@@ -986,10 +975,10 @@ export default {
         //   rel: 'stylesheet',
         //   href: 'acgov-css/custom.css',
         // },
-        // {
-        //   rel: 'stylesheet',
-        //   href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
-        // },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+        },
       ],
     }
   },
