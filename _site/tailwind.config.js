@@ -8,8 +8,9 @@ module.exports = {
         logo: '300px',
       },
       fontSize: {
-        banner: '25px',
         body: '14px',
+        banner: '25px',
+        icon: '6rem',
       },
     },
   },
