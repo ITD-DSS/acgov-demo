@@ -1,14 +1,16 @@
 module.exports = {
   theme: {
-    boxShadow: {
-      banner: '0px 2px 15px rgba(1,1,1,1)',
-    },
-    width: {
-      logo: '300px',
-    },
-    fontSize: {
-      banner: '25px',
-      body: '14px',
+    extend: {
+      boxShadow: {
+        banner: '0px 2px 15px rgba(1,1,1,1)',
+      },
+      width: {
+        logo: '300px',
+      },
+      fontSize: {
+        banner: '25px',
+        body: '14px',
+      },
     },
   },
   variants: {},
