@@ -1,5 +1,6 @@
 <template>
-  <div v-once class="fixed w-full h-20 shadow-banner bg-white z-10">
+  <div class="fixed mx-auto bg-white h-20 w-screen shadow-banner z-10">
+    <!-- <div v-once class="fixed bg-white w-full h-20 shadow-banner z-10"> -->
     <!-- <div class="container-fluid branding"> -->
     <div class="flex flex-row justify-around items-center pt-3">
       <!-- <div class="row container resp"> -->
