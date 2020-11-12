@@ -2,7 +2,7 @@
   <div class="w-screen">
     <acgov-header />
 
-    <main class="container content">
+    <main class="flex flex-col">
       <!--PAGEWATCH CODE="CAALAME_1_20080723_151631_en"-->
 
       <!-- ACVOTE BOX -->

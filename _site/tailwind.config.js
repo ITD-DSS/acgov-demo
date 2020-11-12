@@ -12,6 +12,9 @@ module.exports = {
         banner: '25px',
         icon: '6rem',
       },
+      backgroundOpacity: {
+        90: '0.9',
+      },
     },
   },
   variants: {},
