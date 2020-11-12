@@ -1,5 +1,5 @@
 <template>
-  <div class="flex" :class="storyType">
+  <div class="" :class="storyType">
     <slot />
   </div>
 </template>
@@ -16,20 +16,38 @@ export default {
       type: Boolean,
       default: false,
     },
-    full: {
-      type: Boolean,
-      default: false,
-    },
+    // default is full length
+    // full: {
+    //   type: Boolean,
+    //   default: false,
+    // },
   },
   data() {
     return {
-      storyType: {
-        'w-1/2': this.left || this.right,
-        'flex-row': this.left,
-        'flex-row-reverse': this.right,
-        'w-full': this.full,
-      },
+      currentSlot: '',
+      // storyType: {
+      //   'w-1/2': this.left || this.right,
+      //   'flex-row': this.left,
+      //   'flex-row-reverse': this.right,
+      //   'w-full': this.full,
+      // },
     }
+  },
+  created() {
+    this.getProps()
+  },
+  methods: {
+    getProps() {
+      if (this.left) {
+        this.currentSlot = 'left'
+        this.right = false
+      } else if (this.right) {
+        this.currentSlot = 'right'
+        this.left = false
+      } else {
+        this.currentSlot = 'full'
+      }
+    },
   },
 }
 </script>

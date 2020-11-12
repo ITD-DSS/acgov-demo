@@ -7,6 +7,9 @@ module.exports = {
       width: {
         logo: '300px',
       },
+      fontFamily: {
+        acgov: ['Lucida Sans Unicode', 'Lucida Grande', 'sans-serif'],
+      },
       fontSize: {
         body: '14px',
         banner: '25px',

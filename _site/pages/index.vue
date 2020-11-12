@@ -7,62 +7,66 @@
 
       <!-- ACVOTE BOX -->
       <story-section>
-        <story left>
-          <img-link
-            img-src="/acvote/images/Election_11202.png"
-            img-alt="november 3, 2020 general election"
-            link-to="https://www.acvote.org/index"
-          />
-        </story>
+        <template v-slot:left>
+          <story left>
+            <img-link
+              img-src="/acvote/images/Election_11202.png"
+              img-alt="november 3, 2020 general election"
+              link-to="https://www.acvote.org/index"
+            />
+          </story>
+        </template>
 
-        <story right>
-          <!-- TODO: Styling issues -->
-          <news-story
-            :category="'Elections'"
-            :headline="'November 3 General Election'"
-          >
-            <p>
-              Quick links for the November 3 General Election. For full election
-              information, visit:
-              <a href="https://www.acvote.org/index" target="_blank"
-                >acvote.org</a
-              >.
-            </p>
-            <ul>
-              <li>
-                <a
-                  href="https://www.acgov.org/rovmvp_app/mvp.do"
-                  target="_blank"
-                  >My Voter Profile</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.acgov.org/rovapps/maps/avl/"
-                  target="_blank"
-                  >Accessible Voting Locations</a
-                >
-              </li>
-              <li>
-                <a href="https://acvote.ballottrax.net/voter/" target="_blank"
-                  >Track Your Ballot</a
-                >
-              </li>
-              <li>
-                <a href="https://www.acvote.org/covid" target="_blank"
-                  >Coronavirus Voting Updates</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.acgov.org/rovapps/maps/ballotdropbox_map.htm"
-                  target="_blank"
-                  >Ballot Drop Box Locations</a
-                >
-              </li>
-            </ul>
-          </news-story>
-        </story>
+        <template v-slot:right>
+          <story right>
+            <!-- TODO: Styling issues -->
+            <news-story
+              :category="'Elections'"
+              :headline="'November 3 General Election'"
+            >
+              <p>
+                Quick links for the November 3 General Election. For full
+                election information, visit:
+                <a href="https://www.acvote.org/index" target="_blank"
+                  >acvote.org</a
+                >.
+              </p>
+              <ul>
+                <li>
+                  <a
+                    href="https://www.acgov.org/rovmvp_app/mvp.do"
+                    target="_blank"
+                    >My Voter Profile</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.acgov.org/rovapps/maps/avl/"
+                    target="_blank"
+                    >Accessible Voting Locations</a
+                  >
+                </li>
+                <li>
+                  <a href="https://acvote.ballottrax.net/voter/" target="_blank"
+                    >Track Your Ballot</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.acvote.org/covid" target="_blank"
+                    >Coronavirus Voting Updates</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.acgov.org/rovapps/maps/ballotdropbox_map.htm"
+                    target="_blank"
+                    >Ballot Drop Box Locations</a
+                  >
+                </li>
+              </ul>
+            </news-story>
+          </story>
+        </template>
       </story-section>
 
       <story-section>

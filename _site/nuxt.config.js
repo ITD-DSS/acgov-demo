@@ -24,7 +24,7 @@ export default {
       // },
     ],
     bodyAttrs: {
-      class: ['container', 'font-sans', 'text-body'],
+      class: ['container', 'font-acgov', 'text-body'],
     },
   },
 
