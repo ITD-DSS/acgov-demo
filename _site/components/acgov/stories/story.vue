@@ -1,5 +1,5 @@
 <template>
-  <div :class="storyType">
+  <div class="flex" :class="storyType">
     <slot />
   </div>
 </template>
@@ -24,10 +24,10 @@ export default {
   data() {
     return {
       storyType: {
-        'col-sm-6': this.left || this.right,
-        'primary-stories': this.left,
-        'secondary-stories': this.right,
-        'col-sm-12': this.full,
+        'w-1/2': this.left || this.right,
+        'flex-row': this.left,
+        'flex-row-reverse': this.right,
+        'w-full': this.full,
       },
     }
   },
