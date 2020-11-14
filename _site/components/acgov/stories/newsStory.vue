@@ -19,7 +19,7 @@ padding: 20px 0px 0px 0px;
     color: #000;
     text-transform: uppercase; 
     -->
-    <span class="">{{ category }}</span>
+    <h3 class="">{{ category }}</h3>
     <br />
     <!-- 
       -webkit-tap-highlight-color: rgba(0,0,0,0);

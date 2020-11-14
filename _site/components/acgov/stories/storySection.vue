@@ -10,7 +10,9 @@
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 0px; 
 -->
-  <section class="grid-cols-2 w-4/5 bg-white bg-opacity-90 mt-4 mb-8 mx-auto">
+  <section
+    class="grid grid-cols-2 w-4/5 bg-white bg-opacity-90 mt-4 mb-8 mx-auto p-5"
+  >
     <header class="sr-only">
       <h2>Story Section Name</h2>
     </header>

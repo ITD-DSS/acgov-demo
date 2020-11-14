@@ -8,14 +8,14 @@
 export default {
   name: 'Story',
   props: {
-    left: {
-      type: Boolean,
-      default: false,
-    },
-    right: {
-      type: Boolean,
-      default: false,
-    },
+    // left: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+    // right: {
+    //   type: Boolean,
+    //   default: false,
+    // },
     // default is full length
     // full: {
     //   type: Boolean,
@@ -34,20 +34,20 @@ export default {
     }
   },
   created() {
-    this.getProps()
+    // this.getProps()
   },
   methods: {
-    getProps() {
-      if (this.left) {
-        this.currentSlot = 'left'
-        this.right = false
-      } else if (this.right) {
-        this.currentSlot = 'right'
-        this.left = false
-      } else {
-        this.currentSlot = 'full'
-      }
-    },
+    // getProps() {
+    //   if (this.left) {
+    //     this.currentSlot = 'left'
+    //     this.right = false
+    //   } else if (this.right) {
+    //     this.currentSlot = 'right'
+    //     this.left = false
+    //   } else {
+    //     this.currentSlot = 'full'
+    //   }
+    // },
   },
 }
 </script>
