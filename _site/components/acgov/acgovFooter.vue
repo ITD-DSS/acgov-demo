@@ -1,19 +1,5 @@
 <template>
-  <!-- 
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #333;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  box-sizing: border-box;
-  background-color: rgba(255,255,255,1);
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
-  z-index: 10;
-  box-shadow: #000 0px 2px 15px;
-   -->
-  <footer class="w-full bg-white z-10 shadow-banner">
+  <footer class="w-full bg-white z-10 shadow-banner mt-12">
     <div class="py-6 flex flex-col items-center">
       <div>
         <a href="/government/contactus.htm">Contact Us</a> |
@@ -26,12 +12,6 @@
       </div>
 
       <div class="flex flex-row justify-evenly py-4">
-        <!-- {
-          id: 0,
-          alt: 'Facebook - Alameda County',
-          linkTo: 'https://www.facebook.com/AlamedaCounty',
-          imgSrc: '/img/facebook200x200.png',
-        }, -->
         <a
           v-for="link in socialLinks"
           :key="link.id"
@@ -40,45 +20,6 @@
           class="px-4 inline-block"
           ><img class="w-12" :src="link.imgSrc" :alt="link.alt"
         /></a>
-        <!-- <a href="https://www.facebook.com/AlamedaCounty" target="_blank"
-          ><img
-            class="social-icon"
-            src="/img/facebook200x200.png"
-            alt="facbook icon"
-        /></a>
-
-        <a href="https://twitter.com/AlamedaCounty" target="_blank"
-          ><img
-            class="social-icon"
-            src="/img/twitter200x200.png"
-            alt="Twitter icon"
-        /></a>
-
-        <a href="https://www.youtube.com/user/AlamedaCountyCA" target="_blank"
-          ><img
-            class="social-icon"
-            src="/img/youtube200x200.png"
-            alt="YouTube icon"
-        /></a>
-
-        <a href="https://www.flickr.com/photos/alamedacounty" target="_blank"
-          ><img
-            class="social-icon"
-            src="/img/flickr200x200.png"
-            alt="Flickr icon"
-        /></a>
-
-        <a href="/government/connected/rss.htm" target="_blank"
-          ><img class="social-icon" src="/img/rss200x200.png" alt="RSS icon"
-        /></a>
-
-        <a
-          href="https://public.govdelivery.com/accounts/CAALAME/subscriber/new" target="_blank"
-          ><img
-            class="social-icon"
-            src="/img/govdelivery200x200.png"
-            alt="GovDelivery icon"
-        /></a> -->
       </div>
 
       <div>
