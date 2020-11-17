@@ -19,7 +19,6 @@
 
         <template v-slot:right>
           <story>
-            <!-- TODO: Styling issues -->
             <news-story
               :category="'Elections'"
               :headline="'November 3 General Election'"
@@ -72,39 +71,35 @@
       <story-section>
         <template v-slot:full>
           <story>
-            <img-link img-src="" img-alt="" link-to="" />
-            <a
-              id="covid19img"
-              href="http://www.acphd.org/2019-ncov.aspx"
-              target="_blank"
-              ><img
-                class="img-responsive center-block ads"
-                alt="Alameda County Coronavirus COVID-19 Updates"
-                src="/img/coronavirus-updates.png"
-                width="100%"
-            /></a>
+            <img-link
+              img-src="img/coronavirus-updates.png"
+              img-alt="Alameda County Coronavirus COVID-19 Updates"
+              link-to="http://www.acphd.org/2019-ncov.aspx"
+            />
           </story>
         </template>
         <!-- LEFT COLUMN STORIES -->
         <template v-slot:left>
           <story>
-            <!---->
             <img-link
-              img-src="/img/mask-on-alameda-county-ad.png"
+              img-src="img/mask-on-alameda-county-ad.png"
               img-alt="Mask On Alameda County. Show your mask pride! Tweet a photo of you in your mask. Tag @Dare2BWell and use MaskOnAlamedaCounty."
-              link-to=""
             />
-
+          </story>
+          <story>
             <img-link
               img-src="/img/covid-thank-you2.png"
               img-alt="Alameda County Board of Supervisors and County Administrator Susan S. Muranishi offer thanks to our health care workers, first responders, and County employees. They express their appreciation for all their dedication and commitment."
             />
-
+          </story>
+          <story>
             <img-link
               img-src="/img/covid19-staff-ad-rectangle.png"
               img-alt="Alameda County Employees Stay Connect and Informed"
               link-to="/government/news/covid-19-county-staff.htm"
             />
+          </story>
+          <story>
             <news-story category="Videos" headline="COVID-19 PSAs"
               >Our Health Care Services Agency and Public Health Department have
               produced several public service announcements (PSAs).
@@ -114,31 +109,27 @@
                 >View all PSAs.</a
               ></news-story
             >
-            <!-- VIDEO STORY -->
-            <div
-              class="embed-responsive embed-responsive-16by9"
-              style="margin: 20px 0px 10px 0px"
-            >
-              <iframe
-                src="https://www.youtube.com/embed/rknwVVTtbeQ?rel=0"
-                frameborder="0"
-                allow="encrypted-media"
-                allowfullscreen
-              ></iframe>
-            </div>
-
+          </story>
+          <story>
+            <video-story
+              :youtube-embed="'https://www.youtube.com/embed/rknwVVTtbeQ?rel=0'"
+            ></video-story>
+          </story>
+          <story>
             <img-link
               img-src="/img/coronavirus-businesses.png"
               img-alt="COVID-19 Resources for Businesses"
               link-to="http://eastbayeda.org/default.page"
             />
-
+          </story>
+          <story>
             <img-link
               img-src="/img/coronavirus-compliance-concern.png"
               img-alt="Send email to our Sheriff's Office if you have a concern about COVID-19 compliance."
               link-to="https://www.acgov.org/form_app/feedback/feedback.jsp?id=SHRFcovid"
             />
-
+          </story>
+          <story>
             <news-story
               category="Public Safety"
               headline="Online Services Available 24/7"
@@ -299,8 +290,8 @@
                   for Medi-Cal
                 </li>
                 <!--<li><a href="" target="_blank"></a></li>
-  				<li><a href="" target="_blank"></a></li>
-  				<li><a href="" target="_blank"></a></li>-->
+    				<li><a href="" target="_blank"></a></li>
+    				<li><a href="" target="_blank"></a></li>-->
               </ul>
             </news-story>
           </story>
@@ -311,13 +302,7 @@
         <template v-slot:right>
           <story>
             <!--GOV DELIVERY SUSCRIPTION LINK-->
-            <a data-toggle="modal" data-target="#modal-govd">
-              <img
-                class="img-responsive govd-news"
-                src="/img/get-email-updates.png"
-                alt="GovDelivery icon with text saying Get Email Updates"
-              />
-            </a>
+            <gov-delivery-link />
             <!--/END-->
             <news-story
               category="Public Safety"
@@ -546,6 +531,7 @@
         <!-- RIGHT COLUMN STORIES END -->
 
         <!-- FULL COLUMN TWITTER FEEDS STARTS -->
+        <!-- 
         <template v-slot:full>
           <story full>
             <div>
@@ -613,6 +599,7 @@
             <div style="clear: both"></div>
           </story>
         </template>
+         -->
         <!-- FULL COLUMN TWITTER FEEDS ENDS -->
       </story-section>
       <!-- SECOND NEWS SECTION BEGINS -->
@@ -625,40 +612,21 @@
               img-alt="ACGOV Cares volunteer opportunites, employee stories, donation options and more."
               link-to="https://acgovcares.org"
             />
-
+          </story>
+          <story>
             <img-link
               img-src="/government/news/images/2020ALWphotos.jpg"
               img-alt="2020 Alameda County Arts Leadership Awards"
               link-to="/government/news/artsawards.htm"
             />
-            <br />
           </story>
         </template>
         <!-- LEFT COLUMN STORIES END -->
 
         <!-- RIGHT COLUMN STORIES -->
         <template v-slot:right>
-          <story right>
-            <!--GOV DELIVERY SUSCRIPTION LINK-->
-            <img-link img-src="" img-alt="" link-to="" />
-            <!-- TODO: imgLink component needs to be able to take data toggle and data-target -->
-            <a data-toggle="modal" data-target="#modal-govd">
-              <img
-                class="img-responsive govd-news"
-                src="/img/get-email-updates.png"
-                alt="GovDelivery icon with text saying Get Email Updates"
-              />
-            </a>
-            <!--/END-->
-            <!--<p class="news-stories">
-  			<span class="category">Local</span>
-  			<br />
-  			<span class="headline">Apply For Youth Leadership Academy</span>
-  			<br />
-  			<span class="story">Applications are being accepted for Alameda County’s 2020 Youth Leadership Academy, a free educational program for local 11th and 12th grade students interested in learning about local government, developing leadership skills and networking with peers from throughout the County. We continue to closely monitor the developing COVID-19 situation and will provide updates if there are changes to this program.
-  				<a href="http://bit.ly/alcoyla2020 ">Learn more and apply...</a>
-  			</span>
-  		</p>-->
+          <story>
+            <gov-delivery-link />
             <news-story
               category="Local"
               headline="SRJ ADA Self-Evaluation & Transition Plan"
@@ -673,34 +641,47 @@
                 >Learn more...</a
               ></news-story
             >
+          </story>
 
+          <story>
             <news-story category="Local" headline="Census 2020">
               We are gearing up for Census 2020. We are committed to counting
               all members of our community. Learn more about what we are doing
               and why the Census is so important.
               <a href="/census2020/">Learn more...</a>
             </news-story>
+          </story>
 
+          <story>
             <news-story category="Newsletter" headline="Community Connection"
               >Download our bi-monthly newsletter to learn more about the
               County.
               <a href="/government/connections.htm">Check it out...</a>
             </news-story>
+          </story>
 
+          <story>
             <news-story
               category="Official Announcements"
               headline="Press Releases"
               >View of list of official press releases issued by the County.
               <a href="/government/pressreleases.htm">View...</a>
             </news-story>
+          </story>
 
+          <story>
             <news-story category="Video" headline="What We've Been Up To"
               >Check out this video that describes what we're working on and
               celebrates our recent accomplishments.</news-story
             >
+          </story>
 
-            <!-- TODO: VIDEO STORY COMPONENT -->
-            <div
+          <!-- TODO: VIDEO STORY COMPONENT -->
+          <story>
+            <video-story
+              :youtube-embed="'https://www.youtube.com/embed/v8PPCl10Zoc?rel=0'"
+            ></video-story>
+            <!-- <div
               class="embed-responsive embed-responsive-16by9"
               style="margin: 20px 0px 10px 0px"
             >
@@ -710,9 +691,9 @@
                 allow="encrypted-media"
                 allowfullscreen
               ></iframe>
-            </div>
-            <br />
+            </div> -->
           </story>
+          <br />
         </template>
         <!-- RIGHT COLUMN STORIES END -->
 
@@ -823,7 +804,60 @@ and enforcement. To learn more about what this means for Alameda County resident
       </story-section>
       <!--/PAGEWATCH-->
 
-      <gov-info />
+      <story-section>
+        <template v-slot:left>
+          <story>
+            <div class="col-sm-6 board-photo">
+              <a href="#" data-toggle="modal" data-target="#modal-bos">
+                <img
+                  id="bos"
+                  class="img-responsive center-block"
+                  src="/img/bos.jpg"
+                  alt="Photo collage of the Board of Supervisors showing: Scott Haggerty-District 1, Richard Valle-District 2, Wilma Cha-District 3, Nate Miley-District 4, Keith Carson-District 5. "
+                />
+              </a>
+            </div>
+          </story>
+        </template>
+        <template v-slot:right>
+          <story>
+            <div class="col-sm-6 gov-links">
+              <ul>
+                <li>
+                  <a href="government/departments.htm"
+                    >Agencies &amp; Departments</a
+                  >
+                </li>
+                <li>
+                  <a href="/board/broadcast.htm"
+                    >Board of Supervisors Meetings / Broadcasts / Current
+                    Meeting Agenda</a
+                  >
+                </li>
+                <li>
+                  <a href="/cda/planning/meetings/broadcast.htm"
+                    >Planning Department Meeting Broadcasts</a
+                  >
+                </li>
+                <!--<li><a href="/government/boards.htm">Boards &amp; Commissions</a></li>-->
+                <li>
+                  <a href="#" data-toggle="modal" data-target="#modal-cao"
+                    >County Administrator's Office</a
+                  >
+                </li>
+                <li>
+                  <a href="government/elected.htm">Elected Officials</a>
+                </li>
+                <li>
+                  <a href="government/programs.htm"
+                    >Programs &amp; Initiatives</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </story>
+        </template>
+      </story-section>
     </main>
 
     <!-- <modal-govdelivery /> -->
@@ -946,23 +980,9 @@ and enforcement. To learn more about what this means for Alameda County resident
 //   <link href="/chatbot/wchat.css?v=18" rel="stylesheet" />
 //   Chatbot Code End
 
-// TODO: Google Tag Manager Module
-
-/** 
- * 
-         <!-- Google Tag Manager -->
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MW6VWCK');
-<!-- End Google Tag Manager -->
-
-*/
-
 export default {
   methods: {
-    submitsearch() {
+    Storyitsearch() {
       document.getElementById('search-form').submit()
     },
     goback() {
