@@ -86,12 +86,22 @@
               img-alt="Mask On Alameda County. Show your mask pride! Tweet a photo of you in your mask. Tag @Dare2BWell and use MaskOnAlamedaCounty."
             />
           </story>
+          <<<<<<< HEAD =======
+        </template>
+
+        <template v-slot:left>
+          >>>>>>> 4e68670230cea1ec37d6e1ae7c28b3a9503e1b94
           <story>
             <img-link
               img-src="/img/covid-thank-you2.png"
               img-alt="Alameda County Board of Supervisors and County Administrator Susan S. Muranishi offer thanks to our health care workers, first responders, and County employees. They express their appreciation for all their dedication and commitment."
             />
           </story>
+          <<<<<<<template HEAD =======
+        </template>
+
+        <template v-slot:left>
+          >>>>>>> 4e68670230cea1ec37d6e1ae7c28b3a9503e1b94
           <story>
             <img-link
               img-src="/img/covid19-staff-ad-rectangle.png"
@@ -99,6 +109,10 @@
               link-to="/government/news/covid-19-county-staff.htm"
             />
           </story>
+          <<<<<<< HEAD =======
+        </template>
+        <template v-slot:left>
+          >>>>>>> 4e68670230cea1ec37d6e1ae7c28b3a9503e1b94
           <story>
             <news-story category="Videos" headline="COVID-19 PSAs"
               >Our Health Care Services Agency and Public Health Department have
@@ -110,11 +124,33 @@
               ></news-story
             >
           </story>
+          <<<<<<< HEAD =======
+        </template>
+        <!-- VIDEO STORY -->
+        <template v-slot:left>
+          >>>>>>> 4e68670230cea1ec37d6e1ae7c28b3a9503e1b94
           <story>
             <video-story
               :youtube-embed="'https://www.youtube.com/embed/rknwVVTtbeQ?rel=0'"
             ></video-story>
           </story>
+          <<<<<<< HEAD =======
+        </template>
+
+        <!-- <div
+              class="embed-responsive embed-responsive-16by9"
+              style="margin: 20px 0px 10px 0px"
+            >
+              <iframe
+                src="https://www.youtube.com/embed/rknwVVTtbeQ?rel=0"
+                frameborder="0"
+                allow="encrypted-media"
+                allowfullscreen
+              ></iframe>
+            </div> -->
+
+        <template v-slot:left>
+          >>>>>>> 4e68670230cea1ec37d6e1ae7c28b3a9503e1b94
           <story>
             <img-link
               img-src="/img/coronavirus-businesses.png"
@@ -122,6 +158,11 @@
               link-to="http://eastbayeda.org/default.page"
             />
           </story>
+          <<<<<<< HEAD =======
+        </template>
+
+        <template v-slot:left>
+          >>>>>>> 4e68670230cea1ec37d6e1ae7c28b3a9503e1b94
           <story>
             <img-link
               img-src="/img/coronavirus-compliance-concern.png"
@@ -129,6 +170,11 @@
               link-to="https://www.acgov.org/form_app/feedback/feedback.jsp?id=SHRFcovid"
             />
           </story>
+          <<<<<<< HEAD =======
+        </template>
+
+        <template v-slot:left>
+          >>>>>>> 4e68670230cea1ec37d6e1ae7c28b3a9503e1b94
           <story>
             <news-story
               category="Public Safety"
@@ -296,6 +342,7 @@
             </news-story>
           </story>
         </template>
+
         <!-- LEFT COLUMN STORIES END -->
 
         <!-- RIGHT COLUMN STORIES -->
@@ -877,6 +924,7 @@ and enforcement. To learn more about what this means for Alameda County resident
 </template>
 
 <script>
+import story from '../components/acgov/stories/story.vue'
 // TODO: Integrate Google Translate
 
 //     type="text/javascript"
@@ -981,6 +1029,7 @@ and enforcement. To learn more about what this means for Alameda County resident
 //   Chatbot Code End
 
 export default {
+  components: { story },
   methods: {
     Storyitsearch() {
       document.getElementById('search-form').submit()
