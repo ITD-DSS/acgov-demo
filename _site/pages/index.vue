@@ -72,17 +72,11 @@
       <story-section>
         <template v-slot:full>
           <story>
-            <img-link img-src="" img-alt="" link-to="" />
-            <a
-              id="covid19img"
-              href="http://www.acphd.org/2019-ncov.aspx"
-              target="_blank"
-              ><img
-                class="img-responsive center-block ads"
-                alt="Alameda County Coronavirus COVID-19 Updates"
-                src="/img/coronavirus-updates.png"
-                width="100%"
-            /></a>
+            <img-link
+              img-src="img/coronavirus-updates.png"
+              img-alt="Alameda County Coronavirus COVID-19 Updates"
+              link-to="http://www.acphd.org/2019-ncov.aspx"
+            />
           </story>
         </template>
         <!-- LEFT COLUMN STORIES -->
@@ -94,17 +88,29 @@
               img-alt="Mask On Alameda County. Show your mask pride! Tweet a photo of you in your mask. Tag @Dare2BWell and use MaskOnAlamedaCounty."
               link-to=""
             />
+          </story>
+        </template>
 
+        <template v-slot:left>
+          <story>
             <img-link
               img-src="/img/covid-thank-you2.png"
               img-alt="Alameda County Board of Supervisors and County Administrator Susan S. Muranishi offer thanks to our health care workers, first responders, and County employees. They express their appreciation for all their dedication and commitment."
             />
+          </story>
+        </template>
 
+        <template v-slot:left>
+          <story>
             <img-link
               img-src="/img/covid19-staff-ad-rectangle.png"
               img-alt="Alameda County Employees Stay Connect and Informed"
               link-to="/government/news/covid-19-county-staff.htm"
             />
+          </story>
+        </template>
+        <template v-slot:left>
+          <story>
             <news-story category="Videos" headline="COVID-19 PSAs"
               >Our Health Care Services Agency and Public Health Department have
               produced several public service announcements (PSAs).
@@ -114,8 +120,18 @@
                 >View all PSAs.</a
               ></news-story
             >
-            <!-- VIDEO STORY -->
-            <div
+          </story>
+        </template>
+        <!-- VIDEO STORY -->
+        <template v-slot:left>
+          <story>
+            <video-story
+              :youtube-embed="'https://www.youtube.com/embed/rknwVVTtbeQ?rel=0'"
+            ></video-story>
+          </story>
+        </template>
+
+        <!-- <div
               class="embed-responsive embed-responsive-16by9"
               style="margin: 20px 0px 10px 0px"
             >
@@ -125,20 +141,30 @@
                 allow="encrypted-media"
                 allowfullscreen
               ></iframe>
-            </div>
+            </div> -->
 
+        <template v-slot:left>
+          <story>
             <img-link
               img-src="/img/coronavirus-businesses.png"
               img-alt="COVID-19 Resources for Businesses"
               link-to="http://eastbayeda.org/default.page"
             />
+          </story>
+        </template>
 
+        <template v-slot:left>
+          <story>
             <img-link
               img-src="/img/coronavirus-compliance-concern.png"
               img-alt="Send email to our Sheriff's Office if you have a concern about COVID-19 compliance."
               link-to="https://www.acgov.org/form_app/feedback/feedback.jsp?id=SHRFcovid"
             />
+          </story>
+        </template>
 
+        <template v-slot:left>
+          <story>
             <news-story
               category="Public Safety"
               headline="Online Services Available 24/7"
@@ -299,25 +325,20 @@
                   for Medi-Cal
                 </li>
                 <!--<li><a href="" target="_blank"></a></li>
-  				<li><a href="" target="_blank"></a></li>
-  				<li><a href="" target="_blank"></a></li>-->
+    				<li><a href="" target="_blank"></a></li>
+    				<li><a href="" target="_blank"></a></li>-->
               </ul>
             </news-story>
           </story>
         </template>
+
         <!-- LEFT COLUMN STORIES END -->
 
         <!-- RIGHT COLUMN STORIES -->
         <template v-slot:right>
           <story>
             <!--GOV DELIVERY SUSCRIPTION LINK-->
-            <a data-toggle="modal" data-target="#modal-govd">
-              <img
-                class="img-responsive govd-news"
-                src="/img/get-email-updates.png"
-                alt="GovDelivery icon with text saying Get Email Updates"
-              />
-            </a>
+            <gov-delivery-link />
             <!--/END-->
             <news-story
               category="Public Safety"
@@ -546,6 +567,7 @@
         <!-- RIGHT COLUMN STORIES END -->
 
         <!-- FULL COLUMN TWITTER FEEDS STARTS -->
+        <!-- 
         <template v-slot:full>
           <story full>
             <div>
@@ -613,6 +635,7 @@
             <div style="clear: both"></div>
           </story>
         </template>
+         -->
         <!-- FULL COLUMN TWITTER FEEDS ENDS -->
       </story-section>
       <!-- SECOND NEWS SECTION BEGINS -->
@@ -639,16 +662,7 @@
         <!-- RIGHT COLUMN STORIES -->
         <template v-slot:right>
           <story right>
-            <!--GOV DELIVERY SUSCRIPTION LINK-->
-            <img-link img-src="" img-alt="" link-to="" />
-            <!-- TODO: imgLink component needs to be able to take data toggle and data-target -->
-            <a data-toggle="modal" data-target="#modal-govd">
-              <img
-                class="img-responsive govd-news"
-                src="/img/get-email-updates.png"
-                alt="GovDelivery icon with text saying Get Email Updates"
-              />
-            </a>
+            <gov-delivery-link />
             <!--/END-->
             <!--<p class="news-stories">
   			<span class="category">Local</span>
@@ -823,7 +837,60 @@ and enforcement. To learn more about what this means for Alameda County resident
       </story-section>
       <!--/PAGEWATCH-->
 
-      <gov-info />
+      <story-section>
+        <template v-slot:left>
+          <story>
+            <div class="col-sm-6 board-photo">
+              <a href="#" data-toggle="modal" data-target="#modal-bos">
+                <img
+                  id="bos"
+                  class="img-responsive center-block"
+                  src="/img/bos.jpg"
+                  alt="Photo collage of the Board of Supervisors showing: Scott Haggerty-District 1, Richard Valle-District 2, Wilma Cha-District 3, Nate Miley-District 4, Keith Carson-District 5. "
+                />
+              </a>
+            </div>
+          </story>
+        </template>
+        <template v-slot:right>
+          <story>
+            <div class="col-sm-6 gov-links">
+              <ul>
+                <li>
+                  <a href="government/departments.htm"
+                    >Agencies &amp; Departments</a
+                  >
+                </li>
+                <li>
+                  <a href="/board/broadcast.htm"
+                    >Board of Supervisors Meetings / Broadcasts / Current
+                    Meeting Agenda</a
+                  >
+                </li>
+                <li>
+                  <a href="/cda/planning/meetings/broadcast.htm"
+                    >Planning Department Meeting Broadcasts</a
+                  >
+                </li>
+                <!--<li><a href="/government/boards.htm">Boards &amp; Commissions</a></li>-->
+                <li>
+                  <a href="#" data-toggle="modal" data-target="#modal-cao"
+                    >County Administrator's Office</a
+                  >
+                </li>
+                <li>
+                  <a href="government/elected.htm">Elected Officials</a>
+                </li>
+                <li>
+                  <a href="government/programs.htm"
+                    >Programs &amp; Initiatives</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </story>
+        </template>
+      </story-section>
     </main>
 
     <!-- <modal-govdelivery /> -->
@@ -843,6 +910,7 @@ and enforcement. To learn more about what this means for Alameda County resident
 </template>
 
 <script>
+import story from '../components/acgov/stories/story.vue'
 // TODO: Integrate Google Translate
 
 //     type="text/javascript"
@@ -946,23 +1014,10 @@ and enforcement. To learn more about what this means for Alameda County resident
 //   <link href="/chatbot/wchat.css?v=18" rel="stylesheet" />
 //   Chatbot Code End
 
-// TODO: Google Tag Manager Module
-
-/** 
- * 
-         <!-- Google Tag Manager -->
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MW6VWCK');
-<!-- End Google Tag Manager -->
-
-*/
-
 export default {
+  components: { story },
   methods: {
-    submitsearch() {
+    Storyitsearch() {
       document.getElementById('search-form').submit()
     },
     goback() {

@@ -1,5 +1,5 @@
 <template>
-  <div class="" :class="storyType">
+  <div class="flex flex-col">
     <slot />
   </div>
 </template>
