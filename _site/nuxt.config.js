@@ -17,16 +17,22 @@ export default {
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ],
-    //   link: [
-    //     {
-    //       rel: 'stylesheet',
-    //       href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
-    //     },
-    //   ],
+    link: [
+      // {
+      //   rel: 'stylesheet',
+      //   href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+      // },
+    ],
+    bodyAttrs: {
+      class: ['container', 'font-acgov', 'text-body'],
+    },
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: ['~/static/ece/css/main.css'],
+  css: [
+    // '@/static/ece/css/main.css',
+    '@/assets/css/main.css',
+  ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   // plugins: [],
@@ -51,7 +57,7 @@ export default {
 
   sanity: {
     minimal: true,
-    projectId: 'ehhijqba',
+    // projectId: 'ehhijqba',
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
