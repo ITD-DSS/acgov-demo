@@ -56,14 +56,14 @@ export default {
   ],
 
   sanity: {
-    minimal: true,
-    // projectId: 'ehhijqba',
+    // minimal: true,
+    projectId: 'veavi1vm',
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
   generate: {
-    dir: 'ece-test',
+    // dir: 'ece-test',
   },
   // buildDir: 'ece-test',
   // Build Configuration (https://go.nuxtjs.dev/config-build)
