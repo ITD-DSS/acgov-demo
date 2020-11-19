@@ -4,11 +4,42 @@
 
 - [Node.js 14 LTS (Long Term Support)](https://nodejs.org/en/)
 - [VsCode](https://code.visualstudio.com/) for editor settings
-    - VsCode Plugin - `ESLint`
-    - VsCode Plugin - `Prettier`
-    - VsCode Plugin - `Github Issues and Pull Requests`
-        - [How to use / Features](https://code.visualstudio.com/docs/editor/github)
-    - VsCode Plugin - `Vue VSCode Snippets` by sarah.drasner
+  - VsCode Plugin - `ESLint`
+  - VsCode Plugin - `Prettier`
+  - VsCode Plugin - `Github Issues and Pull Requests`
+    - [How to use / Features](https://code.visualstudio.com/docs/editor/github)
+  - VsCode Plugin - `Vue VSCode Snippets` by sarah.drasner
+
+### PoC Reqs
+
+#### Part I
+
+- Develop two templates (index and interior page )
+- Build few components
+- Build different pages from the components and template
+- Show drag and drop /inline edit / preview component features
+- Show how to share the content
+- Show how to reuse the component
+- Build pages for Spanish language (translation)
+- How to add java script code / google meta tag with in the <head> tag
+
+#### Part II
+
+- Spin a second site from the existing site
+
+#### Part III
+
+- Show how to upload can configure a static website
+
+#### Extras
+
+- Personalization
+- headless delivery
+- integrate analytics
+- multisource (3rd party feed)
+- social post and display
+- content to sms
+- sign up for newsletter
 
 ## Nuxt for Designers!
 
@@ -24,10 +55,9 @@ Copy this command to scaffold a project with all the configuration and scripts.
 
 4. Select `npm: site-dev`
 
-5. Open website at `http://localhost:3000` 
+5. Open website at `http://localhost:3000`
 
 You now have a developement enviroment with hot-reloading! Great way to make it faster to develop sites.
-
 
 #### Capture Content
 
