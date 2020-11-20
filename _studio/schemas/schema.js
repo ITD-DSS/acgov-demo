@@ -6,9 +6,10 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 
 import storySection from "./documents/storySection";
 import Story from "./documents/story";
-// import textStory from "./documents/textStory";
-// import videoStory from "./documents/videoStory";
-// import imageLink from "./documents/imageLink";
+
+import textStory from "./objects/textStory";
+import videoStory from "./objects/videoStory";
+import imageLink from "./objects/imageLink";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -19,8 +20,8 @@ export default createSchema({
     /* Your types here! */
     storySection,
     Story,
-    // textStory,
-    // videoStory,
-    // imageLink,
+    textStory,
+    videoStory,
+    imageLink,
   ]),
 });
