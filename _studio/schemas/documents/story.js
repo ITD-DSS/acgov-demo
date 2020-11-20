@@ -22,99 +22,36 @@ export default {
         ],
         layout: "dropdown",
       },
+      validation: (Rule) => Rule.required(),
     },
-    // STORY POSITION / PAGE LAYOUT
+    // STORY TYPE
+    // {
+    //   title: "Story Type Format",
+    //   name: "storyTypeFormat",
+    //   type: "string",
+    //   options: {
+    //     list: [
+    //       { title: "Text", value: "text" },
+    //       { title: "Image Link", value: "imageLink" },
+    //       { title: "Video", value: "video" },
+    //     ], // <-- predefined values
+    //     layout: "radio", // <-- defaults to 'dropdown'
+    //   },
+    //   validation: (Rule) => Rule.required(),
+    // },
     {
-      title: "Story Position",
-      name: "storyPosition",
-      type: "string",
+      title: "Story Format",
+      name: "storyFormat",
+      type: "array",
+      of: [
+        { type: "textStory" },
+        { type: "imageLink" },
+        { type: "videoStory" },
+      ],
       options: {
-        list: [
-          { title: "Left", value: "left" },
-          { title: "Right", value: "right" },
-          { title: "Full Width", value: "full" },
-        ], // <-- predefined values
-        layout: "radio", // <-- defaults to 'dropdown'
+        editModal: "fullscreen",
       },
-    },
-    // TEXT STORY
-    {
-      title: "Text Story",
-      name: "textStory",
-      type: "object",
-      fieldsets: [{ name: "textFields", title: "News Story Text" }],
-      fields: [
-        {
-          title: "Headline",
-          name: "headline",
-          type: "string",
-        },
-        {
-          title: "Story Body Text",
-          name: "storyBody",
-          type: "text",
-        },
-      ],
-    },
-    // IMAGE LINK
-    {
-      title: "Image Link",
-      name: "imageLink",
-      type: "object",
-      fieldsets: [{ name: "imageLinkFields", title: "Image Link" }],
-      fields: [
-        {
-          title: "Link To URL",
-          name: "linkTo",
-          type: "url",
-        },
-        {
-          title: "Linked Image",
-          name: "linkImage",
-          type: "image",
-          options: {
-            hotspot: true, // <-- Defaults to false
-          },
-          fields: [
-            {
-              name: "caption",
-              type: "string",
-              title: "Caption",
-            },
-            {
-              // Editing this field will be hidden behind an "Edit"-button
-              name: "altText",
-              type: "string",
-              title: "Alt Text",
-              options: {
-                isHighlighted: true, // <-- make this field easily accessible
-              },
-            },
-          ],
-        },
-      ],
-    },
-    // VIDEO STORIES
-    {
-      title: "Video Story",
-      name: "videoStory",
-      type: "object",
-      fields: [
-        {
-          title: "Youtube URL",
-          name: "youtubeUrl",
-          type: "url",
-        },
-        {
-          // Editing this field will be hidden behind an "Edit"-button
-          name: "altText",
-          type: "string",
-          title: "Alt Text",
-          options: {
-            isHighlighted: true, // <-- make this field easily accessible
-          },
-        },
-      ],
+      validation: (Rule) => Rule.unique(),
     },
   ],
 };
