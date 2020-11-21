@@ -3,10 +3,29 @@ export default {
   name: "story",
   type: "document",
   fields: [
+    // REFERENCE NAME
+    {
+      title: "Reference Name",
+      name: "refName",
+      type: "string",
+    },
     // STORY CATEGORIES
     {
-      title: "Category Set",
-      name: "categorySet",
+      title: "Story Section",
+      name: "storySectionRef",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "storySection" }],
+        },
+      ],
+      validation: (Rule) => Rule.length(1),
+    },
+    // STORY TAGS
+    {
+      title: "Story Tag Set",
+      name: "storyTagSet",
       type: "string",
       options: {
         list: [
@@ -24,21 +43,22 @@ export default {
       },
       validation: (Rule) => Rule.required(),
     },
-    // STORY TYPE
-    // {
-    //   title: "Story Type Format",
-    //   name: "storyTypeFormat",
-    //   type: "string",
-    //   options: {
-    //     list: [
-    //       { title: "Text", value: "text" },
-    //       { title: "Image Link", value: "imageLink" },
-    //       { title: "Video", value: "video" },
-    //     ], // <-- predefined values
-    //     layout: "radio", // <-- defaults to 'dropdown'
-    //   },
-    //   validation: (Rule) => Rule.required(),
-    // },
+    // STORY LAYOUT
+    {
+      title: "Story Layout",
+      name: "storyLayout",
+      type: "string",
+      options: {
+        list: [
+          { title: "Left", value: "left" },
+          { title: "Right", value: "right" },
+          { title: "Full Width", value: "full" },
+        ], // <-- predefined values
+        layout: "radio", // <-- defaults to 'dropdown'
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    // STORY FORMAT
     {
       title: "Story Format",
       name: "storyFormat",
@@ -51,7 +71,7 @@ export default {
       options: {
         editModal: "fullscreen",
       },
-      validation: (Rule) => Rule.unique(),
+      validation: (Rule) => Rule.length(1),
     },
   ],
 };

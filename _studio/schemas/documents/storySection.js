@@ -1,6 +1,6 @@
 export default {
   title: "Story Section",
-  name: "story-section",
+  name: "storySection",
   type: "document",
   fields: [
     {
