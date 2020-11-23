@@ -8,16 +8,42 @@ export default {
       name: "sectionName",
       type: "string",
     },
+    // {
+    //   title: "Section Stories",
+    //   name: "sectionStories",
+    //   type: "array",
+    //   of: [
+    //     {
+    //       type: "reference",
+    //       to: [{ type: "story" }],
+    //     },
+    //   ],
+    // },
     {
       title: "Section Stories",
       name: "sectionStories",
-      type: "array",
-      of: [
-        {
-          type: "reference",
-          to: [{ type: "story" }],
+      type: "reference",
+      to: [{ type: "story" }],
+      options: {
+        filter: ({ document }) => {
+          // Always make sure to check for document properties
+          // before attempting to use them
+          if (!document.storySectionRef) {
+            return {
+              filter: "role == $role",
+              params: { role: "director" },
+            };
+          }
+
+          return {
+            filter: "role == $role && birthYear >= $minYear",
+            params: {
+              role: "director",
+              minYear: document.releaseYear,
+            },
+          };
         },
-      ],
+      },
     },
   ],
 };
