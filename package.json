@@ -25,6 +25,7 @@
   "homepage": "https://github.com/ITD-DSS/designer-breakdown-template#readme",
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.12.8",
     "@sanity/cli": "^2.0.*",
     "dotenv": "^8.2.0",
     "dotenv-quokka-plugin": "^1.0.0",
