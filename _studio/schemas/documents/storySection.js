@@ -10,46 +10,74 @@ export default {
       name: "sectionName",
       type: "string",
     },
-    // {
-    //   title: "Section Stories",
-    //   name: "sectionStories",
-    //   type: "array",
-    //   of: [
-    //     {
-    //       type: "reference",
-    //       to: [{ type: "story" }],
-    //     },
-    //   ],
-    // },
     {
       title: "Section Stories",
       name: "sectionStories",
       type: "reference",
-      // of: getSectionStoriesReferences(),
       to: [{ type: "story" }],
-      options: {
-        filter: ({ document, parent }) => {
-          // Always make sure to check for document properties
-          // before attempting to use them
-          if (!document._ref) {
-            return {
-              filter: "$parentName == $storySection",
-              params: {
-                storySection: document.storySectionRef,
-                parentName: parent.sectionName,
-              },
-            };
-          }
+      // options: {
+      //   filter: ({ document, parent }) => {
+      //     console.log("document\n", document);
 
-          return {
-            filter: "$parentId == $refId",
-            params: {
-              parentId: parent.id,
-              refId: document._ref,
-            },
-          };
-        },
-      },
+      //     const { _id, sectionName } = document;
+
+      //     // console.log("parent\n", parent);
+      //     // Always make sure to check for document properties
+      //     // before attempting to use them
+      //     // if (document.sectionName) {
+      //     //   return {
+      //     //     filter: "role == $role",
+      //     //     params: { section: document.sectionName },
+      //     //   };
+      //     // }
+
+      //     // return {
+      //     //   filter: "role == $role && birthYear >= $minYear",
+      //     //   params: {
+      //     //     role: "director",
+      //     //     minYear: document.releaseYear,
+      //     //   },
+      //     // };
+      //   },
+      // },
     },
+
+    // {
+    //   title: "Section Stories",
+    //   name: "sectionStories",
+    //   type: "object",
+    //   fields: [
+    //     {
+    //       title: "Stories In Section",
+    //       name: "sectionStory",
+    //       type: "reference",
+    //       weak: true,
+    //       // of: getSectionStoriesReferences(),
+    //       to: [{ type: "story" }],
+    //       options: {
+    //         filter: ({ document, parent }) => {
+    //           console.log("document\n", document.sectionStories);
+    //           // console.log("parent\n", parent);
+    //           // Always make sure to check for document properties
+    //           // before attempting to use them
+    //           // if (document.sectionName) {
+    //           //   return {
+    //           //     filter: "role == $role",
+    //           //     params: { section: document.sectionName },
+    //           //   };
+    //           // }
+
+    //           // return {
+    //           //   filter: "role == $role && birthYear >= $minYear",
+    //           //   params: {
+    //           //     role: "director",
+    //           //     minYear: document.releaseYear,
+    //           //   },
+    //           // };
+    //         },
+    //       },
+    //     },
+    //   ],
+    // },
   ],
 };

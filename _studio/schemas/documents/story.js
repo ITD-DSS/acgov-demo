@@ -13,24 +13,18 @@ export default {
     {
       title: "Story Section",
       name: "storySectionRef",
-      type: "array",
-      of: [
-        {
-          type: "reference",
-          to: [{ type: "storySection" }],
-        },
-      ],
-      validation: (Rule) => Rule.length(1),
+      type: "reference",
+      to: [{ type: "storySection" }],
     },
     // STORY TAGS
     {
-      title: "Story Tag Set",
-      name: "storyTagSet",
+      title: "Story Tag",
+      name: "storyTag",
       type: "string",
       options: {
         list: [
           { title: "Donations", value: "donations" },
-          { title: "Elections", value: "elections" },
+          { title: "Election", value: "election" },
           { title: "Interactive Map", value: "interactiveMap" },
           { title: "Local", value: "local" },
           { title: "Newsletter", value: "newsletter" },
@@ -55,6 +49,7 @@ export default {
           { title: "Full Width", value: "full" },
         ], // <-- predefined values
         layout: "radio", // <-- defaults to 'dropdown'
+        direction: "horizontal",
       },
       validation: (Rule) => Rule.required(),
     },
