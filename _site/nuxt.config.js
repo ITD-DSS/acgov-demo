@@ -1,3 +1,9 @@
+import dotenv from 'dotenv'
+import find from 'find-up'
+export const findEnv = () => find.sync(process.env.ENV_FILE || '.env')
+
+dotenv.config({ path: findEnv() })
+
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: true,

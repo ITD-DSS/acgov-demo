@@ -1,0 +1,6 @@
+{
+  "babel": {
+    "path": "../node_modules/@babel/core",
+    "presets": ["@babel/react", "@babel/typescript"]
+  }
+}
