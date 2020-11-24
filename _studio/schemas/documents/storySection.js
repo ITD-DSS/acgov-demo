@@ -1,3 +1,5 @@
+// import getSectionStoriesReferences from "../_utils/index";
+
 export default {
   title: "Story Section",
   name: "storySection",
@@ -23,23 +25,27 @@ export default {
       title: "Section Stories",
       name: "sectionStories",
       type: "reference",
+      // of: getSectionStoriesReferences(),
       to: [{ type: "story" }],
       options: {
-        filter: ({ document }) => {
+        filter: ({ document, parent }) => {
           // Always make sure to check for document properties
           // before attempting to use them
-          if (!document.storySectionRef) {
+          if (!document._ref) {
             return {
-              filter: "role == $role",
-              params: { role: "director" },
+              filter: "$parentName == $storySection",
+              params: {
+                storySection: document.storySectionRef,
+                parentName: parent.sectionName,
+              },
             };
           }
 
           return {
-            filter: "role == $role && birthYear >= $minYear",
+            filter: "$parentId == $refId",
             params: {
-              role: "director",
-              minYear: document.releaseYear,
+              parentId: parent.id,
+              refId: document._ref,
             },
           };
         },
