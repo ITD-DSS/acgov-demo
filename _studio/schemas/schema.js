@@ -4,8 +4,10 @@ import createSchema from "part:@sanity/base/schema-creator";
 // Then import schema types from any plugins that might expose them
 import schemaTypes from "all:part:@sanity/base/schema-type";
 
+import siteSettings from "./documents/siteSettings";
 import storySection from "./documents/storySection";
-import Story from "./documents/story";
+// import storySection from "./documents/frontPage";
+import Story from "./documents/Story";
 
 import textStory from "./objects/textStory";
 import videoStory from "./objects/videoStory";
@@ -18,6 +20,7 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     /* Your types here! */
+    siteSettings,
     storySection,
     Story,
     textStory,
