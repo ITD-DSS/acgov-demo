@@ -1,11 +1,11 @@
 {
   "root": true,
   "project": {
-    "name": "dss-designer-template"
+    "name": "acgov"
   },
   "api": {
-    "projectId": "ehhijqba",
-    "dataset": "production"
+    "projectId": "veavi1vm",
+    "dataset": "development"
   },
   "plugins": [
     "@sanity/base",

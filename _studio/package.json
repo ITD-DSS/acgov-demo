@@ -1,5 +1,5 @@
 {
-  "name": "dssdesignertemplate",
+  "name": "acgov",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -7,23 +7,32 @@
   "author": "Jonathan A. M <ontoneio.mm@gmail.com>",
   "license": "UNLICENSED",
   "scripts": {
+    "dev": "sanity start",
     "start": "sanity start",
-    "test": "sanity check"
+    "test": "sanity check",
+    "build": "sanity build"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^2.0.7",
-    "@sanity/components": "^2.0.7",
-    "@sanity/core": "^2.0.5",
-    "@sanity/default-layout": "^2.0.7",
-    "@sanity/default-login": "^2.0.5",
-    "@sanity/desk-tool": "^2.0.8",
-    "@sanity/vision": "^2.0.5",
-    "prop-types": "^15.6",
-    "react": "^16.2",
-    "react-dom": "^16.2"
+    "@sanity/base": "^2.0.9",
+    "@sanity/client": "^2.0.9",
+    "@sanity/components": "^2.0.9",
+    "@sanity/core": "^2.0.9",
+    "@sanity/default-layout": "^2.0.9",
+    "@sanity/default-login": "^2.0.9",
+    "@sanity/desk-tool": "^2.0.9",
+    "@sanity/vision": "^2.0.9",
+    "dotenv": "^8.2.0",
+    "find-up": "^5.0.0",
+    "prop-types": "^15.7",
+    "react": "^17.0",
+    "react-dom": "^17.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.acgov.org/scm/it/acgov-nuxt.git"
+  }
 }

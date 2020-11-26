@@ -1,3 +1,9 @@
+import dotenv from 'dotenv'
+import find from 'find-up'
+export const findEnv = () => find.sync(process.env.ENV_FILE || '.env')
+
+dotenv.config({ path: findEnv() })
+
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: true,
@@ -56,14 +62,14 @@ export default {
   ],
 
   sanity: {
-    minimal: true,
-    // projectId: 'ehhijqba',
+    // minimal: true,
+    projectId: 'veavi1vm',
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
   generate: {
-    dir: 'ece-test',
+    // dir: 'ece-test',
   },
   // buildDir: 'ece-test',
   // Build Configuration (https://go.nuxtjs.dev/config-build)
