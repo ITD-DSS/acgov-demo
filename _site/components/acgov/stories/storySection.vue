@@ -1,15 +1,4 @@
 <template>
-  <!-- 
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #333;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  box-sizing: border-box;
-  margin: 20px auto 40px auto;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 0px; 
--->
   <section
     class="grid grid-cols-2 w-8/12 bg-white bg-opacity-90 mt-4 mb-8 mx-auto p-4 gap-x-12"
   >
@@ -24,6 +13,10 @@
 </template>
 
 <script>
+import { groq } from '@nuxtjs/sanity'
+
+const query = groq`*[_type == "storySection"]`
+
 export default {
   name: 'StorySection',
   props: {
@@ -31,6 +24,16 @@ export default {
       type: String,
       default: 'Story section name',
     },
+  },
+  async fetch() {
+    // JavaScript
+    const result = await this.$sanity.fetch(query)
+    this.storySections = result
+  },
+  data() {
+    return {
+      storySections: [],
+    }
   },
 }
 </script>
