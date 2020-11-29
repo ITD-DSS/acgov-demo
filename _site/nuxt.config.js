@@ -63,7 +63,7 @@ export default {
 
   sanity: {
     // minimal: true,
-    projectId: 'veavi1vm',
+    projectId: process.env.SANITY_PROJECT_ID,
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
