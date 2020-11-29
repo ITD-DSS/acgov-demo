@@ -832,6 +832,13 @@ export default {
       ],
     }
   },
+  // TODO: Implement Validation for Preview mode
+  // validate({ params, store, query }) {
+  //   // If FALSE redirect to 404 page
+  //   return (
+  //     query.preview === 'true' || store.state.moviesSlugs.includes(params.slug)
+  //   )
+  // },
 }
 </script>
 
