@@ -778,14 +778,19 @@
 
 import { groq } from '@nuxtjs/sanity'
 
-const query = groq`*[_type == "storySection"]`
-
 export default {
   layout: 'acgov-home',
+  // async asyncData({ $sanity }) {
+  //   const query = groq`*[_type == "storySection"]`
+  //   //   // JavaScript
+  //   const sections = await $sanity.fetch(query)
+  //   return sections
+  // },
   async fetch() {
+    const query = groq`*[_type == "storySection"]`
     // JavaScript
-    const result = await this.$sanity.fetch(query)
-    this.storySections = result
+    const sections = await this.$sanity.fetch(query)
+    this.storySections = sections
   },
   data() {
     return {
