@@ -776,8 +776,22 @@
 //   <link href="/chatbot/wchat.css?v=18" rel="stylesheet" />
 //   Chatbot Code End
 
+import { groq } from '@nuxtjs/sanity'
+
+const query = groq`*[_type == "storySection"]`
+
 export default {
   layout: 'acgov-home',
+  async fetch() {
+    // JavaScript
+    const result = await this.$sanity.fetch(query)
+    this.storySections = result
+  },
+  data() {
+    return {
+      storySections: [],
+    }
+  },
   methods: {
     // Storyitsearch() {
     //   document.getElementById('search-form').submit()

@@ -13,10 +13,6 @@
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity'
-
-const query = groq`*[_type == "storySection"]`
-
 export default {
   name: 'StorySection',
   props: {
@@ -24,16 +20,6 @@ export default {
       type: String,
       default: 'Story section name',
     },
-  },
-  async fetch() {
-    // JavaScript
-    const result = await this.$sanity.fetch(query)
-    this.storySections = result
-  },
-  data() {
-    return {
-      storySections: [],
-    }
   },
 }
 </script>
