@@ -7,7 +7,7 @@
     </header>
     <div>
       <story
-        v-for="story in section.related"
+        v-for="story in stories"
         :key="story._id"
         :story-format="story.storyFormat[0]"
         :story-layout="story.storyLayout"
