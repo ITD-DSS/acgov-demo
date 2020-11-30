@@ -4,10 +4,7 @@ export default () =>
     S.list()
         .title('acgov Content')
         .items([
-            S.listItem()
-                .title('Site Settings')
-                .schemaType('siteSettings'),
-                
+            S.documentTypeListItem('siteSettings'),
             S.divider(),
             S.listItem()
                     .title('News Sections')
@@ -24,13 +21,5 @@ export default () =>
                                   .params({id}) // use the id in the filter to return sampleProjects that has a reference to the category
                               )
                     ),
-            // S.listItem()
-            //         .title('News Stories')
-            //         .child(
-            //             S.documentList()
-            //                 .title('Story')
-            //                 .schemaType('story')
-            //                 .filter(`_type == "story"`)
-            //         )
         
         ])
