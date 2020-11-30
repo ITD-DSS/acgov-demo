@@ -15,6 +15,7 @@ export const getDefaultDocumentNode = ({ schemaType }) => {
   if (schemaType === "storySection" || schemaType === "story") {
     return S.document().views([
       S.view.form(),
+      S.view.editor(),
       S.view.component(WebPreview).title("Web Preview"),
     ]);
   }

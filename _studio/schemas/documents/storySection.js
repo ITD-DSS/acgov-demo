@@ -31,16 +31,6 @@ export default {
       to: [{ type: "story" }],
       options: {},
     },
-    // {
-    //   title: "Section Stories",
-    //   name: "sectionStories",
-    //   type: "array",
-    //   of: [
-    //     {
-    //       type: "reference",
-    //       to: [{ type: "story" }],
-    //     },
-    //   ],
-    // },
+   
   ],
 };
