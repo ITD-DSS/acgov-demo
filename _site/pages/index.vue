@@ -1,7 +1,16 @@
 <template>
   <main class="flex flex-col">
+    <story-section
+      v-for="section in storySections"
+      :key="section._id"
+      :section-name="section.sectionName"
+      :stories="section.related"
+    >
+    </story-section>
+
     <!--PAGEWATCH CODE="CAALAME_1_20080723_151631_en"-->
-    <story-section>
+
+    <!-- <story-section>
       <template v-slot:left>
         <story>
           <img-link
@@ -61,9 +70,9 @@
           </news-story>
         </story>
       </template>
-    </story-section>
+    </story-section> -->
 
-    <story-section>
+    <!-- <story-section>
       <template v-slot:full>
         <story>
           <img-link
@@ -109,25 +118,11 @@
           >
         </story>
 
-        <!-- VIDEO STORY -->
-
         <story>
           <video-story
             :youtube-embed="'https://www.youtube.com/embed/rknwVVTtbeQ?rel=0'"
           ></video-story>
         </story>
-
-        <!-- <div
-              class="embed-responsive embed-responsive-16by9"
-              style="margin: 20px 0px 10px 0px"
-            >
-              <iframe
-                src="https://www.youtube.com/embed/rknwVVTtbeQ?rel=0"
-                frameborder="0"
-                allow="encrypted-media"
-                allowfullscreen
-              ></iframe>
-            </div> -->
 
         <story>
           <img-link
@@ -298,19 +293,20 @@
                 >
                 for Medi-Cal
               </li>
-              <!--<li><a href="" target="_blank"></a></li>
+              <li><a href="" target="_blank"></a></li>
     				<li><a href="" target="_blank"></a></li>
-    				<li><a href="" target="_blank"></a></li>-->
+    				<li><a href="" target="_blank"></a></li>
             </ul>
           </news-story>
         </story>
       </template>
+      
 
       <template v-slot:right>
         <story>
-          <!--GOV DELIVERY SUSCRIPTION LINK-->
+        
           <gov-delivery-link />
-          <!--/END-->
+         
           <news-story category="Public Safety" headline="Health Officer Orders"
             >Updated Alameda County Health Officer orders and other COVID-19
             information is available on our COVID-19 website. Learn more about
@@ -528,9 +524,7 @@
         </story>
       </template>
 
-      <!-- FULL COLUMN TWITTER FEEDS STARTS -->
-      <!-- 
-        <template v-slot:full>
+      <template v-slot:full>
           <story full>
             <div>
               <div class="twitterfeeds">
@@ -597,11 +591,10 @@
             <div style="clear: both"></div>
           </story>
         </template>
-  -->
-      <!-- FULL COLUMN TWITTER FEEDS ENDS -->
-    </story-section>
+    </story-section> 
+-->
 
-    <story-section>
+    <!--<story-section>
       <template v-slot:left>
         <story>
           <img-link
@@ -668,7 +661,6 @@
           >
         </story>
 
-        <!-- TODO: VIDEO STORY COMPONENT -->
         <story>
           <video-story
             :youtube-embed="'https://www.youtube.com/embed/v8PPCl10Zoc?rel=0'"
@@ -676,9 +668,10 @@
         </story>
         <br />
       </template>
-    </story-section>
+    </story-section> 
+-->
 
-    <story-section>
+    <!--<story-section>
       <template v-slot:left>
         <story>
           <div class="col-sm-6 board-photo">
@@ -713,7 +706,6 @@
                   >Planning Department Meeting Broadcasts</a
                 >
               </li>
-              <!--<li><a href="/government/boards.htm">Boards &amp; Commissions</a></li>-->
               <li>
                 <a href="#" data-toggle="modal" data-target="#modal-cao"
                   >County Administrator's Office</a
@@ -730,6 +722,7 @@
         </story>
       </template>
     </story-section>
+     -->
   </main>
 </template>
 
@@ -780,14 +773,15 @@ import { groq } from '@nuxtjs/sanity'
 
 export default {
   layout: 'acgov-home',
-  // async asyncData({ $sanity }) {
-  //   const query = groq`*[_type == "storySection"]`
-  //   //   // JavaScript
-  //   const sections = await $sanity.fetch(query)
-  //   return sections
-  // },
   async fetch() {
-    const query = groq`*[_type == "storySection"]`
+    const query = groq`
+    *[_type=="storySection"]{
+      _id,
+      _createdAt,
+      sectionName,
+      "related": *[_type=="story" && references(^._id)]
+    } | order(_createdAt asc)
+    `
     // JavaScript
     const sections = await this.$sanity.fetch(query)
     this.storySections = sections
