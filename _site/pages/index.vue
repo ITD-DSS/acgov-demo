@@ -4,8 +4,26 @@
       v-for="section in storySections"
       :key="section._id"
       :section-name="section.sectionName"
-      :stories="section.related"
+      :stories-data="section.related"
     >
+      <template #left="left">
+        <div v-for="story in left" :key="story._id">
+          <story-format-selector
+            :category-tag="story.storyTag"
+            :format-data="story.storyFormat[0]"
+          />
+        </div>
+      </template>
+      <template #right="right">
+        <div v-for="story in right" :key="story._id">
+          <story-format-selector :format-data="story.storyFormat[0]" />
+        </div>
+      </template>
+      <template #full="full">
+        <div v-for="story in full" :key="story._id">
+          <story-format-selector :format-data="story.storyFormat[0]" />
+        </div>
+      </template>
     </story-section>
 
     <!--PAGEWATCH CODE="CAALAME_1_20080723_151631_en"-->
@@ -770,8 +788,10 @@
 //   Chatbot Code End
 
 import { groq } from '@nuxtjs/sanity'
+import storyFormatSelector from '../components/acgov/stories/storyFormatSelector.vue'
 
 export default {
+  components: { storyFormatSelector },
   layout: 'acgov-home',
   async fetch() {
     const query = groq`
@@ -798,6 +818,7 @@ export default {
     // goback() {
     //   window.history.back()
     // },
+    parseStoryFormat() {},
   },
   head() {
     return {
