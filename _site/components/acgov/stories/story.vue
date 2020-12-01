@@ -1,27 +1,6 @@
 <template>
-  <div :class="storyGridClass">
-    <!-- <div class="flex flex-col"> -->
-    <newsStory
-      v-if="storyFormat._type === 'textStory'"
-      :key="storyFormat._key"
-      :category="storyCategory"
-      :headline="storyFormat.headline"
-    >
-      <SanityContent :blocks="storyFormat.storyBody" />
-    </newsStory>
-    <img-link
-      v-else-if="storyFormat._type === 'imageLink'"
-      :key="storyFormat._key"
-      :link-to="storyFormat.linkTo"
-      :img-src="storyFormat.linkImage.asset._ref"
-    />
-    <video-story
-      v-else-if="storyFormat._type === 'videoStory'"
-      :key="storyFormat._key"
-      :youtube-embed="storyFormat.youtubeUrl"
-    />
-    <!-- <slot /> -->
-    <!-- </div> -->
+  <div class="flex flex-col">
+    <slot v-bind="storyData" />
   </div>
 </template>
 
@@ -29,18 +8,22 @@
 export default {
   name: 'Story',
   props: {
-    storyFormat: {
+    storyData: {
       type: Object,
       default: () => {},
     },
-    storyLayout: {
-      type: String,
-      default: '',
-    },
-    storyCategory: {
-      type: String,
-      default: '',
-    },
+    // storyFormat: {
+    //   type: Object,
+    //   default: () => {},
+    // },
+    // storyLayout: {
+    //   type: String,
+    //   default: '',
+    // },
+    // storyCategory: {
+    //   type: String,
+    //   default: '',
+    // },
   },
   data() {
     return {
