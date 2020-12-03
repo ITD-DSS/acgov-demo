@@ -6,15 +6,6 @@
       <h2>{{ sectionName }}</h2>
     </header>
     <div>
-      <!-- <story
-        v-for="story in stories"
-        :key="story._id"
-        :story-format="story.storyFormat[0]"
-        :story-layout="story.storyLayout"
-        :story-category="story.storyTag"
-      ></story> -->
-      <!-- <slot v-bind="storyLayout" /> -->
-      <!-- <slot v-bind="stories"> -->
       <div class="col-span-full">
         <slot name="full" v-bind="full" />
       </div>
@@ -56,7 +47,7 @@ export default {
     bindToSlot() {
       const stories = this.storiesData
       stories.forEach((story) => {
-        switch (story.storyLayout) {
+        switch (story.layout) {
           case 'full':
             this.full.push(story)
             break

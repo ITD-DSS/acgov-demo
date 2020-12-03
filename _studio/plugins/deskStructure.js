@@ -14,6 +14,15 @@ export default () =>
                         .title('Section')
                         .schemaType('storySection')
                         .filter(`_type == "storySection"`)
+                        .child( secId =>
+
+                            S.documentList()
+                            .schemaType('story')
+                            .title('Section Stories')
+                            .filter( `_type == 'story' && references($secId)`)
+                            .params({secId})
+
+                        )
                 )
         
         ])

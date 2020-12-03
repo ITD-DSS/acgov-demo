@@ -1,17 +1,17 @@
 <template>
   <a v-if="linkTo" target="_blank" :href="linkTo">
     <SanityImage :asset-id="imgSrc" auto="format">
-      <template #default="{ src }">
-        <img class="w-full my-2" :src="src" :alt="imgAlt" />
-        <!-- <img :src="src" /> -->
-      </template>
+      <!-- <template #default="{ src }"> -->
+      <!-- <img class="w-full my-2" :src="src" :alt="imgAlt" /> -->
+      <!-- <img :src="src" /> -->
+      <!-- </template> -->
     </SanityImage>
   </a>
   <SanityImage v-else :asset-id="imgSrc" auto="format">
-    <template #default="{ src }">
-      <img class="w-full my-2" :src="src" :alt="imgAlt" />
-      <!-- <img :src="src" /> -->
-    </template>
+    <!-- <template #default="{ src }"> -->
+    <!-- <img class="w-full my-2" :src="src" :alt="imgAlt" /> -->
+    <!-- <img :src="src" /> -->
+    <!-- </template> -->
   </SanityImage>
 </template>
 

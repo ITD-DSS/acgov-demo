@@ -1,28 +1,26 @@
 <template>
-  <div>
-    <news-story
-      v-if="getStoryFormat === 'textStory'"
-      :key="newsStory.keyId"
-      :category="categoryTag"
-      :headline="newsStory.headline"
-    >
-      <SanityContent :blocks="newsStory.body" />
-    </news-story>
-    <img-link
-      v-else-if="getStoryFormat === 'imageLink'"
-      :key="imgLink.keyId"
-      :link-to="imgLink.destLink"
-      :img-src="imgLink.src"
-      :img-alt="imgLink.alt"
-    />
-    <video-story
-      v-else-if="getStoryFormat === 'videoStory'"
-      :key="video.keyId"
-      :youtube-embed="video.url"
-      :vid-alt-text="video.alt"
-    />
-    <span v-else class="invisible"></span>
-  </div>
+  <news-story
+    v-if="getStoryFormat === 'textStory'"
+    :key="formatData._key"
+    :category="categoryTag"
+    :headline="formatData.headline"
+  >
+    <SanityContent :blocks="formatData.body" />
+  </news-story>
+  <img-link
+    v-else-if="getStoryFormat === 'imageLink'"
+    :key="formatData._key"
+    :link-to="formatData.linkTo"
+    :img-src="formatData.imgSrc"
+    :img-alt="formatData.alt"
+  />
+  <video-story
+    v-else-if="getStoryFormat === 'videoStory'"
+    :key="formatData._key"
+    :youtube-embed="formatData.url"
+    :vid-alt-text="formatData.alt"
+  />
+  <span v-else class="invisible"></span>
 </template>
 
 <script>
@@ -63,23 +61,23 @@ export default {
   },
   data() {
     return {
-      newsStory: {
-        category: '',
-        headline: '',
-        body: [],
-        keyId: '',
-      },
-      imgLink: {
-        destLink: '',
-        alt: '',
-        src: '',
-        keyId: '',
-      },
-      video: {
-        url: '',
-        alt: '',
-        keyId: '',
-      },
+      // newsStory: {
+      //   category: '',
+      //   headline: '',
+      //   body: [],
+      //   keyId: '',
+      // },
+      // imgLink: {
+      //   destLink: '',
+      //   alt: '',
+      //   src: '',
+      //   keyId: '',
+      // },
+      // video: {
+      //   url: '',
+      //   alt: '',
+      //   keyId: '',
+      // },
     }
   },
   computed: {
@@ -88,40 +86,38 @@ export default {
     },
   },
   mounted() {
-    this.parseFormats()
+    // this.parseFormats()
   },
   methods: {
-    parseFormats() {
-      const formatType = this.getStoryFormat
-
-      switch (formatType) {
-        case 'textStory':
-          this.newsStory.category = this.formatData.storyTag
-          this.newsStory.keyId = this.formatData._key
-          this.newsStory.headline = this.formatData.headline
-          this.newsStory.body = this.formatData.storyBody
-          break
-        // case 'imageLink':
-        //   if (this.formatData.linkTo !== undefined) {
-        //     this.imageLink.destLink = this.formatData.linkTo
-        //     this.imageLink.alt = this.formatData.linkImage.altText
-        //     this.imageLink.src = this.formatData.linkImage.asset._ref
-        //     this.imageLink.keyId = this.formatData._key
-        //   }
-        //   this.imageLink.alt = this.formatData.linkImage.altText
-        //   this.imageLink.src = this.formatData.linkImage.asset._ref
-        //   this.imageLink.keyId = this.formatData._key
-        //   break
-        case 'videoStory':
-          this.video.url = this.formatData.youtubeUrl
-          this.video.alt = this.formatData.altText
-          this.video.keyId = this.formatData._key
-          break
-
-        default:
-          break
-      }
-    },
+    // parseFormats() {
+    //   const formatType = this.getStoryFormat
+    //   switch (formatType) {
+    //     case 'textStory':
+    //       this.newsStory.category = this.formatData.storyTag
+    //       this.newsStory.keyId = this.formatData._key
+    //       this.newsStory.headline = this.formatData.headline
+    //       this.newsStory.body = this.formatData.storyBody
+    //       break
+    //     // case 'imageLink':
+    //     //   if (this.formatData.linkTo !== undefined) {
+    //     //     this.imageLink.destLink = this.formatData.linkTo
+    //     //     this.imageLink.alt = this.formatData.linkImage.altText
+    //     //     this.imageLink.src = this.formatData.linkImage.asset._ref
+    //     //     this.imageLink.keyId = this.formatData._key
+    //     //   }
+    //     //   this.imageLink.alt = this.formatData.linkImage.altText
+    //     //   this.imageLink.src = this.formatData.linkImage.asset._ref
+    //     //   this.imageLink.keyId = this.formatData._key
+    //     //   break
+    //     case 'videoStory':
+    //       this.video.url = this.formatData.youtubeUrl
+    //       this.video.alt = this.formatData.altText
+    //       this.video.keyId = this.formatData._key
+    //       break
+    //     default:
+    //       break
+    //   }
+    // },
   },
 }
 </script>

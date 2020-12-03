@@ -3,25 +3,31 @@
     <story-section
       v-for="section in storySections"
       :key="section._id"
-      :section-name="section.sectionName"
+      :section-name="section.name"
       :stories-data="section.related"
     >
       <template #left="left">
         <div v-for="story in left" :key="story._id">
           <story-format-selector
-            :category-tag="story.storyTag"
-            :format-data="story.storyFormat[0]"
+            :category-tag="story.tag"
+            :format-data="story.format"
           />
         </div>
       </template>
       <template #right="right">
         <div v-for="story in right" :key="story._id">
-          <story-format-selector :format-data="story.storyFormat[0]" />
+          <story-format-selector
+            :category-tag="story.tag"
+            :format-data="story.format"
+          />
         </div>
       </template>
       <template #full="full">
         <div v-for="story in full" :key="story._id">
-          <story-format-selector :format-data="story.storyFormat[0]" />
+          <story-format-selector
+            :category-tag="story.storyTag"
+            :format-data="story.format"
+          />
         </div>
       </template>
     </story-section>
@@ -796,12 +802,46 @@ export default {
   async fetch() {
     const query = groq`
     *[_type=="storySection"]{
-      _id,
       _createdAt,
-      sectionName,
-      "related": *[_type=="story" && references(^._id)]
+      _id,
+      "name": sectionName,
+      "related": *[_type=="story" && references(^._id)]{
+        _createdAt,
+        _id,
+        _updatedAt,
+        "tag": storyTag,
+        "layout": storyLayout,
+        "format": storyFormat[0]{
+            _key,
+            _type,
+            _type == "textStory" => {
+                headline,
+                "body": storyBody[]
+            },
+            _type == "imageLink" => {
+                linkTo,
+                "alt": linkImage.altText,
+                "imgSrc": linkImage.asset._ref
+            },
+            _type == "videoStory" => {
+                "alt": altText,
+                "url": youtubeUrl
+            },
+        }
     } | order(_createdAt asc)
+} | order(_createdAt asc)
     `
+    // const query = groq`
+    // *[_type=="storySection"]{
+    //   _id,
+    //   _createdAt,
+    //   sectionName,
+    //   "related": *[_type=="story" && references(^._id)]{
+    //     _id,
+    //     _createdAt
+    //   } | order(_createdAt asc)
+    // } | order(_createdAt asc)
+    // `
     // JavaScript
     const sections = await this.$sanity.fetch(query)
     this.storySections = sections
