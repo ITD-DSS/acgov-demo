@@ -26,7 +26,7 @@
       :img-src="format.imgSrc"
       :img-alt="format.alt"
     />
-    <span v-else class="invisible"></span>
+    <span v-else class="hidden"></span>
   </div>
 </template>
 
@@ -66,7 +66,6 @@ export default {
 .full {
   grid-column-start: 1;
   grid-column-end: 3;
-  margin-bottom: 1.75rem;
 }
 .left {
   grid-column-start: 1;
