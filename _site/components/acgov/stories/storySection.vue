@@ -23,38 +23,38 @@ export default {
       default: () => [],
     },
   },
-  data() {
-    return {
-      full: [],
-      left: [],
-      right: [],
-    }
-  },
-  created() {
-    // this.bindToSlot()
-  },
-  methods: {
-    bindToSlot() {
-      const stories = this.storiesData
-      stories.forEach((story) => {
-        switch (story.layout) {
-          case 'full':
-            this.full.push(story)
-            break
-          case 'left':
-            this.left.push(story)
-            break
-          case 'right':
-            this.right.push(story)
-            break
+  // data() {
+  //   return {
+  //     full: [],
+  //     left: [],
+  //     right: [],
+  //   }
+  // },
+  // created() {
+  //   // this.bindToSlot()
+  // },
+  // methods: {
+  //   bindToSlot() {
+  //     const stories = this.storiesData
+  //     stories.forEach((story) => {
+  //       switch (story.layout) {
+  //         case 'full':
+  //           this.full.push(story)
+  //           break
+  //         case 'left':
+  //           this.left.push(story)
+  //           break
+  //         case 'right':
+  //           this.right.push(story)
+  //           break
 
-          default:
-            console.error('No recognized story layouts')
-            break
-        }
-      })
-    },
-  },
+  //         default:
+  //           console.error('No recognized story layouts')
+  //           break
+  //       }
+  //     })
+  //   },
+  // },
 }
 </script>
 
