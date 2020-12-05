@@ -6,12 +6,6 @@
       <h2>{{ sectionName }}</h2>
     </header>
 
-    <!-- <slot name="full" v-bind="full" />
-
-    <slot name="left" v-bind="left" />
-
-    <slot name="right" v-bind="right" /> -->
-
     <slot v-bind="storiesData" />
   </section>
 </template>
