@@ -20,9 +20,10 @@ export default () =>
                             .schemaType('story')
                             .title('Section Stories')
                             .filter( `_type == 'story' && references($secId)`)
-                            .params({secId})
-
+                            .params({secId}),
                         )
-                )
+                        
+                ),
+                S.documentTypeListItem('story')
         
         ])

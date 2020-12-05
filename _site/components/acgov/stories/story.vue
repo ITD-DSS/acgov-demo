@@ -1,7 +1,5 @@
 <template>
-  <div class="flex flex-col">
-    <slot v-bind="storyData" />
-  </div>
+  <story-format-selector v-if="storyData" :component-data="storyData" />
 </template>
 
 <script>

@@ -1,26 +1,28 @@
 <template>
-  <news-story
-    v-if="getStoryFormat === 'textStory'"
-    :key="formatData._key"
-    :category="categoryTag"
-    :headline="formatData.headline"
-  >
-    <SanityContent :blocks="formatData.body" />
-  </news-story>
-  <img-link
-    v-else-if="getStoryFormat === 'imageLink'"
-    :key="formatData._key"
-    :link-to="formatData.linkTo"
-    :img-src="formatData.imgSrc"
-    :img-alt="formatData.alt"
-  />
-  <video-story
-    v-else-if="getStoryFormat === 'videoStory'"
-    :key="formatData._key"
-    :youtube-embed="formatData.url"
-    :vid-alt-text="formatData.alt"
-  />
-  <span v-else class="invisible"></span>
+  <div :class="componentData.layout">
+    <news-story
+      v-if="getStoryFormat === 'textStory'"
+      :key="format._key"
+      :category="componentData.tag"
+      :headline="format.headline"
+    >
+      <SanityContent :blocks="format.body" />
+    </news-story>
+    <img-link
+      v-else-if="getStoryFormat === 'imageLink'"
+      :key="format._key"
+      :link-to="format.linkTo"
+      :img-src="format.imgSrc"
+      :img-alt="format.alt"
+    />
+    <video-story
+      v-else-if="getStoryFormat === 'videoStory'"
+      :key="format._key"
+      :youtube-embed="format.url"
+      :vid-alt-text="format.alt"
+    />
+    <span v-else class="invisible"></span>
+  </div>
 </template>
 
 <script>
@@ -49,46 +51,40 @@
 export default {
   name: 'StoryFormatSelector',
   props: {
-    categoryTag: {
-      type: String,
-      default: '',
-    },
-    formatData: {
+    // categoryTag: {
+    //   type: String,
+    //   default: '',
+    // },
+    componentData: {
       type: Object,
       default: () => {},
       //   validator: (prop) => storyPropValidator(prop),
     },
+    // storyLayout: {
+    //   type: String,
+    //   default: '',
+    // },
   },
   data() {
     return {
-      // newsStory: {
-      //   category: '',
-      //   headline: '',
-      //   body: [],
-      //   keyId: '',
-      // },
-      // imgLink: {
-      //   destLink: '',
-      //   alt: '',
-      //   src: '',
-      //   keyId: '',
-      // },
-      // video: {
-      //   url: '',
-      //   alt: '',
-      //   keyId: '',
-      // },
+      format: {},
     }
   },
   computed: {
     getStoryFormat() {
-      return this.formatData._type
+      return this.componentData.format._type
     },
   },
-  mounted() {
-    // this.parseFormats()
+  created() {
+    this.getFormat()
   },
   methods: {
+    getFormat() {
+      if (this.componentData.format) {
+        return (this.format = this.componentData.format)
+      }
+    },
+
     // parseFormats() {
     //   const formatType = this.getStoryFormat
     //   switch (formatType) {
@@ -122,4 +118,23 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.full {
+  /* grid-column: span 1 / span 3; */
+  grid-column-start: 1;
+  grid-column-end: 3;
+  margin-bottom: 1.75rem;
+}
+.left {
+  /* grid-column: span 1 / span 2; */
+  /* grid-column-end: 2; */
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.right {
+  /* grid-column: span 2 / span 3; */
+  /* grid-column-end: 2; */
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+</style>

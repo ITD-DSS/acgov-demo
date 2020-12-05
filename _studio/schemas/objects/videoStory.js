@@ -5,6 +5,11 @@ export default // VIDEO STORIES
   type: "object",
   fields: [
     {
+      title: "Video Text",
+      name: "videoText",
+      type: "textStory",
+    },
+    {
       title: "Youtube URL",
       name: "youtubeUrl",
       type: "url",

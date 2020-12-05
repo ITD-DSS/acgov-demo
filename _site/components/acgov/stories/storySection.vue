@@ -1,22 +1,18 @@
 <template>
   <section
-    class="grid grid-cols-2 w-8/12 bg-white bg-opacity-90 mt-4 mb-8 mx-auto p-4 gap-x-12"
+    class="news-grid w-8/12 bg-white bg-opacity-90 mt-4 mb-8 mx-auto p-4"
   >
     <header class="sr-only">
       <h2>{{ sectionName }}</h2>
     </header>
-    <div>
-      <div class="col-span-full">
-        <slot name="full" v-bind="full" />
-      </div>
-      <div class="col-start-1 col-end-2">
-        <slot name="left" v-bind="left" />
-      </div>
-      <div class="col-start-2 col-end-3">
-        <slot name="right" v-bind="right" />
-      </div>
-      <!-- </slot> -->
-    </div>
+
+    <!-- <slot name="full" v-bind="full" />
+
+    <slot name="left" v-bind="left" />
+
+    <slot name="right" v-bind="right" /> -->
+
+    <slot v-bind="storiesData" />
   </section>
 </template>
 
@@ -41,7 +37,7 @@ export default {
     }
   },
   created() {
-    this.bindToSlot()
+    // this.bindToSlot()
   },
   methods: {
     bindToSlot() {
@@ -68,4 +64,18 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+/* Partial Override */
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: max-content;
+  grid-auto-flow: row dense;
+  column-gap: 1.25rem;
+  align-content: start;
+  /* grid-auto-flow: row; */
+  /* grid-template-areas:
+    'full full'
+    'left right'; */
+}
+</style>

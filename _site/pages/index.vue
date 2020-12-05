@@ -6,30 +6,30 @@
       :section-name="section.name"
       :stories-data="section.related"
     >
-      <template #left="left">
-        <div v-for="story in left" :key="story._id">
-          <story-format-selector
-            :category-tag="story.tag"
-            :format-data="story.format"
-          />
-        </div>
+      <template #default="stories">
+        <story-format-selector
+          v-for="story in stories"
+          :key="story._id"
+          :component-data="story"
+        />
+        <!-- <story v-for="story in stories" :key="story._id" :story-data="story" /> -->
       </template>
-      <template #right="right">
-        <div v-for="story in right" :key="story._id">
-          <story-format-selector
-            :category-tag="story.tag"
-            :format-data="story.format"
-          />
-        </div>
+      <!-- <template #right="right">
+        <story-format-selector
+          v-for="story in right"
+          :key="story._id"
+          :category-tag="story.tag"
+          :format-data="story.format"
+        />
       </template>
       <template #full="full">
-        <div v-for="story in full" :key="story._id">
-          <story-format-selector
-            :category-tag="story.storyTag"
-            :format-data="story.format"
-          />
-        </div>
-      </template>
+        <story-format-selector
+          v-for="story in full"
+          :key="story._id"
+          :category-tag="story.storyTag"
+          :format-data="story.format"
+        />
+      </template> -->
     </story-section>
 
     <!--PAGEWATCH CODE="CAALAME_1_20080723_151631_en"-->
@@ -794,13 +794,42 @@
 //   Chatbot Code End
 
 import { groq } from '@nuxtjs/sanity'
-import storyFormatSelector from '../components/acgov/stories/storyFormatSelector.vue'
 
-export default {
-  components: { storyFormatSelector },
-  layout: 'acgov-home',
-  async fetch() {
-    const query = groq`
+// const storySectionQuery = groq`
+//   *[_type=="storySection"]{
+//       _createdAt,
+//       _id,
+//       "name": sectionName,
+//   } | order(_createdAt asc)
+// `
+// const relatedStories = (id) => `
+//   *[_type=="story" && references(${id})]{
+//         _createdAt,
+//         _id,
+//         _updatedAt,
+//         "tag": storyTag,
+//         "layout": storyLayout,
+//         "format": storyFormat[0]{
+//             _key,
+//             _type,
+//             _type == "textStory" => {
+//                 headline,
+//                 "body": storyBody[]
+//             },
+//             _type == "imageLink" => {
+//                 linkTo,
+//                 "alt": linkImage.altText,
+//                 "imgSrc": linkImage.asset._ref
+//             },
+//             _type == "videoStory" => {
+//                 "alt": altText,
+//                 "url": youtubeUrl
+//             },
+//         }
+//     } | order(_createdAt asc)
+// `
+
+const query = groq`
     *[_type=="storySection"]{
       _createdAt,
       _id,
@@ -831,6 +860,10 @@ export default {
     } | order(_createdAt asc)
 } | order(_createdAt asc)
     `
+
+export default {
+  layout: 'acgov-home',
+  async fetch() {
     // const query = groq`
     // *[_type=="storySection"]{
     //   _id,
