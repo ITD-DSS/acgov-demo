@@ -2,22 +2,34 @@
   <article class="text-black box-content my-4 pt-2">
     <h3 class="text-sm font-medium pb-2">{{ category }}</h3>
     <h4 class="text-2xl pb-2">{{ headline }}</h4>
-    <p class="text">
+    <p class="text mb-3">
       <slot />
     </p>
-    <slot name="video" />
+    <span v-if="videoUrl || videoAlt">
+      <video-story :vid-alt-text="videoAlt" :youtube-embed="videoUrl" />
+    </span>
   </article>
 </template>
 
 <script>
+import videoStory from './videoStory.vue'
 export default {
   name: 'NewsStory',
+  components: { videoStory },
   props: {
     category: {
       type: String,
       default: '',
     },
     headline: {
+      type: String,
+      default: '',
+    },
+    videoUrl: {
+      type: String,
+      default: '',
+    },
+    videoAlt: {
       type: String,
       default: '',
     },

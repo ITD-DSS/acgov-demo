@@ -5,6 +5,17 @@
       :key="format._key"
       :category="componentData.tag"
       :headline="format.headline"
+      :video-url="format.url"
+      :video-alt="format.alt"
+    >
+      <SanityContent :blocks="format.body" />
+    </news-story>
+    <news-story
+      v-else-if="getStoryFormat === 'videoStory'"
+      :key="format._key"
+      :headline="format.headline"
+      :video-url="format.url"
+      :video-alt="format.alt"
     >
       <SanityContent :blocks="format.body" />
     </news-story>
@@ -14,12 +25,6 @@
       :link-to="format.linkTo"
       :img-src="format.imgSrc"
       :img-alt="format.alt"
-    />
-    <video-story
-      v-else-if="getStoryFormat === 'videoStory'"
-      :key="format._key"
-      :youtube-embed="format.url"
-      :vid-alt-text="format.alt"
     />
     <span v-else class="invisible"></span>
   </div>

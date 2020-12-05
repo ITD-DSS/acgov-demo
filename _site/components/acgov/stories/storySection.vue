@@ -69,7 +69,7 @@ export default {
 .news-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-auto-rows: max-content;
+  grid-auto-rows: min-content;
   grid-auto-flow: row dense;
   column-gap: 1.25rem;
   align-content: start;

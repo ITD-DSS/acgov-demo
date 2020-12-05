@@ -853,6 +853,8 @@ const query = groq`
                 "imgSrc": linkImage.asset._ref
             },
             _type == "videoStory" => {
+                "headline": videoText.headline,
+								"body": videoText.storyBody,
                 "alt": altText,
                 "url": youtubeUrl
             },
