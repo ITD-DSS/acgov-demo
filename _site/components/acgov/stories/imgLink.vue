@@ -1,18 +1,8 @@
 <template>
   <a v-if="linkTo" target="_blank" :href="linkTo">
-    <SanityImage :asset-id="imgSrc">
-      <!-- <template #default="{ src }"> -->
-      <!-- <img class="w-full my-2" :src="src" :alt="imgAlt" /> -->
-      <!-- <img :src="src" /> -->
-      <!-- </template> -->
-    </SanityImage>
+    <SanityImage :asset-id="imgSrc"> </SanityImage>
   </a>
-  <SanityImage v-else :asset-id="imgSrc">
-    <!-- <template #default="{ src }"> -->
-    <!-- <img class="w-full my-2" :src="src" :alt="imgAlt" /> -->
-    <!-- <img :src="src" /> -->
-    <!-- </template> -->
-  </SanityImage>
+  <SanityImage v-else :asset-id="imgSrc"> </SanityImage>
 </template>
 
 <script>
