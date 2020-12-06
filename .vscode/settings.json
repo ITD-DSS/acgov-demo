@@ -58,6 +58,10 @@
     {
       "name": "feature/sanity-dashboard",
       "base": "development"
+    },
+    {
+      "name": "feature/content-calendar",
+      "base": "development"
     }
   ]
 }
