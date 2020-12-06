@@ -54,6 +54,10 @@
     {
       "name": "feature/sanity-nuxt-preview",
       "base": "development"
+    },
+    {
+      "name": "feature/sanity-dashboard",
+      "base": "development"
     }
   ]
 }
