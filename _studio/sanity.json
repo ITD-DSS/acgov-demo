@@ -17,7 +17,8 @@
     "@sanity/dashboard",
     "content-calendar",
     "graph-view",
-    "asset-source-cloudinary"
+    "asset-source-cloudinary",
+    "asset-source-unsplash"
   ],
   "env": {
     "development": {
