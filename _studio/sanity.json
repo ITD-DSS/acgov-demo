@@ -14,7 +14,8 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/production-preview",
-    "@sanity/dashboard"
+    "@sanity/dashboard",
+    "content-calendar"
   ],
   "env": {
     "development": {
