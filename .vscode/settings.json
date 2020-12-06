@@ -62,6 +62,10 @@
     {
       "name": "feature/content-calendar",
       "base": "development"
+    },
+    {
+      "name": "feature/graph-view-plugin",
+      "base": "development"
     }
   ]
 }
