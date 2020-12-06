@@ -66,6 +66,10 @@
     {
       "name": "feature/graph-view-plugin",
       "base": "development"
+    },
+    {
+      "name": "feature/cloudinary-plugin",
+      "base": "development"
     }
   ]
 }

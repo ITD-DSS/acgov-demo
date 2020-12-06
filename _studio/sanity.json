@@ -16,7 +16,8 @@
     "@sanity/production-preview",
     "@sanity/dashboard",
     "content-calendar",
-    "graph-view"
+    "graph-view",
+    "asset-source-cloudinary"
   ],
   "env": {
     "development": {
