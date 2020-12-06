@@ -7,9 +7,9 @@ export default {
     title: "Page Order",
     fields: [
       {
-        name: 'pageMover',
+        name: 'sectionMover',
         type: 'array',
-        title: 'Page Mover',
+        title: 'Section Mover',
         of: [
           
                 

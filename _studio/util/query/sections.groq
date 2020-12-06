@@ -26,4 +26,4 @@
             },
         }
     } | order(_createdAt asc)
-} | order(_createdAt asc)
+}

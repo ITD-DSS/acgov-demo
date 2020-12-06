@@ -9,6 +9,7 @@ export default () =>
             .title('Section Order')
             .child(
               S.editor()
+                .title('Section Mover')
                 .schemaType('pageOrder')
                 .documentId('pageOrder')
             ),

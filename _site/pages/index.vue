@@ -2,9 +2,9 @@
   <main class="flex flex-col">
     <story-section
       v-for="section in storySections"
-      :key="section._id"
-      :section-name="section.name"
-      :stories-data="section.related"
+      :key="section.content._id"
+      :section-name="section.content.name"
+      :stories-data="section.content.related"
     >
       <template #default="stories">
         <story-format-selector
@@ -56,43 +56,51 @@
 import { groq } from '@nuxtjs/sanity'
 
 const query = groq`
-    *[_type=="storySection"]{
-      _createdAt,
-      _id,
-      "name": sectionName,
-      "related": *[_type=="story" && references(^._id)]{
-        _createdAt,
-        _id,
-        _updatedAt,
-        "tag": storyTag,
-        "layout": storyLayout,
-        "format": storyFormat[0]{
-            _key,
-            _type,
-            _type == "textStory" => {
-                headline,
-                "body": storyBody[]
-            },
-            _type == "imageLink" => {
-                linkTo,
-                "alt": linkImage.altText,
-                "imgSrc": linkImage.asset._ref
-            },
-            _type == "videoStory" => {
-                "headline": videoText.headline,
-								"body": videoText.storyBody,
-                "alt": altText,
-                "url": youtubeUrl
-            },
+    *[_type == "pageOrder"][0]{
+      _updatedAt,
+      "sections": sectionMover[]{
+        _key,
+        _ref,
+        "content": *[_type == "storySection" && ^._ref == _id][0]{
+            _createdAt,
+            _id,
+            "name": sectionName,
+            "related": *[_type=="story" && references(^._id)]{
+                _createdAt,
+                _id,
+                _updatedAt,
+                "tag": storyTag,
+                "layout": storyLayout,
+                "format": storyFormat[0]{
+                    _key,
+                    _type,
+                    _type == "textStory" => {
+                        headline,
+                        "body": storyBody[]
+                    },
+                    _type == "imageLink" => {
+                        linkTo,
+                        "alt": select(imageLink.altText),
+                        "imgSrc": linkImage.asset._ref
+                    },
+                    _type == "videoStory" => {
+                        "headline": videoText.headline,
+                        "body": videoText.storyBody,
+                        altText,
+                        "url": youtubeUrl
+                    },
+                }
+            } | order(_createdAt asc)
         }
-    } | order(_createdAt asc)
-} | order(_createdAt asc)
-    `
+    }
+}
+`
 
 export default {
   layout: 'acgov-home',
   async fetch() {
-    const sections = await this.$sanity.fetch(query)
+    const result = await this.$sanity.fetch(query)
+    const { sections } = result
     this.storySections = sections
   },
   data() {
