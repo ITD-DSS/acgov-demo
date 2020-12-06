@@ -1,4 +1,4 @@
 export default async ({ $sanity, $config }) => {
-  const token = $config.SanityNuxtToken
+  const token = await $config.SanityNuxtToken
   $sanity.setToken(token)
 }
