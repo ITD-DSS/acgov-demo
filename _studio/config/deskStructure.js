@@ -5,6 +5,13 @@ export default () =>
         .title('ACgov Content')
         .items([
             S.documentTypeListItem('siteSettings'),
+            S.listItem()
+            .title('Section Order')
+            .child(
+              S.editor()
+                .schemaType('pageOrder')
+                .documentId('pageOrder')
+            ),
 
             S.listItem()
                 .schemaType('storySection')
