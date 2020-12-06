@@ -1,0 +1,9 @@
+{
+    "types": [
+        {
+            "type": "story",
+            "field": "publishedAt",
+            "titleField": "title"
+        }
+    ]
+}

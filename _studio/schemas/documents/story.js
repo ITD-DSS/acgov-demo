@@ -68,5 +68,16 @@ export default {
       },
       validation: (Rule) => Rule.length(1),
     },
+    {
+      title: 'Publish Date',
+      name: 'publishedAt',
+      type: 'datetime',
+      options: {
+        dateFormat: 'DD-MM-YYYY',
+        timeFormat: 'HH:mm',
+        calendarTodayLabel: 'Today'
+      },
+      validation: Rule => Rule.min(Date.now())
+    }
   ],
 };
