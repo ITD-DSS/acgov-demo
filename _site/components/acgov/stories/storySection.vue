@@ -66,7 +66,7 @@ export default {
   grid-auto-rows: min-content;
   grid-auto-flow: row dense;
   column-gap: 1.25rem;
-  row-gap: 1.25rem;
+  row-gap: 0.75rem;
   /* align-content: start; */
   /* grid-auto-flow: row; */
   /* grid-template-areas:
