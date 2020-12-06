@@ -70,6 +70,7 @@ export default {
 .left {
   grid-column-start: 1;
   grid-column-end: 2;
+  align-self: center;
 }
 .right {
   grid-column-start: 2;
