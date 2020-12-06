@@ -11,16 +11,20 @@ export default {
         type: 'array',
         title: 'Page Mover',
         of: [
+          
+                
+            { type: 'storySection', title: 'News Section'},
             {
                 type: 'reference',
                 to: [
-                  {type: 'storySection'}
+                  {type: 'storySection'},
                 ]
             }
+           
           ],
         options: {
             // layout: 'grid'
-            // list: [{ value: 'sectionName' , title: 'Section'}]
+            // list: [{ title: 'sectionName' }]
         },
         validation: Rule => Rule.unique()
       }
