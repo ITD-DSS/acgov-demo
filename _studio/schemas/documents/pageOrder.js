@@ -13,11 +13,11 @@ export default {
         of: [
           
                 
-            { type: 'storySection', title: 'News Section'},
+            { type: 'storySection', title: 'New Section'},
             {
                 type: 'reference',
                 to: [
-                  {type: 'storySection'},
+                  {type: 'storySection', title: 'Existing Sections'},
                 ]
             }
            
