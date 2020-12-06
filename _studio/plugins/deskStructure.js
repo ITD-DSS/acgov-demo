@@ -2,28 +2,53 @@ import S from '@sanity/desk-tool/structure-builder'
 
 export default () => 
     S.list()
-        .title('acgov Content')
+        .title('ACgov Content')
         .items([
             S.documentTypeListItem('siteSettings'),
-            S.divider(),
+
             S.listItem()
                 .schemaType('storySection')
-                .title('News Sections')
+                .title('Section Settings')
                 .child(
                     S.documentList()
                         .title('Section')
                         .schemaType('storySection')
+                        .defaultOrdering([{ field: '_createdAt', direction: 'asc' }])
+                        .filter(`_type == "storySection"`)
+                ),
+            S.divider(),
+            S.listItem()
+                .schemaType('storySection')
+                .title('News by Section')
+                .child(
+                    S.documentList()
+                        .title('Section')
+                        .schemaType('storySection')
+                        .defaultOrdering([{ field: '_createdAt', direction: 'asc' }])
                         .filter(`_type == "storySection"`)
                         .child( secId =>
 
                             S.documentList()
-                            .schemaType('story')
-                            .title('Section Stories')
-                            .filter( `_type == 'story' && references($secId)`)
-                            .params({secId}),
-                        )
-                        
+                                .schemaType('story')
+                                .defaultOrdering([{ field: '_createdAt', direction: 'asc' }])
+                                .title('Section Stories')
+                                .filter( `_type == 'story' && references($secId)`)
+                                .params({secId}),
+                            )
+
+                        ),
+
+             S.listItem()
+                .schemaType('story')
+                .title('News Stories')
+                .child(
+                    S.documentList()
+                        .title('Stories')
+                        .schemaType('story')
+                        .defaultOrdering([{ field: '_createdAt', direction: 'asc' }])
+                        .filter(`_type == "story"`)
                 ),
-                S.documentTypeListItem('story')
+                    
+            
         
-        ])
+                ])
