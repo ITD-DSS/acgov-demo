@@ -15,7 +15,8 @@
     "@sanity/desk-tool",
     "@sanity/production-preview",
     "@sanity/dashboard",
-    "content-calendar"
+    "content-calendar",
+    "graph-view"
   ],
   "env": {
     "development": {
