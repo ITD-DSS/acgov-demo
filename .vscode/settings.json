@@ -24,7 +24,7 @@
     "titleBar.inactiveForeground": "#15202b99"
   },
   "peacock.color": "#3ee544",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "vetur.validation.template": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
@@ -33,13 +33,7 @@
     "develop": "development",
     "master": "production"
   },
-  "githubIssues.createIssueTriggers": [
-    "TODO",
-    "BUG",
-    "FIXME",
-    "ISSUE",
-    "HACK"
-  ],
+  "githubIssues.createIssueTriggers": ["TODO", "BUG", "FIXME", "ISSUE", "HACK"],
   "gitflow4code.features": [
     {
       "name": "feature/content-component-structuring",
@@ -55,6 +49,10 @@
     },
     {
       "name": "feature/sanity-schemas",
+      "base": "development"
+    },
+    {
+      "name": "feature/sanity-nuxt-preview",
       "base": "development"
     }
   ]

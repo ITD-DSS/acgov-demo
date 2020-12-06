@@ -1,0 +1,29 @@
+*[_type=="storySection"]{
+      _createdAt,
+      _id,
+      "name": sectionName,
+      "related": *[_type=="story" && references(^._id)]{
+        _createdAt,
+        _id,
+        _updatedAt,
+        "tag": storyTag,
+        "layout": storyLayout,
+        "format": storyFormat[0]{
+            _key,
+            _type,
+            _type == "textStory" => {
+                headline,
+                "body": storyBody[]
+            },
+            _type == "imageLink" => {
+                linkTo,
+                "alt": linkImage.altText,
+                "imgSrc": linkImage.asset._ref
+            },
+            _type == "videoStory" => {
+                "alt": altText,
+                "url": youtubeUrl
+            },
+        }
+    } | order(_createdAt asc)
+} | order(_createdAt asc)

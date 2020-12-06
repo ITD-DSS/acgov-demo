@@ -8,6 +8,7 @@
       allow="encrypted-media"
       allowfullscreen
     ></iframe>
+    <span class="sr-only">{{ vidAltText }}</span>
   </div>
 </template>
 
@@ -16,6 +17,10 @@ export default {
   name: 'VideoStory',
   props: {
     youtubeEmbed: {
+      type: String,
+      default: '',
+    },
+    vidAltText: {
       type: String,
       default: '',
     },

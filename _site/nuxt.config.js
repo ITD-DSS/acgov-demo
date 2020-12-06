@@ -10,7 +10,9 @@ export default {
   static: {
     prefix: false,
   },
-
+  privateRuntimeConfig: {
+    SanityNuxtToken: process.env.SANITY_NUXT_TOKEN,
+  },
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
@@ -41,18 +43,18 @@ export default {
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  // plugins: [],
+  plugins: ['@/plugins/preview.client.js', '@/plugins/sanity.server.js'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    '@nuxtjs/sanity',
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/sanity',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -63,13 +65,14 @@ export default {
 
   sanity: {
     // minimal: true,
-    projectId: 'veavi1vm',
+    // projectId: 'veavi1vm',
+    withCredentials: true,
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
   generate: {
-    // dir: 'ece-test',
+    fallback: true,
   },
   // buildDir: 'ece-test',
   // Build Configuration (https://go.nuxtjs.dev/config-build)

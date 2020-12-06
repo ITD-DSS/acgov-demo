@@ -1,25 +1,12 @@
 <template>
-  <!-- 
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #333;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  box-sizing: border-box;
-  margin: 20px auto 40px auto;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 0px; 
--->
   <section
-    class="grid grid-cols-2 w-8/12 bg-white bg-opacity-90 mt-4 mb-8 mx-auto p-4 gap-x-12"
+    class="news-grid w-8/12 bg-white bg-opacity-90 mt-4 mb-8 mx-auto p-4"
   >
     <header class="sr-only">
       <h2>{{ sectionName }}</h2>
     </header>
-    <!-- <slot /> -->
-    <div class="col-span-full"><slot name="full" /></div>
-    <div class="col-start-1 col-end-2"><slot name="left" /></div>
-    <div class="col-start-2 col-end-3"><slot name="right" /></div>
+
+    <slot v-bind="storiesData" />
   </section>
 </template>
 
@@ -31,8 +18,59 @@ export default {
       type: String,
       default: 'Story section name',
     },
+    storiesData: {
+      type: Array,
+      default: () => [],
+    },
   },
+  // data() {
+  //   return {
+  //     full: [],
+  //     left: [],
+  //     right: [],
+  //   }
+  // },
+  // created() {
+  //   // this.bindToSlot()
+  // },
+  // methods: {
+  //   bindToSlot() {
+  //     const stories = this.storiesData
+  //     stories.forEach((story) => {
+  //       switch (story.layout) {
+  //         case 'full':
+  //           this.full.push(story)
+  //           break
+  //         case 'left':
+  //           this.left.push(story)
+  //           break
+  //         case 'right':
+  //           this.right.push(story)
+  //           break
+
+  //         default:
+  //           console.error('No recognized story layouts')
+  //           break
+  //       }
+  //     })
+  //   },
+  // },
 }
 </script>
 
-<style></style>
+<style>
+/* Partial Override */
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: min-content;
+  grid-auto-flow: row dense;
+  column-gap: 1.25rem;
+  row-gap: 0.75rem;
+  /* align-content: start; */
+  /* grid-auto-flow: row; */
+  /* grid-template-areas:
+    'full full'
+    'left right'; */
+}
+</style>
