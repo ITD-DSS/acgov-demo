@@ -3,7 +3,7 @@
         {
             "type": "story",
             "field": "publishedAt",
-            "titleField": "title"
+            "titleField": "refName"
         }
     ]
 }
