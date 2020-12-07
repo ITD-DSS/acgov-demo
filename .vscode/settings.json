@@ -82,6 +82,10 @@
     {
       "name": "feature/document-actions",
       "base": "development"
+    },
+    {
+      "name": "feature/content-model-graph",
+      "base": "development"
     }
   ]
 }
