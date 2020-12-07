@@ -57,7 +57,7 @@ export default {
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
   generate: {
-    dir: 'ece-test',
+    dir: 'dist',
   },
   // buildDir: 'ece-test',
   // Build Configuration (https://go.nuxtjs.dev/config-build)
