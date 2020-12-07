@@ -18,13 +18,14 @@
     "content-calendar",
     "graph-view",
     "asset-source-cloudinary",
-    "asset-source-unsplash",
-    "content-model-graph"
+    "asset-source-unsplash"
+    
   ],
   "env": {
     "development": {
       "plugins": [
-        "@sanity/vision"
+        "@sanity/vision",
+        "content-model-graph"
       ]
     }
   },
