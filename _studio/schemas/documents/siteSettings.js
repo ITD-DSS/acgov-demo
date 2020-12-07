@@ -2,7 +2,7 @@ export default {
   name: "siteSettings",
   type: "document",
   title: "Site Settings",
-  //   __experimental_actions: ["update", /* 'create', 'delete', */ "publish"],
+  __experimental_actions: ["update", /* 'create', 'delete', */ "publish"],
   fields: [
     {
       name: "title",
@@ -40,6 +40,9 @@ export default {
       title: "Background Image",
       name: "bgImageMain",
       type: "image",
+      options: {
+        hotspot: true, // <-- Defaults to false
+      },
       fields: [
         {
           // Editing this field will be hidden behind an "Edit"-button

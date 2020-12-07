@@ -5,6 +5,7 @@ export default {
     name: "pageOrder",
     type: "document",
     title: "Page Order",
+    __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
     fields: [
       {
         name: 'sectionMover',

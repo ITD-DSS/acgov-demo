@@ -4,7 +4,15 @@ export default () =>
     S.list()
         .title('ACgov Content')
         .items([
-            S.documentTypeListItem('siteSettings'),
+            // S.documentTypeListItem('siteSettings'),
+            S.listItem()
+            .title('Site Settings')
+            .child(
+              S.editor()
+                .title('Basic Site Settings')
+                .schemaType('siteSettings')
+                .documentId('siteSettings')
+            ),
             S.listItem()
             .title('Section Order')
             .child(
