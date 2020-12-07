@@ -78,6 +78,10 @@
     {
       "name": "feature/sort-by-pageOrder-document",
       "base": "development"
+    },
+    {
+      "name": "feature/document-actions",
+      "base": "development"
     }
   ]
 }

@@ -13,6 +13,7 @@ export default () =>
                 .schemaType('siteSettings')
                 .documentId('siteSettings')
             ),
+            S.divider(),
             S.listItem()
             .title('Section Order')
             .child(
