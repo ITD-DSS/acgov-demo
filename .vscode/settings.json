@@ -86,6 +86,10 @@
     {
       "name": "feature/content-model-graph",
       "base": "development"
+    },
+    {
+      "name": "feature/google-analytics",
+      "base": "development"
     }
   ]
 }
