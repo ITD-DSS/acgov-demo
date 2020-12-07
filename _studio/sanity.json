@@ -18,7 +18,8 @@
     "content-calendar",
     "graph-view",
     "asset-source-cloudinary",
-    "asset-source-unsplash"
+    "asset-source-unsplash",
+    "content-model-graph"
   ],
   "env": {
     "development": {
