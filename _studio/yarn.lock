@@ -5425,6 +5425,10 @@ lodash.curry@^4.0.1:
   version "4.1.1"
   resolved "https://registry.npmjs.org/lodash.curry/-/lodash.curry-4.1.1.tgz#248e36072ede906501d75966200a86dab8b23170"
 
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+
 lodash.defaults@^4.2.0:
   version "4.2.0"
   resolved "https://registry.npmjs.org/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
@@ -7266,6 +7270,12 @@ react-datepicker@^1.8.0:
     react-onclickoutside "^6.7.1"
     react-popper "^1.0.2"
 
+react-debounce-render@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/react-debounce-render/-/react-debounce-render-5.0.0.tgz#ed5a30b40b0f1e52da83c7add33334a6cde7cead"
+  dependencies:
+    lodash.debounce "^4.0.8"
+
 react-dom@^17.0:
   version "17.0.1"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-17.0.1.tgz#1de2560474ec9f0e334285662ede52dbc5426fc6"
@@ -7292,6 +7302,12 @@ react-force-graph@^1.37.0:
     force-graph "^1.34.1"
     prop-types "^15.7.2"
     react-kapsule "^2.2.1"
+
+react-google-charts@^3.0.15:
+  version "3.0.15"
+  resolved "https://registry.npmjs.org/react-google-charts/-/react-google-charts-3.0.15.tgz#30759a470f48336e744fd383d054122b039a1ff2"
+  dependencies:
+    react-load-script "^0.0.6"
 
 react-hot-loader@^4.12.11:
   version "4.13.0"
@@ -7359,6 +7375,10 @@ react-kapsule@^2.2.1:
 react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.npmjs.org/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+
+react-load-script@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.npmjs.org/react-load-script/-/react-load-script-0.0.6.tgz#db6851236aaa25bb622677a2eb51dad4f8d2c258"
 
 react-measure@^2.3.0:
   version "2.5.2"
@@ -7847,6 +7867,14 @@ sanity-plugin-content-model-graph@^1.1.1:
     react-icons "3.10.0"
     styled-components "5.1.0"
     viz.js "2.1.2"
+
+sanity-plugin-google-analytics@^0.2.6:
+  version "0.2.6"
+  resolved "https://registry.npmjs.org/sanity-plugin-google-analytics/-/sanity-plugin-google-analytics-0.2.6.tgz#ca21edd59064101e26acacd513571136b1188f43"
+  dependencies:
+    "@babel/runtime" "^7.6.3"
+    react-debounce-render "^5.0.0"
+    react-google-charts "^3.0.15"
 
 sanity-plugin-graph-view@^1.0.4:
   version "1.0.4"
