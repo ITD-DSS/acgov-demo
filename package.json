@@ -12,10 +12,6 @@
     "postinstall": "lerna bootstrap",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ITD-DSS/designer-breakdown-template.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
