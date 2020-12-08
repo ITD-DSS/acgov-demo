@@ -14,6 +14,7 @@ import textStory from "./objects/textStory";
 import videoStory from "./objects/videoStory";
 import imageLink from "./objects/imageLink";
 import bgImage from "./objects/bgImage";
+import linkImage from "./objects/linkImage";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -29,6 +30,7 @@ export default createSchema({
     textStory,
     videoStory,
     imageLink,
-    bgImage
+    bgImage,
+    linkImage
   ]),
 });
