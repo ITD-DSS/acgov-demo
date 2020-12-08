@@ -1,20 +1,16 @@
 {
-  "name": "designer-breakdown-template",
-  "version": "1.0.0",
+  "name": "acgov-sanity-cms-demo",
+  "version": "0.0.1",
   "description": "",
   "scripts": {
     "build": "lerna run build --parallel",
     "dev": "lerna run dev --parallel",
     "site-dev": "(cd _site) && npm run dev",
-    "build-studio": "lerna bootstrap && (cd studio && npm run build)",
-    "build-site": "lerna bootstrap && (cd studio && SANITY_AUTH_TOKEN=$SANITY_DEPLOY_STUDIO_TOKEN npm run graphql-deploy) && (cd _site && npm run build)",
+    "build-studio": "lerna bootstrap && (cd _studio && npm run build)",
+    "build-site": "lerna bootstrap && (cd _studio && SANITY_AUTH_TOKEN=$SANITY_DEPLOY_STUDIO_TOKEN npm run graphql-deploy) && (cd _site && npm run build)",
     "graphql-deploy": "lerna run graphql-deploy",
     "postinstall": "lerna bootstrap",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ITD-DSS/designer-breakdown-template.git"
   },
   "keywords": [],
   "author": "",
@@ -25,12 +21,10 @@
   "homepage": "https://github.com/ITD-DSS/designer-breakdown-template#readme",
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.12.8",
     "@sanity/cli": "^2.0.*",
     "dotenv": "^8.2.0",
-    "dotenv-quokka-plugin": "^1.0.0",
     "lerna": "^3.22.*",
-    "ssh2-sftp-client": "^5.3.1",
-    "url-parse": "^1.4.7",
-    "website-scraper": "^4.2.3"
+    "ssh2-sftp-client": "^5.3.1"
   }
 }
