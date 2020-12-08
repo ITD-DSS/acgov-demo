@@ -2,12 +2,15 @@
   "name": "acgov-sanity-cms-demo",
   "version": "0.0.1",
   "description": "",
+  "engines": {
+    "node": "^14.15.*"
+  },
   "scripts": {
     "build": "lerna run build --parallel",
     "dev": "lerna run dev --parallel",
     "site-dev": "(cd _site) && npm run dev",
     "build-studio": "lerna bootstrap && (cd _studio && npm run build)",
-    "build-site": "lerna bootstrap && (cd _studio && SANITY_AUTH_TOKEN=$SANITY_DEPLOY_STUDIO_TOKEN npm run graphql-deploy) && (cd _site && npm run build)",
+    "build-site": "lerna bootstrap && (cd _studio && SANITY_AUTH_TOKEN=$SANITY_DEPLOY_STUDIO_TOKEN npm run graphql-deploy) && (cd _site && npm run generate)",
     "graphql-deploy": "lerna run graphql-deploy",
     "postinstall": "lerna bootstrap",
     "test": "echo \"Error: no test specified\" && exit 1"

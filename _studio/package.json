@@ -6,6 +6,9 @@
   "main": "package.json",
   "author": "Jonathan A. M <ontoneio.mm@gmail.com>",
   "license": "UNLICENSED",
+  "engines": {
+    "node": "^14.15.*"
+  },
   "scripts": {
     "dev": "sanity start",
     "start": "sanity start",
