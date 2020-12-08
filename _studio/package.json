@@ -10,7 +10,8 @@
     "dev": "sanity start",
     "start": "sanity start",
     "test": "sanity check",
-    "build": "sanity build"
+    "build": "sanity build",
+    "graphql-deploy": "sanity graphql deploy --playground"
   },
   "keywords": [
     "sanity"
