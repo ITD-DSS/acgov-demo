@@ -90,6 +90,10 @@
     {
       "name": "feature/google-analytics",
       "base": "development"
+    },
+    {
+      "name": "feature/netlify-deploy-plugin",
+      "base": "development"
     }
   ]
 }
