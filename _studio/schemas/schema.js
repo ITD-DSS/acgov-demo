@@ -8,7 +8,7 @@ import pageOrder from "./documents/pageOrder";
 import siteSettings from "./documents/siteSettings";
 import storySection from "./documents/storySection";
 // import storySection from "./documents/frontPage";
-import Story from "./documents/Story";
+import Story from "./documents/story";
 
 import textStory from "./objects/textStory";
 import videoStory from "./objects/videoStory";
