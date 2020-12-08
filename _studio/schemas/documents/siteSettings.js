@@ -40,8 +40,8 @@ export default {
     },
     {
       title: 'Site Background Image',
-      name:'bgImageMain',
-      type: 'bgImage'
+      type: 'bgImage',
+      name:'bgImage',
     }
   ],
 };
