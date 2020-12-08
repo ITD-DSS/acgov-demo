@@ -10,6 +10,12 @@ export default {
   static: {
     prefix: false,
   },
+  publicRuntimeConfig: {
+    googleAnalytics: {
+      id: process.env.GOOGLE_ANALYTICS_ID,
+      dev: process.env.NODE_ENV !== 'production',
+    },
+  },
   privateRuntimeConfig: {
     SanityNuxtToken: process.env.SANITY_NUXT_TOKEN,
   },
@@ -37,7 +43,7 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [],
+  css: ['~/assets/css/main.css'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: ['@/plugins/preview.client.js', '@/plugins/sanity.server.js'],
@@ -52,6 +58,7 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxtjs/sanity',
+    '@nuxtjs/google-analytics',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
