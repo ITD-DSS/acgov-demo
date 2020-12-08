@@ -1,10 +1,18 @@
+import dotenv from 'dotenv'
+import find from 'find-up'
+export const findEnv = () => find.sync(process.env.ENV_FILE || '.env')
+
+dotenv.config({ path: findEnv() })
+
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: true,
   static: {
     prefix: false,
   },
-
+  privateRuntimeConfig: {
+    SanityNuxtToken: process.env.SANITY_NUXT_TOKEN,
+  },
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
@@ -17,30 +25,33 @@ export default {
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ],
-    //   link: [
-    //     {
-    //       rel: 'stylesheet',
-    //       href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
-    //     },
-    //   ],
+    link: [
+      // {
+      //   rel: 'stylesheet',
+      //   href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+      // },
+    ],
+    bodyAttrs: {
+      class: ['container', 'font-acgov', 'text-body'],
+    },
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  // plugins: [],
+  plugins: ['@/plugins/preview.client.js', '@/plugins/sanity.server.js'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    '@nuxtjs/sanity',
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/sanity',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -50,14 +61,16 @@ export default {
   ],
 
   sanity: {
-    minimal: true,
-    projectId: 'ehhijqba',
+    // minimal: true,
+    // projectId: 'veavi1vm',
+    withCredentials: true,
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
   generate: {
     dir: 'dist',
+    fallback: true,
   },
   // buildDir: 'ece-test',
   // Build Configuration (https://go.nuxtjs.dev/config-build)
