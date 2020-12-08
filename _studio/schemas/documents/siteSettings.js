@@ -1,3 +1,5 @@
+import bgImage from "../objects/bgImage";
+
 export default {
   name: "siteSettings",
   type: "document",
@@ -37,20 +39,9 @@ export default {
       },
     },
     {
-      title: "Background Image",
-      name: "bgImageMain",
-      type: "image",
-      options: {
-        hotspot: true, // <-- Defaults to false
-      },
-      fields: [
-        {
-          // Editing this field will be hidden behind an "Edit"-button
-          name: "attribution",
-          type: "string",
-          title: "Attribution",
-        },
-      ],
-    },
+      title: 'Site Background Image',
+      name:'bgImageMain',
+      type: 'bgImage'
+    }
   ],
 };
