@@ -12585,6 +12585,11 @@ vue@^2.6.10, vue@^2.6.12:
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.12.tgz#f5ebd4fa6bd2869403e29a896aed4904456c9123"
   integrity sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg==
 
+vuetensils@^0.7.7:
+  version "0.7.7"
+  resolved "https://registry.yarnpkg.com/vuetensils/-/vuetensils-0.7.7.tgz#685f86a2b49f3a7c65ccf05385fdbc02e295525f"
+  integrity sha512-jq8waAtmT5kqjoUYtVjbGHqaoUagBE4rivzTQmt0XlWidwKvhv6LGv72jOBuzaFsXXHakChfDSc7MKxuL/9qww==
+
 vuex@^3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.6.0.tgz#95efa56a58f7607c135b053350833a09e01aa813"
