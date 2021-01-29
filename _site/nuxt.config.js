@@ -1,8 +1,8 @@
 import dotenv from 'dotenv'
-import find from 'find-up'
-export const findEnv = () => find.sync(process.env.ENV_FILE || '.env')
+// import find from 'find-up'
+// export const findEnv = () => find.sync(process.env.ENV_FILE || '.env')
 
-dotenv.config({ path: findEnv() })
+dotenv.config()
 
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
@@ -53,9 +53,10 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
-    '@nuxtjs/stylelint-module',
+    // '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/sanity',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
