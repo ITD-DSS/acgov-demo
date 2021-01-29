@@ -70,7 +70,6 @@ typings/
 
 # Nuxt generate
 dist
-ece-test
 # vuepress build output
 .vuepress/dist
 

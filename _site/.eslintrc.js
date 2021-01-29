@@ -5,11 +5,11 @@ module.exports = {
     browser: true,
   },
   extends: [
-    '@nuxtjs',
-    'plugin:vue/recommended',
-    'eslint:recommended',
+    '@nuxtjs/eslint-config-typescript',
+    'prettier',
     'prettier/vue',
     'plugin:prettier/recommended',
+    'plugin:nuxt/recommended',
   ],
   rules: {
     'vue/component-name-in-template-casing': ['error', 'PascalCase'],
@@ -22,11 +22,7 @@ module.exports = {
       },
     ],
   },
-  globals: {
-    $nuxt: true,
-  },
-  parserOptions: {
-    parser: 'babel-eslint',
-    sourceType: 'module',
-  },
+  
+  plugins: ['prettier'],
+  // add your custom rules here
 }

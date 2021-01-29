@@ -1,30 +1,26 @@
 {
-  "name": "acgov-sanity-cms-demo",
+  "name": "acgov-nuxt",
   "version": "0.0.1",
-  "description": "",
+  "description": "cms project template",
   "scripts": {
-    "build": "lerna run build --parallel",
-    "dev": "lerna run dev --parallel",
-    "site-dev": "(cd _site) && npm run dev",
-    "build-studio": "lerna bootstrap && (cd _studio && npm run build)",
-    "build-site": "lerna bootstrap && (cd _studio && SANITY_AUTH_TOKEN=$SANITY_DEPLOY_STUDIO_TOKEN npm run graphql-deploy) && (cd _site && npm run build)",
-    "graphql-deploy": "lerna run graphql-deploy",
-    "postinstall": "lerna bootstrap",
+    "postinstall": "run-s boot:**",
+    "boot:site": "(cd _site) && yarn install",
+    "boot:studio": "(cd _studio) && yarn install",
+    "dev:site": "(cd _site) && yarn run dev",
+    "dev:studio": "(cd _studio) && yarn run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.acgov.org/scm/dr/dss-main-nuxt.git"
+  },
+  "devDependencies": {
+    "@sanity/cli": "^2.2.*",
+    "dotenv": "^8.2.0",
+    "yarn-run-all": "^3.1.1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ITD-DSS/designer-breakdown-template/issues"
-  },
-  "homepage": "https://github.com/ITD-DSS/designer-breakdown-template#readme",
-  "dependencies": {},
-  "devDependencies": {
-    "@babel/core": "^7.12.8",
-    "@sanity/cli": "^2.0.*",
-    "dotenv": "^8.2.0",
-    "lerna": "^3.22.*",
-    "ssh2-sftp-client": "^5.3.1"
-  }
+  "license": "",
+  "dependencies": {}
 }

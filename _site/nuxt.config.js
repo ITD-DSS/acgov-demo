@@ -18,7 +18,7 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    //   title: 'Early Care & Education Planning Council - Alameda County',
+    title: 'otio-main-nuxt',
     meta: [
       { charset: 'utf-8' },
       // <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,19 +46,22 @@ export default {
   plugins: ['@/plugins/preview.client.js', '@/plugins/sanity.server.js'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
-  components: true,
+  components: [{ path: '~/node_modules/vuetensils/src/components' }],
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
+    // https://go.nuxtjs.dev/typescript
+    '@nuxt/typescript-build',
+    // https://go.nuxtjs.dev/stylelint
+    '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/sanity',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    // https://go.nuxtjs.dev/axios
+    '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
   ],
