@@ -21,10 +21,12 @@
   </header>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'GlobalHeader',
-}
+})
 </script>
 
 <style lang="scss">

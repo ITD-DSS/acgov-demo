@@ -28,10 +28,11 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
   name: 'TranslateModal',
-}
+})
 </script>
 
 <style scoped></style>

@@ -11,9 +11,10 @@
   </article>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 import videoStory from './videoStory.vue'
-export default {
+export default Vue.extend({
   name: 'NewsStory',
   components: { videoStory },
   props: {
@@ -34,7 +35,7 @@ export default {
       default: '',
     },
   },
-}
+})
 </script>
 
 <style scoped>

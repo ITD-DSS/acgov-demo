@@ -10,8 +10,9 @@
   </section>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
   name: 'StorySection',
   props: {
     sectionName: {
@@ -55,7 +56,7 @@ export default {
   //     })
   //   },
   // },
-}
+})
 </script>
 
 <style>

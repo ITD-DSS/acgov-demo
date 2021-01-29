@@ -5,8 +5,9 @@
   <SanityImage v-else :asset-id="imgSrc"> </SanityImage>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
   name: 'ImgLink',
   props: {
     imgSrc: {
@@ -22,7 +23,7 @@ export default {
       default: '',
     },
   },
-}
+})
 </script>
 
 <style></style>

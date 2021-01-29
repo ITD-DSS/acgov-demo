@@ -39,8 +39,10 @@
   </footer>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'AcgovFooter',
   data() {
     return {
@@ -91,7 +93,7 @@ export default {
       return this.currentDate.getFullYear()
     },
   },
-}
+})
 </script>
 
 <style></style>

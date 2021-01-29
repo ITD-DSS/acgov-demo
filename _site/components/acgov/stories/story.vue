@@ -2,8 +2,9 @@
   <story-format-selector v-if="storyData" :component-data="storyData" />
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
   name: 'Story',
   props: {
     storyData: {
@@ -81,7 +82,7 @@ export default {
     //   }
     // },
   },
-}
+})
 </script>
 
 <style scoped></style>

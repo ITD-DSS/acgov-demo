@@ -18,7 +18,8 @@
   </main>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 // TODO: Integrate Google Translate
 
 //  TODO: Implement interactions stylings
@@ -96,7 +97,7 @@ const query = groq`
 }
 `
 
-export default {
+export default Vue.extend({
   layout: 'acgov-home',
   async fetch() {
     const result = await this.$sanity.fetch(query)
@@ -161,7 +162,7 @@ export default {
   //     query.preview === 'true' || store.state.moviesSlugs.includes(params.slug)
   //   )
   // },
-}
+})
 </script>
 
 <style>

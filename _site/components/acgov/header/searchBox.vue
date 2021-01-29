@@ -131,10 +131,11 @@ width: 90%; -->
   </section>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
   name: 'SearchBox',
-}
+})
 </script>
 
 <style></style>
