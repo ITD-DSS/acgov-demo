@@ -89,7 +89,7 @@ export default Vue.extend({
     }
   },
   computed: {
-    currentYear() {
+    currentYear(): number {
       return this.currentDate.getFullYear()
     },
   },

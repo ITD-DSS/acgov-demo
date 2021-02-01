@@ -46,7 +46,7 @@ export default Vue.extend({
     }
   },
   computed: {
-    getStoryFormat() {
+    getStoryFormat(): string {
       return this.componentData.format._type
     },
   },
