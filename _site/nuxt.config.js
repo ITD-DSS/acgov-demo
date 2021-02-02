@@ -20,7 +20,9 @@ export default {
   plugins: [],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
-  components: [{ path: '~/node_modules/vuetensils/src/components' }],
+  components: [
+    { path: '~/node_modules/vuetensils/src/components', global: true },
+  ],
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
