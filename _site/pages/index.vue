@@ -111,7 +111,7 @@ export default Vue.extend({
   },
   head() {
     return {
-      title: 'ACGOV.org | Alameda County Government',
+      title: '',
       meta: [
         // {
         //   name: 'google-site-verification',

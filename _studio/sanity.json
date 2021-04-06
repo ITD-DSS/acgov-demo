@@ -18,8 +18,7 @@
     "content-calendar",
     "graph-view",
     "asset-source-cloudinary",
-    "asset-source-unsplash",
-    "google-analytics"
+    "asset-source-unsplash"
   ],
   "env": {
     "development": {

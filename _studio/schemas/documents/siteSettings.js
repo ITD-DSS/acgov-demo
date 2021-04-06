@@ -2,55 +2,91 @@ export default {
   name: "siteSettings",
   type: "document",
   title: "Site Settings",
-  // __experimental_actions: ["update", /* 'create', 'delete', */ "publish"],
+  // https://www.sanity.io/docs/experimental/ui-affordances-for-actions
+  fieldsets: [{ name: "footer", title: "Footer" }],
   fields: [
     {
       name: "title",
       type: "string",
-      title: "Title",
+      title: "Site title",
     },
     {
-      name: "description",
-      type: "text",
-      title: "Description",
-      description: "Describe your site for search engines and social media.",
+      title: "URL",
+      name: "url",
+      type: "url",
+      description: "The main site url. Used to create canonical url",
+      validation: Rule => Rule.uri({
+        // scheme: ['http', 'https', 'mailto', 'tel']
+        allowRelative: true,
+        // relativeOnly: true
+      })
     },
     {
-      title: "Base URL",
-      name: "baseURL",
-      type: "slug",
-      options: {
-        source: "title",
-        maxLength: 200, // will be ignored if slugify is set
-        slugify: (input) =>
-          input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
-      },
+      name: "frontpage",
+      type: "reference",
+      description: "Choose page to be the frontpage",
+      to: { type: "page" },
     },
     {
-      name: "keywords",
-      type: "array",
-      title: "Keywords",
-      description: "Add keywords that describes your blog.",
-      of: [{ type: "string" }],
-      options: {
-        layout: "tags",
-      },
+      title: "Site language",
+      name: "lang",
+      type: "string",
     },
     {
-      title: "Background Image",
-      name: "bgImageMain",
+      title: "Brand logo",
+      description:
+        "Best choice is to use an SVG where the color are set with currentColor",
+      name: "logo",
       type: "image",
-      options: {
-        hotspot: true, // <-- Defaults to false
-      },
+      options: { hotspot: true },
       fields: [
         {
-          // Editing this field will be hidden behind an "Edit"-button
-          name: "attribution",
+          name: "alt",
           type: "string",
-          title: "Attribution",
+          title: "Alternative text",
+          description: "Important for SEO and accessiblity.",
+          options: {
+            isHighlighted: true,
+          },
         },
       ],
+    },
+    {
+      title: "Main navigation",
+      name: "mainNavigation",
+      description: "Select pages for the top menu",
+      validation: (Rule) => [
+        Rule.max(5).warning("Are you sure you want more than 5 items?"),
+        Rule.unique().error("You have duplicate menu items"),
+      ],
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "route" }],
+        },
+      ],
+    },
+    {
+      title: "Footer navigation items",
+      name: "footerNavigation",
+      type: "array",
+      validation: (Rule) => [
+        Rule.max(10).warning("Are you sure you want more than 10 items?"),
+        Rule.unique().error("You have duplicate menu items"),
+      ],
+      fieldset: "footer",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "route" }],
+        },
+      ],
+    },
+    {
+      name: "footerText",
+      type: "simplePortableText",
+      fieldset: "footer",
     },
   ],
 };

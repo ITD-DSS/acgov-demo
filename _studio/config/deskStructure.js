@@ -15,12 +15,12 @@ export default () =>
             ),
             S.divider(),
             S.listItem()
-            .title('Section Order')
+            .title('Page Settings')
             .child(
               S.editor()
-                .title('Section Mover')
-                .schemaType('pageOrder')
-                .documentId('pageOrder')
+                .title('Frontpage Settings')
+                .schemaType('page')
+                .documentId('page')
             ),
 
             S.listItem()
