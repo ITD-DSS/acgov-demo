@@ -1,0 +1,45 @@
+*[_type == "page"][0]{
+    _updatedAt,
+    title,
+    content[]->{
+        ...
+    },
+}
+    // ...
+    // "sections": sectionMover[]{
+    //     _key,
+    //     _ref,
+    //     "content": *[_type == "storySection" && ^._ref == _id][0]{
+    //         _createdAt,
+    //         _id,
+    //         "name": sectionName,
+    //         "related": *[_type=="story" && references(^._id)]{
+    //             _createdAt,
+    //             _id,
+    //             _updatedAt,
+    //             "tag": storyTag,
+    //             "layout": storyLayout,
+    //             "format": storyFormat[0]{
+    //                 _key,
+    //                 _type,
+    //                 _type == "textStory" => {
+    //                     headline,
+    //                     "body": storyBody[]
+    //                 },
+    //                 _type == "imageLink" => {
+    //                     linkTo,
+    //                     "alt": select(imageLink.altText),
+    //                     "imgSrc": linkImage.asset._ref
+    //                 },
+    //                 _type == "videoStory" => {
+    //                     "headline": videoText.headline,
+    //                                     "body": videoText.storyBody,
+    //                     altText,
+    //                     "url": youtubeUrl
+    //                 },
+    //             }
+    //         } | order(_createdAt asc)
+    //     }
+    // }
+// }
+    
