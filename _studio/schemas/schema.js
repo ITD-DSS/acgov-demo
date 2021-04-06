@@ -6,7 +6,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 
 import siteSettings from "./documents/siteSettings";
 import storySection from "./documents/storySection";
-import pageOrder from "./documents/pageOrder";
+// import pageOrder from "./documents/pageOrder";
 import page from "./documents/page";
 import route from "./documents/route";
 import Story from "./documents/Story";
@@ -34,7 +34,8 @@ export default createSchema({
     /* DOCUMENTS */
     siteSettings,
     storySection,
-    pageOrder,
+    // TODO: Deprecate: replace with PAGE paradigm
+    // pageOrder,
     page,
     route,
     Story,
