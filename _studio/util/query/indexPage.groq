@@ -2,7 +2,36 @@
     _updatedAt,
     title,
     content[]->{
-        ...
+        // ...,
+        _id,
+        "name": sectionName,
+        "slug": sectionSlug.current,
+        "related": *[_type=="story" && references(^._id)]{
+                _createdAt,
+                _id,
+                _updatedAt,
+                "tag": storyTag,
+                "layout": storyLayout,
+                "format": storyFormat[0]{
+                    _key,
+                    _type,
+                    _type == "textStory" => {
+                        headline,
+                        "body": storyBody[]
+                    },
+                    _type == "imageLink" => {
+                        linkTo,
+                        "alt": select(imageLink.altText),
+                        "imgSrc": linkImage.asset._ref
+                    },
+                    _type == "videoStory" => {
+                        "headline": videoText.headline,
+                        "body": videoText.storyBody,
+                        altText,
+                        "url": youtubeUrl
+                    },
+                }
+            } | order(_createdAt asc),
     },
 }
     // ...
@@ -41,5 +70,4 @@
     //         } | order(_createdAt asc)
     //     }
     // }
-// }
     

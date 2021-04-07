@@ -24,13 +24,29 @@ export default {
           input.toLowerCase().replace(/\s+/g, "-").slice(0, 25),
       },
     },
-    {
-      title: "Section Stories",
-      name: "sectionStories",
-      type: "reference",
-      to: [{ type: "story" }],
-      options: {},
-    },
-   
+    // {
+    //   title: "Section Stories",
+    //   name: "sectionStories",
+    //   type: "reference",
+    //   to: [{ type: "story" }],
+    //   options: {},
+    // },
+    // {
+    //   name: "sectionStories",
+    //   type: "array",
+    //   title: "Section Stories",
+    //   of: [
+    //     // { type: "hero" }, 
+    //     // { type: "imageSection" }, 
+    //     // { type: "textSection" }, 
+    //     // {type: "storySection"},
+    //     {
+    //     type: 'reference',
+    //     to: [
+    //         {type: 'story'},
+    //       ]
+    //     }
+    //   ],
+    // },
   ],
 };

@@ -1,10 +1,10 @@
 <template>
   <main class="flex flex-col">
     <story-section
-      v-for="section in storySections"
-      :key="section.content._id"
-      :section-name="section.content.name"
-      :stories-data="section.content.related"
+      v-for="section in content"
+      :key="section._id"
+      :section-name="section.name"
+      :stories-data="section.related"
     >
       <template #default="stories">
         <story-format-selector
@@ -54,49 +54,12 @@ import Vue from 'vue'
 //   <link href="/chatbot/wchat.css?v=18" rel="stylesheet" />
 //   Chatbot Code End
 
-// const query = groq`
-//     *[_type == "pageOrder"][0]{
-//       _updatedAt,
-//       "sections": sectionMover[]{
-//         _key,
-//         _ref,
-//         "content": *[_type == "storySection" && ^._ref == _id][0]{
-//             _createdAt,
-//             _id,
-//             "name": sectionName,
-//             "related": *[_type=="story" && references(^._id)]{
-//                 _createdAt,
-//                 _id,
-//                 _updatedAt,
-//                 "tag": storyTag,
-//                 "layout": storyLayout,
-//                 "format": storyFormat[0]{
-//                     _key,
-//                     _type,
-//                     _type == "textStory" => {
-//                         headline,
-//                         "body": storyBody[]
-//                     },
-//                     _type == "imageLink" => {
-//                         linkTo,
-//                         "alt": select(imageLink.altText),
-//                         "imgSrc": linkImage.asset._ref
-//                     },
-//                     _type == "videoStory" => {
-//                         "headline": videoText.headline,
-//                         "body": videoText.storyBody,
-//                         altText,
-//                         "url": youtubeUrl
-//                     },
-//                 }
-//             } | order(_createdAt asc)
-//         }
-//     }
-// }
-// `
-
 export default Vue.extend({
   layout: 'acgov-home',
+  asyncData({ store }) {
+    const site = store.state.site
+    return site
+  },
   head() {
     return {
       title: '',
