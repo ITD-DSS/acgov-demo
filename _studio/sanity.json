@@ -34,16 +34,16 @@
       "path": "./schemas/schema"
     },
     {
+      "implements": "part:@sanity/production-preview/resolve-production-url",
+      "path": "./config/resolveProductionUrl.js"
+    },
+    {
       "name": "part:@sanity/desk-tool/structure",
       "path": "./config/deskStructure.js"
     },
     { 
       "implements": "part:@sanity/dashboard/config", 
       "path": "./config/dashboardConfig.js" 
-    },
-    {
-      "implements": "part:@sanity/production-preview/resolve-production-url",
-      "path": "./config/resolveProductionUrl.js"
     }
   ]
 }
