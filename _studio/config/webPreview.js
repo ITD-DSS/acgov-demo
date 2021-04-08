@@ -35,7 +35,7 @@ export const getDefaultDocumentNode = ({ schemaType, documentId }) => {
   ) {
     return S.document().views([
       S.view.form(),
-      S.view.editor(),
+      // S.view.editor(),
       S.view.component(WebPreview).title("Web Preview"),
     ]);
   }

@@ -12,10 +12,10 @@ export default function resolveProductionUrl(document) {
     return `${PREVIEW_URL}/?preview=true`
   }
   else if (document._type === "storySection"){
-    return `${PREVIEW_URL}/${document.sectionSlug.current}/?preview=true`
+    return `${PREVIEW_URL}/${document.sectionSlug.current}?preview=true`
   }
   else if (document._type === "story"){
-    return `${PREVIEW_URL}/${document.storySlug.current}/?preview=true`
+    return `${PREVIEW_URL}/${document.storySlug.current}?preview=true`
   }
   else {
     console.error('From resolveProductionUrl()')
