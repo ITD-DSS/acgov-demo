@@ -26,7 +26,7 @@ const WebPreview = ({ document }) => {
   return <iframe src={targetURL} frameBorder={0} width="100%" height="100%" />;
 };
 
-export default getDefaultDocumentNode = ({ schemaType, documentId }) => {
+export const getDefaultDocumentNode = ({ schemaType, documentId }) => {
   // Conditionally return a different configuration based on the schema type
   if (
     documentId == "page" ||
@@ -41,4 +41,4 @@ export default getDefaultDocumentNode = ({ schemaType, documentId }) => {
   }
 };
 
-// export default S.defaults();
+export default S.defaults();
