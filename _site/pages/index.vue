@@ -56,6 +56,9 @@ import Vue from 'vue'
 
 export default Vue.extend({
   layout: 'acgov-home',
+  // validate({ params, store, query }) {
+  //   return query.preview === 'true' || store.state.site.slug === params.slug
+  // },
   asyncData({ store }) {
     const site = store.state.site
     return site

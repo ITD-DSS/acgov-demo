@@ -18,6 +18,7 @@ export const mutations = {
 
 const siteQuery = groq`
 *[_type == "page"][0]{
+    "slug": pageSlug.current,
     _updatedAt,
     title,
     content[]->{

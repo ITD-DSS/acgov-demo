@@ -1,5 +1,30 @@
 import S from '@sanity/desk-tool/structure-builder'
 
+const WebPreview = ({ document }) => {
+    const PREVIEW_URL =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000"
+      : process.env.BASE_URL;
+
+    function getDocumentType(document) {
+      const { displayed } = document;
+      if (document._type === "page") {
+        // console.log(process.env.NODE_ENV)
+        return `${PREVIEW_URL}/?preview=true`;
+      } else if (document._type === "storySection") {
+        return `${PREVIEW_URL}/${displayed.sectionSlug.current}?preview=true`;
+      } else if (document._type === "story") {
+        return `${PREVIEW_URL}/${displayed.storySlug.current}?preview=true`;
+      } else {
+        console.error("From getDocumentType()");
+      }
+    }
+
+    const targetURL = getDocumentType(document);
+  
+    return <iframe src={targetURL} frameBorder={0} width="100%" height="100%" />;
+  };
+
 export default () => 
     S.list()
         .title('ACgov Content')
@@ -17,10 +42,11 @@ export default () =>
             S.listItem()
             .title('Page Settings')
             .child(
-              S.editor()
+                S.editor()              
                 .title('Frontpage Settings')
                 .schemaType('page')
                 .documentId('page')
+                .views[]
             ),
 
             S.listItem()

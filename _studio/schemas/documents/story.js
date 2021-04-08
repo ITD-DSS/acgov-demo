@@ -9,6 +9,19 @@ export default {
       name: "refName",
       type: "string",
     },
+    {
+      title: 'Slug',
+      name: 'storySlug',
+      type: 'slug',
+      options: {
+        source: 'refName',
+        maxLength: 200, // will be ignored if slugify is set
+        slugify: input => input
+                             .toLowerCase()
+                             .replace(/\s+/g, '-')
+                             .slice(0, 200)
+      }
+    },
     // STORY CATEGORIES
     {
       title: "Story Section",

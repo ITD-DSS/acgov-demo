@@ -9,8 +9,10 @@
     "dev": " run-p -l dev:*",
     "dev:site": "(cd _site) && yarn run dev",
     "dev:studio": "(cd _studio) && yarn run dev",
+    "preview:dev": "run-p -l dev:studio dev:start",
+    "preview:start": "(cd _site) && yarn start",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "refresh": "rimraf ./**/node_modules"
+    "refresh": "rimraf ./**/node_modules && yarn"
   },
   "repository": {
     "type": "git",

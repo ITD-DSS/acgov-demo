@@ -35,7 +35,6 @@ export default {
       class: ['container', 'font-acgov', 'text-body'],
     },
   },
-
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     // '@/static/ece/css/main.css',
@@ -71,8 +70,11 @@ export default {
   ],
 
   sanity: {
-    // minimal: true,
-    // projectId: 'veavi1vm',
+    projectId: process.env.SANITY_PROJECT_ID,
+    // TODO: WORK WITH PROD AND DEVELOPEMENT DATASETS : MAYBE MOVE TO ENV VARIABLE
+    dataset:
+      process.env.NODE_ENV !== 'production' ? 'development' : 'development',
+    useCdn: false,
     withCredentials: true,
   },
 
