@@ -5,7 +5,7 @@
   "description": "",
   "main": "package.json",
   "author": "Jonathan A. M <ontoneio.mm@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "dev": "sanity start",
     "start": "sanity start",

@@ -11,6 +11,9 @@
     "dev:studio": "(cd _studio) && yarn run dev",
     "preview:dev": "run-p -l dev:studio dev:start",
     "preview:start": "(cd _site) && yarn start",
+    "build": " run-p -l build:*",
+    "build:site": "(cd _site) && yarn generate",
+    "build:studio": "(cd _studio) && yarn build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf ./node_modules ./**/node_modules ./**/dist ./**/.nuxt",
     "refresh": "run-s clean && yarn"
