@@ -4,12 +4,12 @@ import S from '@sanity/desk-tool/structure-builder'
   export const getDefaultDocumentNode = ({ schemaType, documentId }) => {
     // Conditionally return a different configuration based on the schema type
     switch (schemaType || documentId) {
-      case "page":
-        return S.document().views([
-          S.view.form(),
-          // S.view.editor(),
-          S.view.component(WebPreview).title("Web Preview"),
-        ])
+      // case "page":
+      //   return S.document().views([
+      //     S.view.form(),
+      //     // S.view.editor(),
+      //     S.view.component(WebPreview).title("Web Preview"),
+      //   ])
         // break;
       case "story":
         return S.document().views([
@@ -91,7 +91,13 @@ export default () =>
                 S.editor()              
                 .title('Frontpage Settings')
                 .schemaType('page')
-                .documentId('page'),
+                .documentId('page')
+                .views([
+                  S.view.form(),
+                  S.view
+                  .component(WebPreview)
+                  .title('Web Preview'),
+                ])
             ),
 
             S.listItem()
