@@ -12,6 +12,7 @@
     "preview:dev": "run-p -l dev:studio dev:start",
     "preview:start": "(cd _site) && yarn start",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf ./node_modules ./**/node_modules ./**/dist ./**/.nuxt",
     "refresh": "rimraf ./**/node_modules && yarn"
   },
   "repository": {
