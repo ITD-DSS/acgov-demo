@@ -1,3 +1,5 @@
 [dev]
  command = 'yarn dev'
+ port = 8181
  targetPort = 3333
+ framework = "#custom"
