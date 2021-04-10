@@ -3,3 +3,8 @@
  port = 8181
  targetPort = 3333
  framework = "#custom"
+
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
