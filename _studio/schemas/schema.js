@@ -9,7 +9,7 @@ import storySection from "./documents/storySection";
 // import pageOrder from "./documents/pageOrder";
 import page from "./documents/page";
 import route from "./documents/route";
-import story from "./documents/Story";
+import story from "./documents/story";
 
 import hero from "./objects/hero";
 import simplePortableText from "./objects/simplePortableText";
