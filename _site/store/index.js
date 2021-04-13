@@ -1,5 +1,9 @@
 import { groq } from '@nuxtjs/sanity'
 export const state = () => ({
+  user: {
+    authenticated: false,
+    id: null,
+  },
   site: {},
 })
 
