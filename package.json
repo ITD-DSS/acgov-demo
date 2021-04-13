@@ -7,7 +7,7 @@
     "boot:site": "(cd _site) && yarn install",
     "boot:studio": "(cd _studio) && yarn install",
     "dev": "run-p -l dev:*",
-    "dev:netlify": "netlify dev",
+    "netlify:dev": "netlify dev",
     "dev:site": "(cd _site) && yarn dev",
     "dev:studio": "(cd _studio) && yarn dev",
     "preview:dev": "run-p -l dev:studio preview:start",
