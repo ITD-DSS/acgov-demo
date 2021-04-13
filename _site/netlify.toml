@@ -1,11 +1,11 @@
 [dev]
- command = 'yarn dev'
+ command = 'yarn dev:site'
  port = 8888
  targetPort = 3000
  framework = "#custom"
 
- [[redirects]]
-  from = "http://localhost:8888/studio"
-  to = "http://localhost:3333"
-  status = 301
-  force = true
+#  [[redirects]]
+#   from = "http://localhost:8888/studio"
+#   to = "http://localhost:3333"
+#   status = 301
+#   force = true

@@ -1,5 +1,5 @@
 [dev]
- command = 'yarn dev'
+ command = 'yarn preview:dev'
  port = 8181
  targetPort = 3333
  framework = "#custom"
