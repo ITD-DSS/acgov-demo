@@ -24,38 +24,6 @@ export default Vue.extend({
       default: () => [],
     },
   },
-  // data() {
-  //   return {
-  //     full: [],
-  //     left: [],
-  //     right: [],
-  //   }
-  // },
-  // created() {
-  //   // this.bindToSlot()
-  // },
-  // methods: {
-  //   bindToSlot() {
-  //     const stories = this.storiesData
-  //     stories.forEach((story) => {
-  //       switch (story.layout) {
-  //         case 'full':
-  //           this.full.push(story)
-  //           break
-  //         case 'left':
-  //           this.left.push(story)
-  //           break
-  //         case 'right':
-  //           this.right.push(story)
-  //           break
-
-  //         default:
-  //           console.error('No recognized story layouts')
-  //           break
-  //       }
-  //     })
-  //   },
-  // },
 })
 </script>
 
@@ -68,10 +36,5 @@ export default Vue.extend({
   grid-auto-flow: row dense;
   column-gap: 1.25rem;
   row-gap: 0.75rem;
-  /* align-content: start; */
-  /* grid-auto-flow: row; */
-  /* grid-template-areas:
-    'full full'
-    'left right'; */
 }
 </style>

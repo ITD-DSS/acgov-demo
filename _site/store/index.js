@@ -1,5 +1,6 @@
 import { groq } from '@nuxtjs/sanity'
 export const state = () => ({
+  showDrafPreviewBanner: false,
   user: {
     authenticated: false,
     id: null,
@@ -15,6 +16,9 @@ export const getters = {
 }
 
 export const mutations = {
+  showBanner(state) {
+    state.showDrafPreviewBanner = true
+  },
   INIT(state, payload) {
     state.site = { ...payload }
   },

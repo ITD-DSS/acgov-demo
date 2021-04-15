@@ -14,45 +14,12 @@
         />
       </template>
     </story-section>
-    <!--PAGEWATCH CODE="CAALAME_1_20080723_151631_en"-->
   </main>
+  <!--PAGEWATCH CODE="CAALAME_1_20080723_151631_en"-->
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-// TODO: Integrate Google Translate
-
-//  TODO: Implement interactions stylings
-
-//   <!-- UserSnap Code -->
-// TODO: Implement User Snap
-//
-// '//api.usersnap.com/load/' + '4331c1dc-9b6c-418d-ac74-3574f46db338.js'
-//
-//   Siteimprove Analytics Code
-//  TODO: implement SiteImprove analytics
-//
-// sz.src = '//siteimproveanalytics.com/js/siteanalyze_10984.js'
-//
-// TODO: BOS AGENDA JS
-//   src="/js/bos-agenda-update.js"
-// TODO: Implement Chatbot
-//   Chatbot Code
-//   <div id="togglebutton" style="display: none">
-//     <button id="beginwebchat" onclick="toggleWebChat()">
-//       <img
-//         src="/img/covid-chat.png"
-//         alt="Click this chat icon to open a chat window about COCID-19."
-//       />
-//     </button>
-//   </div>
-//
-//     crossorigin="anonymous"
-//     src="https://cdn.botframework.com/botframework-webchat/latest/webchat-es5.js"
-//
-//    src="/chatbot/wchat.js?v=18"
-//   <link href="/chatbot/wchat.css?v=18" rel="stylesheet" />
-//   Chatbot Code End
 
 export default Vue.extend({
   layout: 'acgov-home',
