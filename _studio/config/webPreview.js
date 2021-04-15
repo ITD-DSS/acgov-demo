@@ -1,25 +1,21 @@
 import React from "react";
 import S from "@sanity/desk-tool/structure-builder";
+import previewUrl from '../util/lib/previewUrl'
 
 const WebPreview = ({ document }) => {
   function getDocumentType(document) {
     const { displayed } = document;
     if (document._type === "page") {
       // console.log(process.env.NODE_ENV)
-      return `${PREVIEW_URL}/?preview=true`;
+      return `${previewUrl()}/?preview=true`;
     } else if (document._type === "storySection") {
-      return `${PREVIEW_URL}/${displayed.sectionSlug.current}?preview=true`;
+      return `${previewUrl()}/${displayed.sectionSlug.current}?preview=true`;
     } else if (document._type === "story") {
-      return `${PREVIEW_URL}/${displayed.storySlug.current}?preview=true`;
+      return `${previewUrl()}/${displayed.storySlug.current}?preview=true`;
     } else {
       console.error("From getDocumentType()");
     }
   }
-
-  const PREVIEW_URL =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : process.env.BASE_URL;
 
   const targetURL = getDocumentType(document);
 
