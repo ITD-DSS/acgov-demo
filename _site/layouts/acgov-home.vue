@@ -25,9 +25,11 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-export default Vue.extend({})
+<script>
+export default {
+  fetchKey: 'acgov-layout',
+  fetchOnServer: true,
+}
 </script>
 
 <style></style>

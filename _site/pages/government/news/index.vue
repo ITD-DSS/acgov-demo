@@ -19,6 +19,8 @@
 
 <script>
 export default {
+  layout: 'acgov-home',
+  fetchKey: 'acgov-news-index',
   asyncData({ store }) {
     const site = store.state.site
     return site

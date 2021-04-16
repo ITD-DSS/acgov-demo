@@ -18,11 +18,11 @@
   <!--PAGEWATCH CODE="CAALAME_1_20080723_151631_en"-->
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
+<script>
+export default {
   layout: 'acgov-home',
+  fetchKey: 'acgov-index',
+  fetchOnServer: true,
   // validate({ params, store, query }) {
   //   return query.preview === 'true' || store.state.site.slug === params.slug
   // },
@@ -83,7 +83,7 @@ export default Vue.extend({
   //     query.preview === 'true' || store.state.moviesSlugs.includes(params.slug)
   //   )
   // },
-})
+}
 </script>
 
 <style>
