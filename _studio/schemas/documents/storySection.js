@@ -15,7 +15,7 @@ export default {
     },
     {
       title: "Section Slug",
-      name: "sectionSlug",
+      name: "slug",
       type: "slug",
       options: {
         source: (doc) => `${doc.sectionName}`,

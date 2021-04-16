@@ -1,15 +1,24 @@
+import { createSlugField } from "../fields/slug"
 export default {
   name: "route",
   type: "document",
   title: "Route",
 //   icon: MdLink,
   fields: [
-    {
-      name: "slug",
-      type: "slug",
-      title: "Slug",
-      source: 'current'
-    },
+    // {
+    //   name: "slug",
+    //   type: "slug",
+    //   title: "Slug",
+    //   options: {
+    //     source: 'route',
+    //     maxLength: 200, // will be ignored if slugify is set
+    //     slugify: input => input
+    //                          .toLowerCase()
+    //                          .replace(/\s+/g, '-')
+    //                          .slice(0, 200)
+    //   }
+    // },
+    createSlugField({ source: "current" }),
     {
       name: "page",
       type: "reference",

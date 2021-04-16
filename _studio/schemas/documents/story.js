@@ -10,8 +10,8 @@ export default {
       type: "string",
     },
     {
-      title: 'Slug',
-      name: 'storySlug',
+      title: 'Story Slug',
+      name: 'slug',
       type: 'slug',
       options: {
         source: 'refName',

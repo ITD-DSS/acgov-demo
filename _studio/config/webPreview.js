@@ -1,23 +1,10 @@
 import React from "react";
 import S from "@sanity/desk-tool/structure-builder";
-import previewUrl from '../util/lib/previewUrl'
+import getDocumentTypePreviewUrl from '../util/lib/previewUrl'
 
 const WebPreview = ({ document }) => {
-  function getDocumentType(document) {
-    const { displayed } = document;
-    if (document._type === "page") {
-      // console.log(process.env.NODE_ENV)
-      return `${previewUrl()}/?preview=true`;
-    } else if (document._type === "storySection") {
-      return `${previewUrl()}/${displayed.sectionSlug.current}?preview=true`;
-    } else if (document._type === "story") {
-      return `${previewUrl()}/${displayed.storySlug.current}?preview=true`;
-    } else {
-      console.error("From getDocumentType()");
-    }
-  }
 
-  const targetURL = getDocumentType(document);
+  const targetURL = getDocumentTypePreviewUrl(document);
 
   return <iframe src={targetURL} frameBorder={0} width="100%" height="100%" />;
 };
