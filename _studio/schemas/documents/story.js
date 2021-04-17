@@ -5,7 +5,7 @@ export default {
   fields: [
     // REFERENCE NAME
     {
-      title: "Reference Name",
+      title: "Story Label",
       name: "refName",
       type: "string",
     },

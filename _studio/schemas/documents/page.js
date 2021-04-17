@@ -14,6 +14,36 @@ export default {
         type: "string",
         title: "Title",
       },
+      // {
+      //   name: 'refRoute',
+      //   title: 'Route',
+      //   type: 'object',
+      //   fields: [
+      //     {
+      //       name: 'routeGetter',
+      //       title: 'title',
+      //       type: 'reference',
+      //       to: [{type: 'route'}],
+      //       options:{
+      //         filter: ({document}) => {                
+      //           return {
+      //             filter: '_type == $type && references($id)',
+      //             params: {
+      //               type: 'route',
+      //               id: document._id
+      //             }
+      //           }
+      //         } 
+      //       }
+      //     },
+      //     {
+      //       name: 'assignedSlug',
+      //       title: 'Assigned Slug',
+      //       type: 'slug',
+      //       source: (doc, opts) => (console.log('doc:', doc, '\noptions:', opts))
+      //     },
+      //   ],
+      // },
       {
         name: "content",
         type: "array",
@@ -52,6 +82,17 @@ export default {
       select: {
         title: "title",
         media: "openGraphImage",
+      },
+      // select: {
+      //   slug: "slug_custom_format.current",
+      //   routeLabel: "routeLabel",
+      // },
+      prepare({ title, media }) {
+        return {
+          title,
+          // subtitle: `slug: not ready`,
+          media
+        };
       },
     },
   };
