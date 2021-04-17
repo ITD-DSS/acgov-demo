@@ -86,18 +86,36 @@ export default () =>
            ,
             S.divider(),
             S.listItem()
-            .title('Page Settings')
+              .schemaType('route')
+              .title('Page Routes')
+              .child(
+                S.documentList()
+                    .title('Routes')
+                    .schemaType('route')
+                    .defaultOrdering([{ field: '_createdAt', direction: 'asc' }])
+                    .filter(`_type == "route"`)
+            ),
+              ,
+            S.listItem()
+            .title('Pages')
             .child(
-                S.editor()              
-                .title('Frontpage Settings')
-                .schemaType('page')
-                .documentId('page')
-                .views([
-                  S.view.form(),
-                  S.view
-                  .component(WebPreview)
-                  .title('Web Preview'),
-                ])
+                S.documentList()
+                  .title('Pages')
+                  .schemaType('page')
+                  .defaultOrdering([{ field: '_createdAt', direction: 'asc' }])
+                  .filter(`_type == "page"`)
+                  .child( docId =>
+                    S.editor()              
+                      .title('Frontpage Settings')
+                      .schemaType('page')
+                      .documentId(docId)
+                      .views([
+                        S.view.form(),
+                        S.view
+                        .component(WebPreview)
+                        .title('Web Preview'),
+                      ])
+                  )
             ),
 
             S.listItem()
