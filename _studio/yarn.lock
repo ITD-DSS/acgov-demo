@@ -961,7 +961,7 @@
   version "1.1.4"
   resolved "https://registry.npmjs.org/@sanity/asset-utils/-/asset-utils-1.1.4.tgz#fe3220794fab59a567b1ed4e20aadc896d246c77"
 
-"@sanity/base@2.8.0", "@sanity/base@^2.8.0":
+"@sanity/base@2.8.0", "@sanity/base@>= 2.5.0", "@sanity/base@^2.8.0":
   version "2.8.0"
   resolved "https://registry.npmjs.org/@sanity/base/-/base-2.8.0.tgz#8409b5f0e74809515727df306f33aabbc43638d8"
   dependencies:
@@ -1517,7 +1517,7 @@
     "@types/react" "^17.0.0"
     rxjs "^6.5.3"
 
-"@sanity/ui@^0.33.12":
+"@sanity/ui@>= 0.33.9", "@sanity/ui@^0.33.12":
   version "0.33.16"
   resolved "https://registry.npmjs.org/@sanity/ui/-/ui-0.33.16.tgz#35dacccce775b112549335885ffb4c4a10e7cc3b"
   dependencies:
@@ -1532,7 +1532,7 @@
     react-popper "^2.2.5"
     react-refractor "^2.1.4"
 
-"@sanity/util@2.8.0":
+"@sanity/util@2.8.0", "@sanity/util@>= 2.5.0":
   version "2.8.0"
   resolved "https://registry.npmjs.org/@sanity/util/-/util-2.8.0.tgz#f28f054c7c7ed8dd2bb8652cad049964382ec764"
   dependencies:
@@ -1669,6 +1669,10 @@
 "@types/scheduler@*":
   version "0.16.1"
   resolved "https://registry.npmjs.org/@types/scheduler/-/scheduler-0.16.1.tgz#18845205e86ff0038517aab7a18a62a6b9f71275"
+
+"@types/speakingurl@^13.0.2":
+  version "13.0.2"
+  resolved "https://registry.npmjs.org/@types/speakingurl/-/speakingurl-13.0.2.tgz#865dc309b4d61ea333ade3171e916e341aa26137"
 
 "@types/strip-bom@^3.0.0":
   version "3.0.0"
@@ -7911,6 +7915,16 @@ sanity-plugin-asset-source-unsplash@^0.1.3:
   dependencies:
     react-photo-gallery "^8.0.0"
 
+sanity-plugin-better-slug@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/sanity-plugin-better-slug/-/sanity-plugin-better-slug-1.0.0.tgz#5fd8511f6fa4f4fed9248d3c8a6462f001d3fdef"
+  dependencies:
+    "@sanity/base" ">= 2.5.0"
+    "@sanity/ui" ">= 0.33.9"
+    "@sanity/util" ">= 2.5.0"
+    "@types/speakingurl" "^13.0.2"
+    speakingurl "^14.0.1"
+
 sanity-plugin-content-calendar@^1.1.0:
   version "1.1.1"
   resolved "https://registry.npmjs.org/sanity-plugin-content-calendar/-/sanity-plugin-content-calendar-1.1.1.tgz#6749a9d0142e96b2e809bf9be31df3c617aaab60"
@@ -8163,7 +8177,6 @@ slate@^0.58.4:
 slugify@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.5.0.tgz#5f3c8e2a84105b54eb51486db1b468a599b3c9b8"
-  integrity sha512-Q2UPZ2udzquy1ElHfOLILMBMqBEXkiD3wE75qtBvV+FsDdZZjUqPZ44vqLTejAVq+wLLHacOMcENnP8+ZbzmIA==
 
 snapdragon-node@^2.0.1:
   version "2.1.1"
@@ -8258,6 +8271,10 @@ spdx-license-ids@^3.0.0:
 speakingurl@^13.0.0:
   version "13.0.0"
   resolved "https://registry.npmjs.org/speakingurl/-/speakingurl-13.0.0.tgz#266c52d2b47585375af058e4783c8d1097a2d3db"
+
+speakingurl@^14.0.1:
+  version "14.0.1"
+  resolved "https://registry.npmjs.org/speakingurl/-/speakingurl-14.0.1.tgz#f37ec8ddc4ab98e9600c1c9ec324a8c48d772a53"
 
 speedometer@~1.0.0:
   version "1.0.0"
