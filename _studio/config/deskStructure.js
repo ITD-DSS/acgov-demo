@@ -80,7 +80,8 @@ export default () =>
             S.editor()
               .title('Basic Site Settings')
               .schemaType('siteSettings')
-              .documentId('siteSettings')
+              // .documentId('siteSettings')
+              .documentId('acgov')
           )
             // S.documentTypeListItem('siteSettings'),
            ,

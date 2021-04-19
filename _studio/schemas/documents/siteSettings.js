@@ -23,9 +23,11 @@ export default {
     },
     {
       name: "frontpage",
+      title: "Frontpage",
       type: "reference",
-      description: "Choose page to be the frontpage",
-      to: { type: "route" },
+      weak: true,
+      description: "Choose a route to be the frontpage",
+      to: [{ type: "route" }],
     },
     {
       title: "Site language",
