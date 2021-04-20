@@ -2,11 +2,13 @@
   <section
     class="news-grid w-8/12 bg-white bg-opacity-90 mt-4 mb-8 mx-auto p-4"
   >
-    <header class="sr-only">
-      <h2>{{ sectionName }}</h2>
+    <header class="">
+      <NuxtLink :to="getSlug">
+        <h2>{{ sectionName }}</h2>
+      </NuxtLink>
     </header>
 
-    <slot v-bind="storiesData" />
+    <slot v-bind="getContent" />
   </section>
 </template>
 
@@ -15,13 +17,20 @@ import Vue from 'vue'
 export default Vue.extend({
   name: 'StorySection',
   props: {
-    sectionName: {
-      type: String,
-      default: 'Story section name',
-    },
     storiesData: {
-      type: Array,
+      type: Object,
       default: () => [],
+    },
+  },
+  computed: {
+    sectionName() {
+      return this.storiesData.name
+    },
+    getSlug() {
+      return `/government/news/${this.storiesData.slug}`
+    },
+    getContent() {
+      return this.storiesData.sectionContent
     },
   },
 })

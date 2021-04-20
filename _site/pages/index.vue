@@ -1,10 +1,9 @@
 <template>
   <main class="flex flex-col">
     <story-section
-      v-for="section in content"
+      v-for="section in getSections"
       :key="section._id"
-      :section-name="section.name"
-      :stories-data="section.related"
+      :stories-data="section"
     >
       <template #default="stories">
         <story-format-selector
@@ -29,6 +28,11 @@ export default {
   asyncData({ store }) {
     const site = store.state.site
     return site
+  },
+  computed: {
+    getSections() {
+      return this.$store.state.site.frontpage.page.pageContent
+    },
   },
   head() {
     return {
