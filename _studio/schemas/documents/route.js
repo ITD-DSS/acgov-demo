@@ -46,6 +46,7 @@ export default {
     {
       name: "page",
       type: "reference",
+      weak: true,
       description: "Select the page that this route should point to",
       to: [
         {

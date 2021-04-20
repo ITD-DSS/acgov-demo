@@ -107,7 +107,7 @@ export default () =>
                   .filter(`_type == "page"`)
                   .child( docId =>
                     S.editor()              
-                      .title('Frontpage Settings')
+                      .title('Page Settings')
                       .schemaType('page')
                       .documentId(docId)
                       .views([
