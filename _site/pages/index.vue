@@ -1,18 +1,6 @@
 <template>
   <main class="flex flex-col">
-    <story-section
-      v-for="section in homePageContent"
-      :key="section._id"
-      :stories-data="section"
-    >
-      <!-- <template #default="stories">
-        <story-format-selector
-          v-for="story in stories"
-          :key="story._id"
-          :component-data="story"
-        />
-      </template> -->
-    </story-section>
+    <AcgovNews :news="newsData" home-slug="government/news/" />
   </main>
   <!--PAGEWATCH CODE="CAALAME_1_20080723_151631_en"-->
 </template>
@@ -26,8 +14,8 @@ export default {
   //   return query.preview === 'true' || store.state.site.slug === params.slug
   // },
   async asyncData({ store }) {
-    const homePageContent = await store.state.urlValidationMap.mainIndex.content
-    return { homePageContent }
+    const newsData = await store.getters.newsContent
+    return { newsData }
   },
   computed: {
     // getSections() {

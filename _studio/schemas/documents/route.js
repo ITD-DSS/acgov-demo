@@ -16,17 +16,17 @@ export default {
       type: 'slug',
       inputComponent: SlugInput,
       options: {
-        basePath: 'https://acgov.org',
-        source: ( doc ) => doc.routeLabel ? 'routeLabel' : 'slug_custom_format.current',
+        source: ( doc ) => doc.routeLabel ? doc.routeLabel : 'slug_custom_format.current',
         // maxLength: 200, // will be ignored if slugify is set
         slugify: (input) => (
           input.toLowerCase().match("index")
-            ? 'index'
-            :input
-              .toLowerCase()
-              .replace(/\s+/g, '-')
-              .slice(0, 200)
-        )
+          ? 'index'
+          :input
+          .toLowerCase()
+          .replace(/\s+/g, '-')
+          .slice(0, 200)
+          ),
+        basePath: 'https://acgov.org',
       },
     },
     // {

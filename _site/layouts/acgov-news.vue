@@ -13,7 +13,7 @@
         </p>
       </aside>
     </client-only>
-    <acgov-header><nav-icons /></acgov-header>
+    <acgov-header />
 
     <Nuxt />
     <!-- <modal-govdelivery /> -->

@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import videoStory from './videoStory.vue'
+import videoStory from './VideoStory.vue'
 export default Vue.extend({
   name: 'NewsStory',
   components: { videoStory },

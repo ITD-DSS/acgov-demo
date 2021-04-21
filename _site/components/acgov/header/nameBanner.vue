@@ -7,7 +7,9 @@
 
       <!-- <div class="col-sm-6 col-xs-12 logo"> -->
       <div class="mr-8">
-        <img class="w-logo" src="/img/brandingPROD.png" />
+        <NuxtLink to="/"
+          ><img class="w-logo" src="/img/brandingPROD.png"
+        /></NuxtLink>
       </div>
       <!-- <img class="img-responsive acgov-logo" src="/img/brandingPROD.png" /> -->
 

@@ -16,10 +16,21 @@ export const state = () => ({
 })
 
 export const getters = {
-  //   getSections(state) {
-  //     const storySection = state.site.content
-  //     return storySection
-  //   },
+  newsContent(state) {
+    return state.urlValidationMap.mainIndex.content
+  },
+  getNewsSection: (state) => (params) => {
+    return new Promise((resolve, reject) => {
+      if (params.section) {
+        resolve(
+          state.urlValidationMap.mainIndex.content.find(
+            (section) => section.slug === params.section
+          )
+        )
+        reject(console.error(`No section matching params: ${params.section} `))
+      }
+    })
+  },
 }
 
 export const mutations = {
@@ -104,6 +115,16 @@ export const actions = {
       content: frontpage.page.pageContent,
     }
     commit('SET_INDEX', indexPage)
+  },
+  validateSection({ getters }, payload) {
+    const sections = getters.newsContent
+    const isSection = (section) => section.slug === payload
+    return new Promise((resolve, reject) => {
+      if (typeof payload === 'string') {
+        resolve(sections.some(isSection))
+      }
+      reject(console.error('No section slug!'))
+    })
   },
   validateIndex({ state }) {},
   validateAgency({ state }) {},

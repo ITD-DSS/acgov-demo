@@ -1,5 +1,6 @@
 import React from "react";
 import S from '@sanity/desk-tool/structure-builder'
+import getDocumentTypePreviewUrl from '../util/lib/previewUrl'
 
   export const getDefaultDocumentNode = ({ schemaType, documentId }) => {
     // Conditionally return a different configuration based on the schema type
@@ -41,17 +42,16 @@ import S from '@sanity/desk-tool/structure-builder'
     //   ]);
     // }
   };
-  const PREVIEW_URL =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : process.env.BASE_URL;
+  // const PREVIEW_URL =
+  //   process.env.NODE_ENV === "development"
+  //     ? "http://localhost:3000"
+  //     : process.env.BASE_URL;
   
   const WebPreview = ({ document }) => {
 
-    const { displayed } = document;
+    // const { displayed } = document
   
-  
-    const targetURL = `${PREVIEW_URL}/?preview=true`;
+    const targetURL = getDocumentTypePreviewUrl(document);
   
     return <iframe src={targetURL} frameBorder={0} width="100%" height="100%" />;
   };

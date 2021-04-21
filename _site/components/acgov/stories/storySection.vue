@@ -26,10 +26,13 @@ export default {
       return this.storiesData.name
     },
     getSlug() {
-      return `/government/news/${this.storiesData.slug}`
+      return `${this.storiesData.slug}`
     },
     getContent() {
-      return this.storiesData.sectionContent
+      return {
+        storySlug: this.getSlug,
+        content: this.storiesData.sectionContent,
+      }
     },
   },
 }

@@ -30,9 +30,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-export default Vue.extend({
+<script>
+export default {
   name: 'StoryFormatSelector',
   props: {
     componentData: {
@@ -46,7 +45,7 @@ export default Vue.extend({
     }
   },
   computed: {
-    getStoryFormat(): string {
+    getStoryFormat() {
       return this.componentData.format._type
     },
   },
@@ -60,7 +59,7 @@ export default Vue.extend({
       }
     },
   },
-})
+}
 </script>
 
 <style>
