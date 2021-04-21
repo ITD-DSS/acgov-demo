@@ -2,35 +2,35 @@ import React from "react";
 import S from '@sanity/desk-tool/structure-builder'
 import getDocumentTypePreviewUrl from '../util/lib/previewUrl'
 
-  // export const getDefaultDocumentNode = ({ schemaType, documentId }) => {
-  //   // Conditionally return a different configuration based on the schema type
-  //   switch (schemaType || documentId) {
-  //     // case "page":
-  //     //   return S.document().views([
-  //     //     S.view.form(),
-  //     //     // S.view.editor(),
-  //     //     S.view.component(WebPreview).title("Web Preview"),
-  //     //   ])
-  //       // break;
-  //     case "story":
-  //       return S.document().views([
-  //         S.view.form(),
-  //         // S.view.editor(),
-  //         S.view.component(WebPreview).title("Web Preview"),
-  //       ])
-  //       // break;
-  //     case "storySection":
-  //       return S.document().views([
-  //         S.view.form(),
-  //         // S.view.editor(),
-  //         S.view.component(WebPreview).title("Web Preview"),
-  //       ])
+  export const getDefaultDocumentNode = ({ schemaType, documentId }) => {
+    // Conditionally return a different configuration based on the schema type
+    switch (schemaType || documentId) {
+      // case "page":
+      //   return S.document().views([
+      //     S.view.form(),
+      //     // S.view.editor(),
+      //     S.view.component(WebPreview).title("Web Preview"),
+      //   ])
+        // break;
+      case "story":
+        return S.document().views([
+          S.view.form(),
+          // S.view.editor(),
+          S.view.component(WebPreview).title("Web Preview"),
+        ])
+        // break;
+      case "storySection":
+        return S.document().views([
+          S.view.form(),
+          // S.view.editor(),
+          S.view.component(WebPreview).title("Web Preview"),
+        ])
     
-  //     default:
-  //       break;
-  //   }
+      default:
+        break;
+    }
 
-  // };
+  };
 
   
   const WebPreview = ({ document }) => {
