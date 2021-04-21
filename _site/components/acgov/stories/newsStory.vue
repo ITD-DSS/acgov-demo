@@ -11,12 +11,9 @@
   </article>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import videoStory from './VideoStory.vue'
-export default Vue.extend({
+<script>
+export default {
   name: 'NewsStory',
-  components: { videoStory },
   props: {
     category: {
       type: String,
@@ -35,7 +32,7 @@ export default Vue.extend({
       default: '',
     },
   },
-})
+}
 </script>
 
 <style scoped>
