@@ -18,21 +18,21 @@ export default {
     return { newsData }
   },
   // TODO: Implement Validation for Preview mode
-  //   validate({ route, store }) {
-  //     // check that store.state.site.frontpage.slug === route
-  //     if (
-  //       route.path === '/government/news' &&
-  //       store.state.urlValidationMap.mainIndex.slug === 'index'
-  //     ) {
-  //       // If FALSE redirect to 404 page
-  //       return true
-  //       // return (
-  //       //   query.preview === 'true' ||
-  //       //   store.state.moviesSlugs.includes(params.slug)
-  //       // )
-  //     }
-  //     return false
-  //   },
+  validate({ route, query, store }) {
+    // check that store.state.site.frontpage.slug === route
+    if (
+      route.path === '/government/news' &&
+      store.state.urlValidationMap.mainIndex.slug === 'index'
+    ) {
+      // If FALSE redirect to 404 page
+      // return true
+      return (
+        query.preview === 'true' ||
+        store.state.urlValidationMap.mainIndex.slug === 'index'
+      )
+    }
+    return false
+  },
 }
 </script>
 

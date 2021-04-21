@@ -10,17 +10,9 @@ export default {
   layout: 'acgov-home',
   fetchKey: 'acgov-index',
   fetchOnServer: true,
-  // validate({ params, store, query }) {
-  //   return query.preview === 'true' || store.state.site.slug === params.slug
-  // },
   async asyncData({ store }) {
     const newsData = await store.getters.newsContent
     return { newsData }
-  },
-  computed: {
-    // getSections() {
-    //   // return this.$store.state.site.frontpage.page.pageContent
-    // },
   },
   head() {
     return {
@@ -69,18 +61,15 @@ export default {
     }
   },
   // TODO: Implement Validation for Preview mode
-  validate({ route, store }) {
+  validate({ route, query, store }) {
     // check that store.state.site.frontpage.slug === route
     if (
       route.fullPath === '/' &&
       store.state.urlValidationMap.mainIndex.slug === 'index'
     ) {
-      // If FALSE redirect to 404 page
-      return true
-      // return (
-      //   query.preview === 'true' ||
-      //   store.state.moviesSlugs.includes(params.slug)
-      // )
+      return (
+        query.preview === 'true' || store.state.urlValidationMap.mainIndex.slug
+      )
     }
     return false
   },

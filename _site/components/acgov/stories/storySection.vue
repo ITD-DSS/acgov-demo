@@ -20,12 +20,19 @@ export default {
       type: Object,
       default: () => [],
     },
+    sectionSlug: {
+      type: String,
+      default: '',
+    },
   },
   computed: {
     sectionName() {
       return this.storiesData.name
     },
     getSlug() {
+      if (this.sectionSlug) {
+        return `${this.sectionSlug}${this.storiesData.slug}`
+      }
       return `${this.storiesData.slug}`
     },
     getContent() {

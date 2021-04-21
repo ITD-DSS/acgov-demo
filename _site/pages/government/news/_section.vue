@@ -16,9 +16,12 @@
 <script>
 export default {
   layout: 'acgov-news',
-  //   async validate({ params, store }) {
-  //     return await store.dispatch('validateSection', params.section)
-  //   },
+  validate({ params, query, store }) {
+    const isValid = () => store.dispatch('validateSection', params.section)
+    if (isValid) {
+      return query.preview === true || params.section
+    }
+  },
   async asyncData({ store, params }) {
     return { section: await store.getters.getNewsSection(params) }
   },

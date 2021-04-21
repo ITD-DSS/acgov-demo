@@ -7,10 +7,7 @@ export const state = () => ({
   },
   urlValidationMap: {
     mainIndex: {},
-    agency: [],
-    dept: [],
-    service: [],
-    slugs: [],
+    pages: [],
   },
   site: {},
 })
@@ -40,15 +37,13 @@ export const mutations = {
   SET_INDEX(state, payload) {
     state.urlValidationMap.mainIndex = { ...payload }
   },
+  SET_PAGE(state, payload) {
+    state.urlValidationMap.pages.push(payload)
+  },
   INIT(state, payload) {
     state.site = { ...payload }
   },
 }
-
-groq`*[_type == "siteSettings" && _id == "acgov"][0]{
-  ...,
-  frontpage->
-}`
 
 const siteQuery = groq`
 *[_type == "siteSettings" && _id == "acgov"][0]{
@@ -103,9 +98,20 @@ const siteQuery = groq`
       },
 }`
 
+const randomPages = groq`
+  *[_type == "route" && slug_custom_format.current != "index"]{
+    // ...,
+    _id,
+    routeLabel,
+    "slug": slug_custom_format.current,
+    page->
+  }
+`
+
 export const actions = {
   async nuxtServerInit({ commit }, { $sanity }) {
     const result = await $sanity.fetch(siteQuery)
+    const pages = await $sanity.fetch(randomPages)
 
     const { frontpage } = result
 
@@ -115,6 +121,9 @@ export const actions = {
       content: frontpage.page.pageContent,
     }
     commit('SET_INDEX', indexPage)
+    pages.forEach((page) => {
+      commit('SET_PAGE', page)
+    })
   },
   validateSection({ getters }, payload) {
     const sections = getters.newsContent
