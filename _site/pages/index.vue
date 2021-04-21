@@ -1,17 +1,17 @@
 <template>
   <main class="flex flex-col">
     <story-section
-      v-for="section in getSections"
+      v-for="section in homePageContent"
       :key="section._id"
       :stories-data="section"
     >
-      <template #default="stories">
+      <!-- <template #default="stories">
         <story-format-selector
           v-for="story in stories"
           :key="story._id"
           :component-data="story"
         />
-      </template>
+      </template> -->
     </story-section>
   </main>
   <!--PAGEWATCH CODE="CAALAME_1_20080723_151631_en"-->
@@ -25,14 +25,14 @@ export default {
   // validate({ params, store, query }) {
   //   return query.preview === 'true' || store.state.site.slug === params.slug
   // },
-  asyncData({ store }) {
-    const site = store.state.site
-    return site
+  async asyncData({ store }) {
+    const homePageContent = await store.state.urlValidationMap.mainIndex.content
+    return { homePageContent }
   },
   computed: {
-    getSections() {
-      return this.$store.state.site.frontpage.page.pageContent
-    },
+    // getSections() {
+    //   // return this.$store.state.site.frontpage.page.pageContent
+    // },
   },
   head() {
     return {
@@ -81,12 +81,21 @@ export default {
     }
   },
   // TODO: Implement Validation for Preview mode
-  // validate({ params, store, query }) {
-  //   // If FALSE redirect to 404 page
-  //   return (
-  //     query.preview === 'true' || store.state.moviesSlugs.includes(params.slug)
-  //   )
-  // },
+  validate({ route, store }) {
+    // check that store.state.site.frontpage.slug === route
+    if (
+      route.fullPath === '/' &&
+      store.state.urlValidationMap.mainIndex.slug === 'index'
+    ) {
+      // If FALSE redirect to 404 page
+      return true
+      // return (
+      //   query.preview === 'true' ||
+      //   store.state.moviesSlugs.includes(params.slug)
+      // )
+    }
+    return false
+  },
 }
 </script>
 

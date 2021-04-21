@@ -5,6 +5,13 @@ export const state = () => ({
     authenticated: false,
     id: null,
   },
+  urlValidationMap: {
+    mainIndex: {},
+    agency: [],
+    dept: [],
+    service: [],
+    slugs: [],
+  },
   site: {},
 })
 
@@ -19,10 +26,18 @@ export const mutations = {
   showBanner(state) {
     state.showDrafPreviewBanner = true
   },
+  SET_INDEX(state, payload) {
+    state.urlValidationMap.mainIndex = { ...payload }
+  },
   INIT(state, payload) {
     state.site = { ...payload }
   },
 }
+
+groq`*[_type == "siteSettings" && _id == "acgov"][0]{
+  ...,
+  frontpage->
+}`
 
 const siteQuery = groq`
 *[_type == "siteSettings" && _id == "acgov"][0]{
@@ -80,15 +95,19 @@ const siteQuery = groq`
 export const actions = {
   async nuxtServerInit({ commit }, { $sanity }) {
     const result = await $sanity.fetch(siteQuery)
-    commit('INIT', result)
-  },
-  validateSlug({ state }, slug) {
-    const newsSectionSlug = /^\Wgovernment\Wnews\W/g
-    const pageContent = state.site.frontpage.page.pageContent
-    if (typeof slug === 'string' && slug.match(newsSectionSlug)) {
-      const slug = slug.split('/')[0]
+
+    const { frontpage } = result
+
+    const indexPage = {
+      slug: frontpage.slug,
+      label: frontpage.routeLabel,
+      content: frontpage.page.pageContent,
     }
-    const isSlug = (sectionSlug) => sectionSlug.slug === slug
-    return pageContent.some(isSlug)
+    commit('SET_INDEX', indexPage)
   },
+  validateIndex({ state }) {},
+  validateAgency({ state }) {},
+  validateDept({ state }) {},
+  validateService({ state }) {},
+  validateSlug({ state }) {},
 }
