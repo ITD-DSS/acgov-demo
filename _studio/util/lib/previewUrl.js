@@ -9,9 +9,12 @@ export default function (document) {
   const { displayed } = document;
 
   if(displayed){
-    if (displayed._type === "page") {
+    if (displayed._type === "route" || displayed._type === 'page') {
+      if(displayed.slug_custom_format.current === 'index'){
+        return `${previewUrl}/?preview=true`;
+      }
+      return `${previewUrl}/${displayed.slug_custom_format.current}?preview=true`;
       // console.log(process.env.NODE_ENV)
-      return `${previewUrl}/?preview=true`;
     } else if (displayed._type === "storySection") {
       return `${previewUrl}/government/news/${displayed.slug.current}`;
     } else if (displayed._type === "story") {
