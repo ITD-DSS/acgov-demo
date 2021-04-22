@@ -1,15 +1,33 @@
-*[_type == "page"][0]{
-    _updatedAt,
+*[_type == "siteSettings" && _id == "acgov"][0]{
+    // ...
+    url,
     title,
-    content[]->{
+    lang,
+    _updatedAt,
+    "index": frontpage->{
         // ...,
-        _id,
-        "name": sectionName,
-        "slug": sectionSlug.current,
-        "related": *[_type=="story" && references(^._id)]{
-                _createdAt,
+      _id,
+      _rev,
+    //   routeLabel,
+      "slug": slug_custom_format.current,
+      "page-id": page->_id,
+      "page-label": page->title,
+      "sections": page->content[]->{
+          ...,
+          _id,
+          _type,
+          _createdAt,
+          _updatedAt,
+          "label": sectionName,
+          "slug": slug.current,
+          "sectionContent": *[_type=="story" && references(^._id)]{
+            //   ...
                 _id,
+                _type,
+                _createdAt,
                 _updatedAt,
+                "slug": slug.current,
+                _type,
                 "tag": storyTag,
                 "layout": storyLayout,
                 "format": storyFormat[0]{
@@ -30,44 +48,8 @@
                         altText,
                         "url": youtubeUrl
                     },
-                }
+              }
             } | order(_createdAt asc),
-    },
+        } | order(_createdAt asc)
+    }
 }
-    // ...
-    // "sections": sectionMover[]{
-    //     _key,
-    //     _ref,
-    //     "content": *[_type == "storySection" && ^._ref == _id][0]{
-    //         _createdAt,
-    //         _id,
-    //         "name": sectionName,
-    //         "related": *[_type=="story" && references(^._id)]{
-    //             _createdAt,
-    //             _id,
-    //             _updatedAt,
-    //             "tag": storyTag,
-    //             "layout": storyLayout,
-    //             "format": storyFormat[0]{
-    //                 _key,
-    //                 _type,
-    //                 _type == "textStory" => {
-    //                     headline,
-    //                     "body": storyBody[]
-    //                 },
-    //                 _type == "imageLink" => {
-    //                     linkTo,
-    //                     "alt": select(imageLink.altText),
-    //                     "imgSrc": linkImage.asset._ref
-    //                 },
-    //                 _type == "videoStory" => {
-    //                     "headline": videoText.headline,
-    //                                     "body": videoText.storyBody,
-    //                     altText,
-    //                     "url": youtubeUrl
-    //                 },
-    //             }
-    //         } | order(_createdAt asc)
-    //     }
-    // }
-    

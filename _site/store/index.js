@@ -104,7 +104,7 @@ const randomPages = groq`
     _id,
     routeLabel,
     "slug": slug_custom_format.current,
-    page->
+    page->{...}
   }
 `
 

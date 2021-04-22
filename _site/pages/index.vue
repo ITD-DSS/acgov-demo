@@ -1,6 +1,6 @@
 <template>
   <main class="flex flex-col">
-    <AcgovNews :news="newsData" home-slug="government/news/" />
+    <AcgovNews :news="newsData" />
   </main>
   <!--PAGEWATCH CODE="CAALAME_1_20080723_151631_en"-->
 </template>

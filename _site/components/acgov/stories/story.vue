@@ -1,9 +1,6 @@
 <template>
-  <story-format-selector
-    v-if="storyData"
-    :id="storyData.slug"
-    :component-data="storyData"
-  />
+  <!-- <story-format-selector v-if="storyData" :component-data="storyData" /> -->
+  <story-format-selector v-if="storyData" />
 </template>
 
 <script>
@@ -29,6 +26,14 @@ export default {
         'col-start-1 col-end-2': this.isLeft,
         'col-start-2 col-end-3': this.isRight,
       }
+    },
+  },
+  created() {
+    this.checkTypes(this.storyData)
+  },
+  methods: {
+    checkTypes(data) {
+      console.log(data)
     },
   },
 }
