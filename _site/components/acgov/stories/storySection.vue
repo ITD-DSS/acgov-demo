@@ -3,7 +3,7 @@
     class="news-grid w-8/12 bg-white bg-opacity-90 mt-4 mb-8 mx-auto p-4"
   >
     <header class="">
-      <NuxtLink :to="`government/news/${sectionData.slug}`">
+      <NuxtLink :to="buildSectionSlug">
         <h2>{{ sectionData.label }}</h2>
       </NuxtLink>
     </header>
@@ -21,8 +21,15 @@ export default {
       type: Object,
       default: () => [],
     },
+    sectionSlug: {
+      type: String,
+      default: '',
+    },
   },
   computed: {
+    buildSectionSlug() {
+      return `${this.sectionSlug}${this.sectionData.slug}`
+    },
     // getSlug() {
     //   return `government/news/${this.sectionData.slug}`
     // },

@@ -1,20 +1,6 @@
 <template>
   <main class="flex flex-col">
-    <AcgovNews>
-      <StorySection
-        v-for="section in newsData"
-        :key="section._id"
-        :section-data="section"
-      >
-        <template v-slot="{ content }">
-          <Story
-            v-for="story in content"
-            :key="story._id"
-            :story-data="story"
-          />
-        </template>
-      </StorySection>
-    </AcgovNews>
+    <AcgovNews :news="newsData" news-index="government/news/" />
   </main>
   <!--PAGEWATCH CODE="CAALAME_1_20080723_151631_en"-->
 </template>
@@ -29,12 +15,12 @@ export default {
     return { newsData }
   },
   methods: {
-    getStoryHeadline(story) {
-      if (story.format.headline) {
-        return story.format.headline
-      }
-      return console.log(story)
-    },
+    // getStoryHeadline(story) {
+    //   if (story.format.headline) {
+    //     return story.format.headline
+    //   }
+    //   return console.log(story)
+    // },
   },
   head() {
     return {
