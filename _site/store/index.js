@@ -6,7 +6,7 @@ export const state = () => ({
     id: null,
   },
   urlValidationMap: {
-    mainIndex: {},
+    main: {},
     pages: [],
   },
   site: {},
@@ -14,7 +14,7 @@ export const state = () => ({
 
 export const getters = {
   newsContent(state) {
-    return state.urlValidationMap.mainIndex.content
+    return state.urlValidationMap.main.index.sections
   },
   getNewsSection: (state) => (params) => {
     return new Promise((resolve, reject) => {
@@ -35,7 +35,7 @@ export const mutations = {
     state.showDrafPreviewBanner = true
   },
   SET_INDEX(state, payload) {
-    state.urlValidationMap.mainIndex = { ...payload }
+    state.urlValidationMap.main = { ...payload }
   },
   SET_PAGE(state, payload) {
     state.urlValidationMap.pages.push(payload)
@@ -45,37 +45,42 @@ export const mutations = {
   },
 }
 
-const siteQuery = groq`
+const indexQuery = groq`
 *[_type == "siteSettings" && _id == "acgov"][0]{
+    // ...
     url,
     title,
     lang,
     _updatedAt,
-    frontpage->{
+    "index": frontpage->{
+        // ...,
       _id,
-      routeLabel,
+      _rev,
+    //   routeLabel,
       "slug": slug_custom_format.current,
-      page->{
-        _id,
-        title,
-        "pageContent": content[]->{
-          title,
+      "page-id": page->_id,
+      "page-label": page->title,
+      "sections": page->content[]->{
+          // ...,
           _id,
+          // _type,
           _createdAt,
           _updatedAt,
-          "name":sectionName,
+          "label": sectionName,
           "slug": slug.current,
           "sectionContent": *[_type=="story" && references(^._id)]{
+            //   ...
                 _id,
+                // _type,
                 _createdAt,
                 _updatedAt,
                 "slug": slug.current,
-                _type,
+                // "type": _type,
                 "tag": storyTag,
                 "layout": storyLayout,
                 "format": storyFormat[0]{
                     _key,
-                    _type,
+                    "componentType": _type,
                     _type == "textStory" => {
                         headline,
                         "body": storyBody[]
@@ -93,10 +98,10 @@ const siteQuery = groq`
                     },
               }
             } | order(_createdAt asc),
-          } | order(_createdAt asc),
-        }
-      },
-}`
+        } | order(_createdAt asc)
+    }
+}
+`
 
 const randomPages = groq`
   *[_type == "route" && slug_custom_format.current != "index"]{
@@ -110,16 +115,9 @@ const randomPages = groq`
 
 export const actions = {
   async nuxtServerInit({ commit }, { $sanity }) {
-    const result = await $sanity.fetch(siteQuery)
+    const indexPage = await $sanity.fetch(indexQuery)
     const pages = await $sanity.fetch(randomPages)
 
-    const { frontpage } = result
-
-    const indexPage = {
-      slug: frontpage.slug,
-      label: frontpage.routeLabel,
-      content: frontpage.page.pageContent,
-    }
     commit('SET_INDEX', indexPage)
     pages.forEach((page) => {
       commit('SET_PAGE', page)

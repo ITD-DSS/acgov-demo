@@ -13,7 +13,7 @@
       "page-id": page->_id,
       "page-label": page->title,
       "sections": page->content[]->{
-          ...,
+        //   ...,
           _id,
           _type,
           _createdAt,

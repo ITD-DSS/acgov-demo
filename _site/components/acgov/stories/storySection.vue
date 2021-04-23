@@ -3,12 +3,13 @@
     class="news-grid w-8/12 bg-white bg-opacity-90 mt-4 mb-8 mx-auto p-4"
   >
     <header class="">
-      <NuxtLink :to="getSlug">
-        <h2>{{ sectionName }}</h2>
+      <NuxtLink :to="`government/news/${sectionData.slug}`">
+        <h2>{{ sectionData.label }}</h2>
       </NuxtLink>
     </header>
 
-    <slot v-bind="getContent" />
+    <!-- <slot v-bind="getContent" /> -->
+    <slot v-bind="{ content: sectionData.sectionContent }" />
   </section>
 </template>
 
@@ -16,31 +17,18 @@
 export default {
   name: 'StorySection',
   props: {
-    storiesData: {
+    sectionData: {
       type: Object,
       default: () => [],
     },
-    sectionSlug: {
-      type: String,
-      default: '',
-    },
   },
   computed: {
-    sectionName() {
-      return this.storiesData.name
-    },
-    getSlug() {
-      if (this.sectionSlug) {
-        return `${this.sectionSlug}${this.storiesData.slug}`
-      }
-      return `${this.storiesData.slug}`
-    },
-    getContent() {
-      return {
-        storySlug: this.getSlug,
-        content: this.storiesData.sectionContent,
-      }
-    },
+    // getSlug() {
+    //   return `government/news/${this.sectionData.slug}`
+    // },
+    // getContent() {
+    //   return this.sectionData.sectionContent
+    // },
   },
 }
 </script>

@@ -1,6 +1,20 @@
 <template>
   <main class="flex flex-col">
-    <AcgovNews :news="newsData" />
+    <AcgovNews>
+      <StorySection
+        v-for="section in newsData"
+        :key="section._id"
+        :section-data="section"
+      >
+        <template v-slot="{ content }">
+          <Story
+            v-for="story in content"
+            :key="story._id"
+            :story-data="story"
+          />
+        </template>
+      </StorySection>
+    </AcgovNews>
   </main>
   <!--PAGEWATCH CODE="CAALAME_1_20080723_151631_en"-->
 </template>
@@ -13,6 +27,14 @@ export default {
   async asyncData({ store }) {
     const newsData = await store.getters.newsContent
     return { newsData }
+  },
+  methods: {
+    getStoryHeadline(story) {
+      if (story.format.headline) {
+        return story.format.headline
+      }
+      return console.log(story)
+    },
   },
   head() {
     return {
@@ -61,18 +83,18 @@ export default {
     }
   },
   // TODO: Implement Validation for Preview mode
-  validate({ route, query, store }) {
-    // check that store.state.site.frontpage.slug === route
-    if (
-      route.fullPath === '/' &&
-      store.state.urlValidationMap.mainIndex.slug === 'index'
-    ) {
-      return (
-        query.preview === 'true' || store.state.urlValidationMap.mainIndex.slug
-      )
-    }
-    return false
-  },
+  // validate({ route, query, store }) {
+  //   // check that store.state.site.frontpage.slug === route
+  //   if (
+  //     route.fullPath === '/' &&
+  //     store.state.urlValidationMap.mainIndex.slug === 'index'
+  //   ) {
+  //     return (
+  //       query.preview === 'true' || store.state.urlValidationMap.mainIndex.slug
+  //     )
+  //   }
+  //   return false
+  // },
 }
 </script>
 

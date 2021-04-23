@@ -1,13 +1,17 @@
 <template>
   <article class="text-black box-content my-4 pt-2">
-    <h3 class="text-sm font-medium pb-2">{{ category }}</h3>
-    <h4 class="text-2xl pb-2">{{ headline }}</h4>
+    <h3 class="text-sm font-medium pb-2"><slot name="category" /></h3>
+
+    <h4 class="text-2xl pb-2">
+      <slot name="headline" />
+    </h4>
     <p class="text mb-3">
       <slot />
     </p>
-    <span v-if="videoUrl || videoAlt">
+    <slot name="video" />
+    <!-- <span v-if="videoUrl || videoAlt">
       <video-story :vid-alt-text="videoAlt" :youtube-embed="videoUrl" />
-    </span>
+    </span> -->
   </article>
 </template>
 
@@ -15,22 +19,26 @@
 export default {
   name: 'NewsStory',
   props: {
-    category: {
-      type: String,
-      default: '',
-    },
-    headline: {
-      type: String,
-      default: '',
-    },
-    videoUrl: {
-      type: String,
-      default: '',
-    },
-    videoAlt: {
-      type: String,
-      default: '',
-    },
+    // format: {
+    //   type: Object,
+    //   default: () => {},
+    // },
+    // category: {
+    //   type: String,
+    //   default: '',
+    // },
+    // headline: {
+    //   type: String,
+    //   default: '',
+    // },
+    // videoUrl: {
+    //   type: String,
+    //   default: '',
+    // },
+    // videoAlt: {
+    //   type: String,
+    //   default: '',
+    // },
   },
 }
 </script>
