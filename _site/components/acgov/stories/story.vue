@@ -91,13 +91,6 @@ export default {
       }
       return undefined
     },
-    // storyGridClass() {
-    //   return {
-    //     'col-span-full': this.isFull,
-    //     'col-start-1 col-end-2': this.isLeft,
-    //     'col-start-2 col-end-3': this.isRight,
-    //   }
-    // },
   },
   methods: {},
 }

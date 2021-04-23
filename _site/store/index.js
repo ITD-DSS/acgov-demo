@@ -20,7 +20,7 @@ export const getters = {
     return new Promise((resolve, reject) => {
       if (params.section) {
         resolve(
-          state.urlValidationMap.mainIndex.content.find(
+          state.urlValidationMap.main.index.sections.find(
             (section) => section.slug === params.section
           )
         )
