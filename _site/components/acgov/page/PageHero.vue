@@ -1,6 +1,9 @@
 <template>
   <section class="relative">
-    <h2 class="absolute left-15 text-white text-2xl">{{ heading }}</h2>
+    <div class="absolute text-white text-2xl">
+      <h2>{{ heading }}</h2>
+      <SanityContent :blocks="tagline" />
+    </div>
 
     <img class="w-full" :src="imgSrc" alt="" />
   </section>
@@ -17,6 +20,13 @@ export default {
       const heading = this.$attrs.heading
       if (heading !== '') {
         return heading
+      }
+      return ''
+    },
+    tagline() {
+      const tagline = this.$attrs.tagline
+      if (tagline.length !== 0) {
+        return tagline
       }
       return ''
     },
