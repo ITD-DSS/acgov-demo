@@ -2,7 +2,19 @@
   <main class="flex flex-col items-center">
     <template v-if="getSections !== undefined">
       <div v-for="section in getSections" :key="section._key">
-        <component :is="getComponent(section)" v-bind="section"></component>
+        <component
+          :is="getComponent(section)"
+          v-bind="section"
+          :section-data="section.section"
+        >
+          <template v-slot="{ content }">
+            <Story
+              v-for="story in content"
+              :key="story._id"
+              :story-data="story"
+            />
+          </template>
+        </component>
       </div>
     </template>
     <!-- <div class="w-1/2 mt-10 text-lg">

@@ -30,12 +30,6 @@ export default {
     buildSectionSlug() {
       return `${this.sectionSlug}${this.sectionData.slug}`
     },
-    // getSlug() {
-    //   return `government/news/${this.sectionData.slug}`
-    // },
-    // getContent() {
-    //   return this.sectionData.sectionContent
-    // },
   },
 }
 </script>

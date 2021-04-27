@@ -79,6 +79,7 @@ export default {
     dataset:
       process.env.NODE_ENV !== 'production' ? 'development' : 'development',
     useCdn: false,
+    apiVersion: '2021-03-25',
     withCredentials: true,
   },
 

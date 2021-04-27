@@ -1,8 +1,13 @@
 <template>
   <section class="relative">
-    <div class="absolute text-white text-2xl">
+    <div class="absolute text-white text-4xl m-40">
       <h2>{{ heading }}</h2>
-      <SanityContent :blocks="tagline" />
+      <SanityContent class="text-lg" :blocks="tagline" />
+      <NuxtLink :to="ctaSlug">
+        <button class="bg-green-400">
+          <span>{{ ctaTitle }}</span>
+        </button>
+      </NuxtLink>
     </div>
 
     <img class="w-full" :src="imgSrc" alt="" />
@@ -29,6 +34,22 @@ export default {
         return tagline
       }
       return ''
+    },
+    ctaTitle() {
+      const cta = this.$attrs.cta
+      if (cta.title) {
+        return cta.title
+      }
+      return ''
+    },
+    ctaSlug() {
+      const slug = this.$attrs.cta.route.slug
+      if (slug === 'index') {
+        return '/'
+      } else if (slug === '') {
+        return '/'
+      }
+      return slug
     },
   },
 }
