@@ -17,14 +17,6 @@
         </component>
       </div>
     </template>
-    <!-- <div class="w-1/2 mt-10 text-lg">
-      <h1>
-        <strong>{{ page.routeLabel }}</strong>
-      </h1>
-      <p>
-        <strong> {{ JSON.stringify(page, undefined, 2) }}</strong>
-      </p>
-    </div> -->
   </main>
 </template>
 
@@ -67,27 +59,6 @@ export default {
           return console.error(`NO MATCHING COMPONENTS--->>> ${section._type}`)
       }
       return componentType
-    },
-    getData(section) {
-      // let componentType = ''
-      switch (this.getComponent(section)) {
-        case 'PageHero':
-          // componentType = 'PageHero'
-          break
-        case 'PageTextSection':
-          // componentType = 'PageTextSection'
-          break
-        case 'PageImageTextSection':
-          // componentType = 'PageImageTextSection'
-          break
-        case 'StorySection':
-          // componentType = 'StorySection'
-          break
-        default:
-          return console.error(
-            `NO MATCHING DATA--->>> ${this.getComponent(section)}`
-          )
-      }
     },
   },
   head() {
