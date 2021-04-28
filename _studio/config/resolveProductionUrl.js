@@ -1,6 +1,6 @@
 // import { findEnv } from "./findEnv";
 // dotenv.config({ path: findEnv() });
-import getDocumentTypePreviewUrl from '../util/lib/previewUrl'
+import getDocumentTypePreviewUrl from '../util/lib/getDocumentTypePreviewUrl'
 
 /**
  * 

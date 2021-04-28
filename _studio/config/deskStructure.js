@@ -1,17 +1,24 @@
 import React from "react";
 import S from '@sanity/desk-tool/structure-builder'
-import getDocumentTypePreviewUrl from '../util/lib/previewUrl'
+import getDocumentTypePreviewUrl from '../util/lib/getDocumentTypePreviewUrl'
 
   export const getDefaultDocumentNode = ({ schemaType, documentId }) => {
     // Conditionally return a different configuration based on the schema type
-    switch (schemaType || documentId) {
-      // case "page":
-      //   return S.document().views([
-      //     S.view.form(),
-      //     // S.view.editor(),
-      //     S.view.component(WebPreview).title("Web Preview"),
-      //   ])
-        // break;
+    switch (schemaType) {
+      case "route":
+        return S.document().views([
+          S.view.form(),
+          // S.view.editor(),
+          S.view.component(WebPreview).title("Web Preview"),
+        ])
+        break;
+      case "page":
+        return S.document().views([
+          S.view.form(),
+          // S.view.editor(),
+          S.view.component(PagePreview).title("Web Preview"),
+        ])
+        break;
       case "story":
         return S.document().views([
           S.view.form(),
@@ -29,18 +36,22 @@ import getDocumentTypePreviewUrl from '../util/lib/previewUrl'
       default:
         break;
     }
-
   };
 
+  // const PagePreview({document}) => {
+
+  // }
   
   const WebPreview = ({ document }) => {
-
     // const { displayed } = document
-    console.log('doc:', document)
-  
+    // console.log('doc:', document)
+    
     const targetURL = getDocumentTypePreviewUrl(document);
+    
+    console.log('PREVIEW URL: =>',targetURL)
   
     return <iframe src={targetURL} frameBorder={0} width="100%" height="100%" />;
+    // return null
   };
 
 export default () => 
@@ -69,13 +80,17 @@ export default () =>
                     .defaultOrdering([{ field: '_createdAt', direction: 'asc' }])
                     .filter(`_type == "route"`)
                     .child( docId =>
+                      // S.documentList()
+                      //   .title('Page')
+                      //   .filter('_type == "page" && references($docId)')
+                      //   .params({ docId })
                       S.editor()              
-                        .title('Route Settings')
+                        .title('Page Settings')
                         .schemaType('route')
                         .documentId(docId)
                         .views([
                           S.view.form(),
-                          // S.view.form('page'),
+                          // S.view.form(docId),
                           S.view
                           .component(WebPreview)
                           .title('Web Preview'),
