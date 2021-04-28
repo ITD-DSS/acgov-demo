@@ -10,7 +10,7 @@ export default function (document) {
   // HANDLE document Types
   const { draft , displayed } = document
 
-  console.log('2. GET DOCUMENT STATES\nDRAFT: ', draft, '\nDISPLAYED', displayed )
+  // console.log('2. GET DOCUMENT STATES\nDRAFT: ', draft, '\nDISPLAYED', displayed )
 
   if(draft !== undefined && displayed !== undefined) {
     let routeSlug = ''

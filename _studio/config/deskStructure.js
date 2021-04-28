@@ -113,9 +113,9 @@ export default () =>
                       .documentId(docId)
                       .views([
                         S.view.form(),
-                        // S.view
-                        // .component(WebPreview)
-                        // .title('Web Preview'),
+                        S.view
+                        .component(WebPreview)
+                        .title('Web Preview'),
                       ])
                   )
             ),

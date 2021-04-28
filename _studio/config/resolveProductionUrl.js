@@ -9,5 +9,8 @@ import getDocumentTypePreviewUrl from '../util/lib/getDocumentTypePreviewUrl'
  */
 
 export default function resolveProductionUrl(document) {
-  return getDocumentTypePreviewUrl(document)
+  // console.log('RESOLVE PROD URL DOCUMENT()', document)
+  // const urlSlug = getDocumentTypePreviewUrl(document)
+  // console.log('getDocumentTypePreviewUrl(document)', urlSlug)
+  // return getDocumentTypePreviewUrl(document)
 }
