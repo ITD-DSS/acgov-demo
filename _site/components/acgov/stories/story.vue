@@ -1,14 +1,11 @@
 <template>
-  <!-- <story-format-selector v-if="storyData" :component-data="storyData.format" /> -->
-  <!-- <div :class="storyData.layout"> -->
-  <div :class="storyData.layout">
+  <div :id="storyData.slug" :class="storyData.layout">
     <article
       v-if="
         getComponentType === 'textStory' || getComponentType === 'videoStory'
       "
       class="text-black box-content my-4 pt-2"
     >
-      <!-- <h3 class="text-sm font-medium pb-2"><slot name="category" /></h3> -->
       <h3 class="text-sm font-medium pb-2">{{ storyData.tag }}</h3>
       <h4 v-if="getFormatHeadline !== ''" class="text-2xl pb-2">
         {{ getFormatHeadline }}
@@ -30,33 +27,6 @@
       :img-alt="format.imgAlt ? format.imgAlt : 'No Alt Tag!'"
       :link-to="format.linkTo ? format.linkTo : '#'"
     />
-    <!-- <news-story
-      v-if="getFormatType() === 'textStory'"
-      :key="storyData.format._key"
-      :category="storyData.tag"
-      :headline="storyData.format.headline"
-      :video-url="storyData.format.url"
-      :video-alt="storyData.format.alt"
-    >
-      <SanityContent :blocks="storyData.format.body" />
-    </news-story> -->
-    <!-- <news-story
-      v-else-if="getFormatType() === 'videoStory'"
-      :key="storyData.format._key"
-      :headline="storyData.format.headline"
-      :video-url="storyData.format.url"
-      :video-alt="storyData.format.alt"
-    >
-      <SanityContent :blocks="storyData.format.body" />
-    </news-story> -->
-    <!-- <img-link
-      v-else-if="getFormatType() === 'imageLink'"
-      :key="storyData.format._key"
-      :link-to="storyData.format.linkTo"
-      :img-src="storyData.format.imgSrc"
-      :img-alt="storyData.format.alt"
-    /> -->
-    <!-- <span v-else class="hidden"></span> -->
   </div>
 </template>
 

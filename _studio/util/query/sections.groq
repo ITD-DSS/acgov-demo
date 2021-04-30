@@ -13,7 +13,7 @@
             "type": _type,
             "tag": storyTag,
             "layout": storyLayout,
-            storyFormat[0],
+            // storyFormat[0],
             "format": storyFormat[0]{
                 
                 _key,
@@ -33,8 +33,7 @@
                     altText,
                     "url": youtubeUrl
                 },
-              
-      } | order(_createdAt asc),
+      }
     } | order(_createdAt asc), 
   }
 // *[_type=="storySection"]{

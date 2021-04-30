@@ -18,16 +18,12 @@ export const getters = {
     return state.urlValidationMap.main.index.sections
   },
   getNewsSection: (state) => (params) => {
-    return new Promise((resolve, reject) => {
-      if (params.section !== undefined || params.section !== '') {
-        resolve(
-          state.urlValidationMap.sections.find(
-            (section) => section.slug === params.section
-          )
-        )
-        reject(console.error(`No section matching params: ${params.section} `))
-      }
-    })
+    if (params.section !== undefined || params.section !== '') {
+      return state.urlValidationMap.sections.find(
+        (section) => section.slug === params.section
+      )
+    }
+    return console.error(`No section matching params: ${params.section} `)
   },
 }
 
@@ -227,8 +223,7 @@ const sectionQuery = groq`
                     altText,
                     "url": youtubeUrl
                 },
-              
-      } | order(_createdAt asc),
+      }
     } | order(_createdAt asc), 
   }
 `
