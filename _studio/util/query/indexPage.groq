@@ -30,6 +30,7 @@
                 _type,
                 "tag": storyTag,
                 "layout": storyLayout,
+                // storyFormat[0],
                 "format": storyFormat[0]{
                     _key,
                     _type,

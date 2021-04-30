@@ -8,6 +8,7 @@ export const state = () => ({
   urlValidationMap: {
     main: {},
     pages: [],
+    sections: [],
   },
   site: {},
 })
@@ -18,9 +19,9 @@ export const getters = {
   },
   getNewsSection: (state) => (params) => {
     return new Promise((resolve, reject) => {
-      if (params.section) {
+      if (params.section !== undefined || params.section !== '') {
         resolve(
-          state.urlValidationMap.main.index.sections.find(
+          state.urlValidationMap.sections.find(
             (section) => section.slug === params.section
           )
         )
@@ -40,8 +41,8 @@ export const mutations = {
   SET_PAGE(state, payload) {
     state.urlValidationMap.pages.push(payload)
   },
-  INIT(state, payload) {
-    state.site = { ...payload }
+  SET_SECTION(state, payload) {
+    state.urlValidationMap.sections.push(payload)
   },
 }
 
@@ -191,15 +192,59 @@ const randomPages = groq`
     }
   }
 `
+const sectionQuery = groq`
+  *[_type == 'storySection']{
+      _id,
+      _createdAt,
+      _updatedAt,
+      "label": sectionName,
+      "slug": slug.current,
+      "sectionContent": *[_type=="story" && references(^._id)]{
+          // ...
+            _id,
+            _createdAt,
+            _updatedAt,
+            "slug": slug.current,
+            "type": _type,
+            "tag": storyTag,
+            "layout": storyLayout,
+            "format": storyFormat[0]{
+                // ...
+                _key,
+                "componentType": _type,
+                _type == "textStory" => {
+                    headline,
+                    "body": storyBody[]
+                },
+                _type == "imageLink" => {
+                    linkTo,
+                    "alt": select(imageLink.altText),
+                    "imgSrc": linkImage.asset._ref
+                },
+                _type == "videoStory" => {
+                    "headline": videoText.headline,
+                    "body": videoText.storyBody,
+                    altText,
+                    "url": youtubeUrl
+                },
+              
+      } | order(_createdAt asc),
+    } | order(_createdAt asc), 
+  }
+`
 
 export const actions = {
   async nuxtServerInit({ commit }, { $sanity }) {
     const indexPage = await $sanity.fetch(indexQuery)
     const pages = await $sanity.fetch(randomPages)
+    const sections = await $sanity.fetch(sectionQuery)
 
     commit('SET_INDEX', indexPage)
     pages.forEach((page) => {
       commit('SET_PAGE', page)
+    })
+    sections.forEach((section) => {
+      commit('SET_SECTION', section)
     })
   },
   validateSection({ getters }, payload) {

@@ -43,9 +43,7 @@ import useSlug from '../util/lib/useSlug'
   // }
   
   const WebPreview = ({ document }) => {
-    // const { displayed } = document
-    // console.log('doc:', document)
-    // debugger
+ 
     const targetURL = useSlug(document);
     console.log('PREVIEW URL: =>',targetURL)
 

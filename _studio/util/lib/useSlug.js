@@ -9,7 +9,7 @@ export default function (document) {
 
   const previewQuery = '?preview=true'
 
-  const [slug, setSlug] = useState('');
+  const [previewUrl, setPreviewUrl] = useState('');
 
   console.log('1. GET DOCUMENT TYPE PREVIEW URL', document)
   
@@ -21,43 +21,58 @@ export default function (document) {
   console.log('2. DOCUMENT:\n', documentState)
   
   // debugger
-  useEffect(() => {   
-      if(documentType === 'route') {
-        const routeSlug = `${documentState.slug_custom_format.current}`
-        console.log('ROUTE SLUG =>',routeSlug)
-        const docSlug = `${BasePreviewUrl}/${routeSlug}${previewQuery}`
-        setSlug(docSlug)
-      }      
-  })
-  useEffect(() => {   
-      if(documentType === 'page') {
+  useEffect(() => {
+
+    let slug = ''
+    let URL = ''
+    switch (documentType) {
+      case 'route':
+        slug = `${documentState.slug_custom_format.current}`
+        console.log('ROUTE SLUG =>',slug)
+        URL = `${BasePreviewUrl}/${slug}${previewQuery}`
+        setPreviewUrl(URL)
+        break;
+      case 'page':
         async function fetchRoute(){
           const query = `*[_type == 'route' && references($pageId)][0]{"slug": slug_custom_format.current}`
           const params = {pageId: documentState._id}
-          const routeSlug = await client.fetch(query, params)
-          console.log('ROUTE SLUG =>', routeSlug)
-          const docSlug = `${BasePreviewUrl}/${routeSlug.slug}${previewQuery}`
-          setSlug(docSlug)
+          slug = await client.fetch(query, params)
+          console.log('ROUTE SLUG =>', slug)
+          URL = `${BasePreviewUrl}/${slug.slug}${previewQuery}`
+          setPreviewUrl(URL)
         }
         fetchRoute()
-      }      
+        break;
+      case 'storySection':
+        slug = `${documentState.slug.current}`
+        // console.log('ROUTE SLUG =>',slug)
+        URL = `${BasePreviewUrl}/government/news/${slug}${previewQuery}`
+        setPreviewUrl(URL)
+        break;
+      case 'story':
+        console.log("STORY =>", documentState)
+        async function fetchStorySlug(){
+          try {
+            const storySlug = `${documentState.slug.current}`
+            const query = `*[_type == 'storySection' && _id == $sectionId ][0]{"slug": slug.current}`
+            const params = {sectionId: documentState.storySectionRef._ref}
+            const section = await client.fetch(query, params)
+            console.log('SECTION SLUG =>', section)
+            URL = `${BasePreviewUrl}/government/news/${section.slug}#${storySlug}${previewQuery}`
+            setPreviewUrl(URL) 
+          } catch (error) {
+            console.error(error)
+          }
+        }
+        fetchStorySlug()
+        break;
+    
+      default:
+        setPreviewUrl(null)
+        break;
+    }   
   })
 
-  // console.log('2. GET DOCUMENT STATES\nDRAFT: ', draft, '\nDISPLAYED', displayed )
-  
-  // if(document.type === 'route') {
-  //   const routeSlug = document.slug_custom_format.current
-  //   return console.log('ROUTE SLUG', routeSlug)
-  //   // return `${BasePreviewUrl}/${routeSlug}`
-  // }
-  
-  //  check for document displayed and draft types
-  // const { displayed, draft } = document
-  
-  // console.log('2. GET DISPLAYED TYPE DOCUMENT', displayed)
-  // console.log('3. GET DRAFT TYPE DOCUMENT', draft)
-  
-  // // handle draft documents documents
-  return slug
+  return previewUrl
 
 }

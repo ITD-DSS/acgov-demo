@@ -1,6 +1,6 @@
 <template>
   <main class="flex flex-col">
-    <StorySection :section-data="section">
+    <StorySection :section-data="section" :section-slug="section.slug">
       <template v-slot="{ content }">
         <Story
           v-for="story in content"

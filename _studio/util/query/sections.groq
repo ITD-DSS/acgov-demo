@@ -1,29 +1,71 @@
-*[_type=="storySection"]{
-      _createdAt,
+*[_type == 'storySection']{
       _id,
-      "name": sectionName,
-      "related": *[_type=="story" && references(^._id)]{
-        _createdAt,
-        _id,
-        _updatedAt,
-        "tag": storyTag,
-        "layout": storyLayout,
-        "format": storyFormat[0]{
-            _key,
-            _type,
-            _type == "textStory" => {
-                headline,
-                "body": storyBody[]
-            },
-            _type == "imageLink" => {
-                linkTo,
-                "alt": linkImage.altText,
-                "imgSrc": linkImage.asset._ref
-            },
-            _type == "videoStory" => {
-                "alt": altText,
-                "url": youtubeUrl
-            },
-        }
-    } | order(_createdAt asc)
-}
+      _createdAt,
+      _updatedAt,
+      "label": sectionName,
+      "slug": slug.current,
+      "sectionContent": *[_type=="story" && references(^._id)]{
+          // ...
+            _id,
+            _createdAt,
+            _updatedAt,
+            "slug": slug.current,
+            "type": _type,
+            "tag": storyTag,
+            "layout": storyLayout,
+            storyFormat[0],
+            "format": storyFormat[0]{
+                
+                _key,
+                "componentType": _type,
+                _type == "textStory" => {
+                    headline,
+                    "body": storyBody[]
+                },
+                _type == "imageLink" => {
+                    linkTo,
+                    "alt": select(imageLink.altText),
+                    "imgSrc": linkImage.asset._ref
+                },
+                _type == "videoStory" => {
+                    "headline": videoText.headline,
+                    "body": videoText.storyBody,
+                    altText,
+                    "url": youtubeUrl
+                },
+              
+      } | order(_createdAt asc),
+    } | order(_createdAt asc), 
+  }
+// *[_type=="storySection"]{
+    // ...,
+    // slug,
+    // "slug": slug.current
+    //   _createdAt,
+    //   _id,
+    //   "name": sectionName,
+    //   "related": *[_type=="story" && references(^._id)]{
+    //     _createdAt,
+    //     _id,
+    //     _updatedAt,
+    //     "tag": storyTag,
+    //     "layout": storyLayout,
+    //     "format": storyFormat[0]{
+    //         _key,
+    //         _type,
+    //         _type == "textStory" => {
+    //             headline,
+    //             "body": storyBody[]
+    //         },
+    //         _type == "imageLink" => {
+    //             linkTo,
+    //             "alt": linkImage.altText,
+    //             "imgSrc": linkImage.asset._ref
+    //         },
+    //         _type == "videoStory" => {
+    //             "alt": altText,
+    //             "url": youtubeUrl
+    //         },
+    //     }
+    // } | order(_createdAt asc)
+// }
