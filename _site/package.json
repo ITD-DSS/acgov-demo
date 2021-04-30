@@ -23,6 +23,7 @@
     "@sanity/image-url": "^0.140.22",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
+    "scroll-to-fragment": "^1.0.12",
     "vuetensils": "^0.7.8"
   },
   "devDependencies": {

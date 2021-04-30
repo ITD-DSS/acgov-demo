@@ -11178,6 +11178,11 @@ schema-utils@^3.0.0:
     ajv "^6.12.5"
     ajv-keywords "^3.5.2"
 
+scroll-to-fragment@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/scroll-to-fragment/-/scroll-to-fragment-1.0.12.tgz#3e7812309b6ba3a7302c61bb1166e79031e3ab30"
+  integrity sha512-FT2Vi0DATdhdV7oUlieUhxVj1Q0Wuxum7MtVZTTfdgexfLbkAi1drpWdTE3XAb61G8AeEjidQnxWrkMlCNYbYw==
+
 section-matter@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/section-matter/-/section-matter-1.0.0.tgz#e9041953506780ec01d59f292a19c7b850b84167"
