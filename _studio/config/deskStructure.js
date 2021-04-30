@@ -1,6 +1,6 @@
 import React from "react";
 import S from '@sanity/desk-tool/structure-builder'
-import getDocumentTypePreviewUrl from '../util/lib/getDocumentTypePreviewUrl'
+import useSlug from '../util/lib/useSlug'
 
   export const getDefaultDocumentNode = ({ schemaType, documentId }) => {
     // Conditionally return a different configuration based on the schema type
@@ -45,13 +45,17 @@ import getDocumentTypePreviewUrl from '../util/lib/getDocumentTypePreviewUrl'
   const WebPreview = ({ document }) => {
     // const { displayed } = document
     // console.log('doc:', document)
-    
-    const targetURL = getDocumentTypePreviewUrl(document);
-    
+    // debugger
+    const targetURL = useSlug(document);
     console.log('PREVIEW URL: =>',targetURL)
+
+    if(targetURL !== null || targetURL !== undefined) {
+      
+      return <iframe src={targetURL} frameBorder={0} width="100%" height="100%" />;
+    }
+    
   
-    return <iframe src={targetURL} frameBorder={0} width="100%" height="100%" />;
-    // return null
+    return <section width="100%" height="100%" >NO SLUG SET FOR CONTENT PREVIEW</section>
   };
 
 export default () => 
