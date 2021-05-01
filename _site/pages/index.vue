@@ -11,25 +11,13 @@ export default {
   fetchKey: 'acgov-index',
   fetchOnServer: true,
   async asyncData({ store }) {
-    const newsData = await store.getters.newsContent
+    const newsData = await store.getters.indexContent
     return { newsData }
-  },
-  methods: {
-    // getStoryHeadline(story) {
-    //   if (story.format.headline) {
-    //     return story.format.headline
-    //   }
-    //   return console.log(story)
-    // },
   },
   head() {
     return {
-      title: '',
+      title: this.$store.getters.siteTitle,
       meta: [
-        // {
-        //   name: 'google-site-verification',
-        //   content: 'IbsI4I84KNfBVhGugciXGiu2v2wBwKB_Kju-x9j6uYI',
-        // },
         {
           hid: 'description',
           name: 'Description',
@@ -49,18 +37,10 @@ export default {
         },
       ],
       link: [
-        // {
-        //   rel: 'stylesheet',
-        //   href: 'acgov-css/bootstrap.min.css',
-        // },
-        // {
-        //   rel: 'stylesheet',
-        //   href: 'acgov-css/ie10-viewport-bug-workaround.css',
-        // },
-        // {
-        //   rel: 'stylesheet',
-        //   href: 'acgov-css/custom.css',
-        // },
+        {
+          rel: 'canonical',
+          href: this.$store.getters.siteUrl,
+        },
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/icon?family=Material+Icons',

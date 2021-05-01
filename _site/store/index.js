@@ -10,12 +10,14 @@ export const state = () => ({
     pages: [],
     sections: [],
   },
-  site: {},
 })
 
 export const getters = {
-  newsContent(state) {
+  indexContent(state) {
     return state.urlValidationMap.main.index.sections
+  },
+  sections(state) {
+    return state.urlValidationMap.sections
   },
   getNewsSection: (state) => (params) => {
     if (params.section !== undefined || params.section !== '') {
@@ -24,6 +26,12 @@ export const getters = {
       )
     }
     return console.error(`No section matching params: ${params.section} `)
+  },
+  siteTitle(state) {
+    return state.urlValidationMap.main.title
+  },
+  siteUrl(state) {
+    return state.urlValidationMap.main.url
   },
 }
 
@@ -243,7 +251,7 @@ export const actions = {
     })
   },
   validateSection({ getters }, payload) {
-    const sections = getters.newsContent
+    const sections = getters.sections
     const isSection = (section) => section.slug === payload
     return new Promise((resolve, reject) => {
       if (typeof payload === 'string') {
