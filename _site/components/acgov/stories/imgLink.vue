@@ -16,10 +16,10 @@ export default Vue.extend({
       type: String,
       default: '',
     },
-    imgAlt: {
-      type: String,
-      default: '',
-    },
+    // imgAlt: {
+    //   type: String,
+    //   default: '',
+    // },
     linkTo: {
       type: String,
       default: '',

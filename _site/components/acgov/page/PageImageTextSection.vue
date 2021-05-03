@@ -11,8 +11,8 @@
     </div>
     <div class="ml-10">
       <figure>
-        <img :src="imageUrl" :alt="imgAlt" />
-        <figcaption>{{ imgAlt }}</figcaption>
+        <img :src="imageUrl" />
+        <figcaption></figcaption>
       </figure>
     </div>
   </section>
