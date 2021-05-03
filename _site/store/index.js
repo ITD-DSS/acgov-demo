@@ -238,6 +238,9 @@ const sectionQuery = groq`
 
 export const actions = {
   async nuxtServerInit({ commit }, { $sanity }) {
+    // console.log('$SANITY:', $sanity)
+    // console.log('APPLICATION:', app)
+    // console.log('RESPONSE:', res)
     const indexPage = await $sanity.fetch(indexQuery)
     const pages = await $sanity.fetch(randomPages)
     const sections = await $sanity.fetch(sectionQuery)
@@ -260,9 +263,4 @@ export const actions = {
       reject(console.error('No section slug!'))
     })
   },
-  validateIndex({ state }) {},
-  validateAgency({ state }) {},
-  validateDept({ state }) {},
-  validateService({ state }) {},
-  validateSlug({ state }) {},
 }
