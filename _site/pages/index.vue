@@ -1,18 +1,60 @@
 <template>
   <main class="flex flex-col">
-    <AcgovNews :news="newsData" news-index="government/news/" />
+    <AcgovNews :news="sections" news-index="government/news/" />
   </main>
-  <!--PAGEWATCH CODE="CAALAME_1_20080723_151631_en"-->
 </template>
 
 <script>
+import { groq } from '@nuxtjs/sanity'
+
+const indexQuery = groq`*[_type == "route" && _id == $routeId][0]{
+  ...page->{
+    "sections": content[]->{
+        _id,
+        _createdAt,
+        _updatedAt,
+        "label": sectionName,
+        "slug": slug.current,
+        "sectionContent": *[_type=="story" && references(^._id)]{
+              _id,
+              _createdAt,
+              _updatedAt,
+              "slug": slug.current,
+              "tag": storyTag,
+              "layout": storyLayout,
+              "format": storyFormat[0]{
+                  _key,
+                  "componentType": _type,
+                  _type == "textStory" => {
+                      headline,
+                      "body": storyBody[]
+                  },
+                  _type == "imageLink" => {
+                      linkTo,
+                      "alt": select(imageLink.altText),
+                      "imgSrc": linkImage.asset._ref
+                  },
+                  _type == "videoStory" => {
+                      "headline": videoText.headline,
+                      "body": videoText.storyBody,
+                      altText,
+                      "url": youtubeUrl
+                  },
+            }
+          }
+      }
+  }
+}
+`
+
 export default {
   layout: 'acgov-home',
   fetchKey: 'acgov-index',
   fetchOnServer: true,
-  async asyncData({ store }) {
-    const newsData = await store.getters.indexContent
-    return { newsData }
+  async asyncData({ $sanity, store }) {
+    const params = { routeId: store.getters.indexRouteId }
+    const sections = await $sanity.fetch(indexQuery, params)
+    return sections
   },
   head() {
     return {
@@ -49,18 +91,14 @@ export default {
     }
   },
   // TODO: Implement Validation for Preview mode
-  // validate({ route, query, store }) {
-  //   // check that store.state.site.frontpage.slug === route
-  //   if (
-  //     route.fullPath === '/' &&
-  //     store.state.urlValidationMap.mainIndex.slug === 'index'
-  //   ) {
-  //     return (
-  //       query.preview === 'true' || store.state.urlValidationMap.mainIndex.slug
-  //     )
-  //   }
-  //   return false
-  // },
+  validate({ route, query, store }) {
+    // Check that routeLabel in store matches
+    return (
+      query.preview === 'true' ||
+      store.state.urlValidationMap.index.slug === route.name ||
+      route.path === '/index'
+    )
+  },
 }
 </script>
 

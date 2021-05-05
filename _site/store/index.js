@@ -1,37 +1,33 @@
 import { groq } from '@nuxtjs/sanity'
 export const state = () => ({
-  showDrafPreviewBanner: false,
-  user: {
-    authenticated: false,
-    id: null,
-  },
+  // showDrafPreviewBanner: false,
+  // user: {
+  //   authenticated: false,
+  //   id: null,
+  // },
+  meta: {},
   urlValidationMap: {
-    main: {},
+    index: {},
     pages: [],
     sections: [],
   },
 })
 
 export const getters = {
-  indexContent(state) {
-    return state.urlValidationMap.main.index.sections
+  indexRouteId(state) {
+    return state.urlValidationMap.index._id
+  },
+  allPageSlugs(state) {
+    return state.urlValidationMap.pages
   },
   sections(state) {
     return state.urlValidationMap.sections
   },
-  getNewsSection: (state) => (params) => {
-    if (params.section !== undefined || params.section !== '') {
-      return state.urlValidationMap.sections.find(
-        (section) => section.slug === params.section
-      )
-    }
-    return console.error(`No section matching params: ${params.section} `)
-  },
   siteTitle(state) {
-    return state.urlValidationMap.main.title
+    return state.meta.title
   },
   siteUrl(state) {
-    return state.urlValidationMap.main.url
+    return state.meta.url
   },
 }
 
@@ -40,7 +36,10 @@ export const mutations = {
     state.showDrafPreviewBanner = true
   },
   SET_INDEX(state, payload) {
-    state.urlValidationMap.main = { ...payload }
+    state.urlValidationMap.index = payload
+  },
+  SET_MAIN_META(state, payload) {
+    state.meta = payload
   },
   SET_PAGE(state, payload) {
     state.urlValidationMap.pages.push(payload)
@@ -50,202 +49,58 @@ export const mutations = {
   },
 }
 
-const indexQuery = groq`
+const siteMeta = groq`
 *[_type == "siteSettings" && _id == "acgov"][0]{
-    // ...
-    url,
-    title,
-    lang,
+    _id,
     _updatedAt,
-    "index": frontpage->{
-        // ...,
+    title,
+    url,
+    lang
+}
+`
+const indexPageRouteSlug = groq`
+*[_type == "siteSettings" && _id == "acgov"][0]{
+    ...frontpage->{
       _id,
-      _rev,
-    //   routeLabel,
-      "slug": slug_custom_format.current,
-      "page-id": page->_id,
-      "page-label": page->title,
-      "sections": page->content[]->{
-          // ...,
-          _id,
-          // _type,
-          _createdAt,
-          _updatedAt,
-          "label": sectionName,
-          "slug": slug.current,
-          "sectionContent": *[_type=="story" && references(^._id)]{
-            //   ...
-                _id,
-                // _type,
-                _createdAt,
-                _updatedAt,
-                "slug": slug.current,
-                // "type": _type,
-                "tag": storyTag,
-                "layout": storyLayout,
-                "format": storyFormat[0]{
-                    _key,
-                    "componentType": _type,
-                    _type == "textStory" => {
-                        headline,
-                        "body": storyBody[]
-                    },
-                    _type == "imageLink" => {
-                        linkTo,
-                        "alt": select(imageLink.altText),
-                        "imgSrc": linkImage.asset._ref
-                    },
-                    _type == "videoStory" => {
-                        "headline": videoText.headline,
-                        "body": videoText.storyBody,
-                        altText,
-                        "url": youtubeUrl
-                    },
-              }
-            } | order(_createdAt asc),
-        } | order(_createdAt asc)
+      _updatedAt,
+      routeLabel,
+      "slug": slug_custom_format.current
     }
 }
 `
 
-const randomPages = groq`
+const allOtherPageSlugs = groq`
   *[_type == "route" && slug_custom_format.current != "index"]{
-    // ...,
-    _id,
     routeLabel,
     "slug": slug_custom_format.current,
-    page->{
-      // ...,
+    ...page->{
       _createdAt,
-      _id,
+      "pageId": _id,
       _type,
       _updatedAt,
-      content[]{
-        // ...,
-        _type  == 'hero' => {
-          _key,
-          _type,
-          backgroundImage,
-          heading,
-          tagline,
-          "cta": ctas[0]{
-            // ...,
-            _key,
-            title,
-            route->{
-              _id,
-              routeLabel,
-              "slug": slug_custom_format.current
-            },
-          }
-        },
-        _type == 'textSection' => {
-          _key,
-          _type,
-          heading,
-          text
-        },
-        _type == 'imageSection' => {
-          _key,
-          _type,
-          heading,
-          image,
-          text
-        },
-        _type == 'reference' => {
-          // ...,
-          _type,
-          "section": *[_type == 'storySection' && _id == ^._ref ][0]{
-            _id,
-            _type,
-            _createdAt,
-            _updatedAt,
-            sectionName,
-            "slug": slug.current,
-            "sectionContent": *[_type=="story" && references(^._id)]{
-              // ...
-                _id,
-                _createdAt,
-                _updatedAt,
-                "slug": slug.current,
-                "tag": storyTag,
-                "layout": storyLayout,
-                "format": storyFormat[0]{
-                    _key,
-                    "componentType": _type,
-                    _type == "textStory" => {
-                        headline,
-                        "body": storyBody[]
-                    },
-                    _type == "imageLink" => {
-                        linkTo,
-                        "alt": select(imageLink.altText),
-                        "imgSrc": linkImage.asset._ref
-                    },
-                    _type == "videoStory" => {
-                        "headline": videoText.headline,
-                        "body": videoText.storyBody,
-                        altText,
-                        "url": youtubeUrl
-                    },
-              }
-            } | order(_createdAt asc),
-          }          
-        }
-      }
     }
   }
 `
-const sectionQuery = groq`
+const sectionSlugs = groq`
   *[_type == 'storySection']{
       _id,
       _createdAt,
       _updatedAt,
       "label": sectionName,
       "slug": slug.current,
-      "sectionContent": *[_type=="story" && references(^._id)]{
-          // ...
-            _id,
-            _createdAt,
-            _updatedAt,
-            "slug": slug.current,
-            "type": _type,
-            "tag": storyTag,
-            "layout": storyLayout,
-            "format": storyFormat[0]{
-                // ...
-                _key,
-                "componentType": _type,
-                _type == "textStory" => {
-                    headline,
-                    "body": storyBody[]
-                },
-                _type == "imageLink" => {
-                    linkTo,
-                    "alt": select(imageLink.altText),
-                    "imgSrc": linkImage.asset._ref
-                },
-                _type == "videoStory" => {
-                    "headline": videoText.headline,
-                    "body": videoText.storyBody,
-                    altText,
-                    "url": youtubeUrl
-                },
-      }
-    } | order(_createdAt asc), 
   }
 `
 
 export const actions = {
   async nuxtServerInit({ commit }, { $sanity }) {
-    // console.log('$SANITY:', $sanity)
-    // console.log('APPLICATION:', app)
-    // console.log('RESPONSE:', res)
-    const indexPage = await $sanity.fetch(indexQuery)
-    const pages = await $sanity.fetch(randomPages)
-    const sections = await $sanity.fetch(sectionQuery)
-
-    commit('SET_INDEX', indexPage)
+    // REQUEST MINIMAL DATA FROM SANITY
+    const indexRoute = await $sanity.fetch(indexPageRouteSlug)
+    const mainMeta = await $sanity.fetch(siteMeta)
+    const pages = await $sanity.fetch(allOtherPageSlugs)
+    const sections = await $sanity.fetch(sectionSlugs)
+    // ADD DATA TO VUEX STORE
+    commit('SET_INDEX', indexRoute)
+    commit('SET_MAIN_META', mainMeta)
     pages.forEach((page) => {
       commit('SET_PAGE', page)
     })
@@ -261,6 +116,16 @@ export const actions = {
         resolve(sections.some(isSection))
       }
       reject(console.error('No section slug!'))
+    })
+  },
+  validPage({ getters }, payload) {
+    const pages = getters.allPageSlugs
+    const isPage = (page) => page.slug === payload
+    return new Promise((resolve, reject) => {
+      if (typeof payload === 'string') {
+        resolve(pages.some(isPage))
+      }
+      reject(console.error('No Page Slug!'))
     })
   },
 }

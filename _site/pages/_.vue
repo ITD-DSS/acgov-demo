@@ -21,18 +21,101 @@
 </template>
 
 <script>
+import { groq } from '@nuxtjs/sanity'
+const pageQuery = groq`
+  *[_type == "page" && _id == $pageId]{
+      _id,
+      _createdAt,
+      _updatedAt,
+      content[]{
+        _type  == 'hero' => {
+          _key,
+          _type,
+          backgroundImage,
+          heading,
+          tagline,
+          "cta": ctas[0]{
+            // ...,
+            _key,
+            title,
+            route->{
+              _id,
+              routeLabel,
+              "slug": slug_custom_format.current
+            },
+          }
+        },
+        _type == 'textSection' => {
+          _key,
+          _type,
+          heading,
+          text
+        },
+        _type == 'imageSection' => {
+          _key,
+          _type,
+          heading,
+          image,
+          text
+        },
+        _type == 'reference' => {
+          // ...,
+          _type,
+          "section": *[_type == 'storySection' && _id == ^._ref ][0]{
+            _id,
+            _type,
+            _createdAt,
+            _updatedAt,
+            sectionName,
+            "slug": slug.current,
+            "sectionContent": *[_type=="story" && references(^._id)]{
+              // ...
+                _id,
+                _createdAt,
+                _updatedAt,
+                "slug": slug.current,
+                "tag": storyTag,
+                "layout": storyLayout,
+                "format": storyFormat[0]{
+                    _key,
+                    "componentType": _type,
+                    _type == "textStory" => {
+                        headline,
+                        "body": storyBody[]
+                    },
+                    _type == "imageLink" => {
+                        linkTo,
+                        "alt": select(imageLink.altText),
+                        "imgSrc": linkImage.asset._ref
+                    },
+                    _type == "videoStory" => {
+                        "headline": videoText.headline,
+                        "body": videoText.storyBody,
+                        altText,
+                        "url": youtubeUrl
+                    },
+              }
+            } | order(_createdAt asc),
+          }          
+        }
+      }
+  }
+`
+
 export default {
   layout: 'acgov-news',
-  validate({ route, query, params }) {
-    if (route.name === 'all') {
-      return query.preview === 'true' || params.pathMatch
-    }
+  validate({ store, query, params }) {
+    const isValid = () => store.dispatch('validPage', params.pathMatch)
+    return query.preview === 'true' || isValid()
   },
-  asyncData({ store, params }) {
+  async asyncData({ store, params, $sanity }) {
     const page = store.state.urlValidationMap.pages.find(
       (page) => page.slug === params.pathMatch
     )
-    return page
+    const queryOptions = { pageId: page.pageId }
+
+    const pageContent = await $sanity.fetch(pageQuery, queryOptions)
+    return { meta: page, [page._type]: pageContent[0] }
   },
   computed: {
     getSections() {
