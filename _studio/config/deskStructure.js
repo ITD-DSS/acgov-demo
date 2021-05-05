@@ -37,10 +37,6 @@ import useSlug from '../util/lib/useSlug'
         break;
     }
   };
-
-  // const PagePreview({document}) => {
-
-  // }
   
   const WebPreview = ({ document }) => {
  
@@ -51,9 +47,7 @@ import useSlug from '../util/lib/useSlug'
       
       return <iframe src={targetURL} frameBorder={0} width="100%" height="100%" />;
     }
-    
-  
-    return <section width="100%" height="100%" >NO SLUG SET FOR CONTENT PREVIEW</section>
+    return <section width="100%" height="100%" ><h1>NO SLUG SET FOR CONTENT PREVIEW</h1></section>
   };
 
 export default () => 

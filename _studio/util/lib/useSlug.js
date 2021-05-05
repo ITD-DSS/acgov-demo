@@ -11,43 +11,50 @@ export default function (document) {
 
   const [previewUrl, setPreviewUrl] = useState('');
 
-  console.log('1. GET DOCUMENT TYPE PREVIEW URL', document)
+  // console.log('1. GET DOCUMENT TYPE PREVIEW URL', document)
   
   const { draft , displayed } = document
   
   // HANDLE document State
   const documentState = draft === null ? displayed : draft;
   const documentType = documentState._type
-  console.log('2. DOCUMENT:\n', documentState)
+  // console.log('2. DOCUMENT:\n', documentState)
   
   // debugger
   useEffect(() => {
-
-    let slug = ''
-    let URL = ''
     switch (documentType) {
       case 'route':
-        slug = `${documentState.slug_custom_format.current}`
-        console.log('ROUTE SLUG =>',slug)
-        URL = `${BasePreviewUrl}/${slug}${previewQuery}`
-        setPreviewUrl(URL)
+        const routeSlug = documentState.slug_custom_format.current
+        console.log('ROUTE SLUG:', routeSlug)
+        if(routeSlug === 'index'){
+          setPreviewUrl(`${BasePreviewUrl}${previewQuery}`)
+        }
+        setPreviewUrl(`${BasePreviewUrl}/${routeSlug}${previewQuery}`)
+        
         break;
       case 'page':
         async function fetchRoute(){
           const query = `*[_type == 'route' && references($pageId)][0]{"slug": slug_custom_format.current}`
           const params = {pageId: documentState._id}
-          slug = await client.fetch(query, params)
-          console.log('ROUTE SLUG =>', slug)
-          URL = `${BasePreviewUrl}/${slug.slug}${previewQuery}`
-          setPreviewUrl(URL)
+          try {
+            const pageSlug = await client.fetch(query, params)
+            console.log('ROUTE SLUG FOR PAGE =>', pageSlug)
+            if(pageSlug.slug === 'index'){
+              setPreviewUrl(`${BasePreviewUrl}${previewQuery}`)
+            } else {
+              setPreviewUrl(`${BasePreviewUrl}/${pageSlug.slug}${previewQuery}`)
+            }
+          } catch (error) {
+            console.error(error)
+          }
         }
         fetchRoute()
         break;
       case 'storySection':
-        slug = `${documentState.slug.current}`
-        // console.log('ROUTE SLUG =>',slug)
-        URL = `${BasePreviewUrl}/government/news/${slug}${previewQuery}`
-        setPreviewUrl(URL)
+        const sectionSlug = `${documentState.slug.current}`
+        console.log('SECTION SLUG =>',sectionSlug)
+        setPreviewUrl(`${BasePreviewUrl}/government/news/${sectionSlug}${previewQuery}`)
+        
         break;
       case 'story':
         console.log("STORY =>", documentState)
