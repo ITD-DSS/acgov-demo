@@ -4,14 +4,25 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
+const sanityBaseConfig = {
+  projectId: process.env.SANITY_PROJECT_ID,
+  apiVersion: '2021-03-25',
+  // TODO: WORK WITH PROD AND DEVELOPEMENT DATASETS : MAYBE MOVE TO ENV VARIABLE
+  dataset:
+    process.env.NODE_ENV !== 'production' ? 'development' : 'development',
+}
+
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: true,
-  static: {
-    prefix: false,
-  },
+  // static: {
+  //   prefix: false,
+  // },
   privateRuntimeConfig: {
-    SanityNuxtToken: process.env.SANITY_NUXT_TOKEN,
+    sanity: {
+      token: process.env.SANITY_NUXT_TOKEN,
+    },
+    // SanityPreviewToken: process.env.SANITY_NUXT_TOKEN,
   },
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -43,7 +54,7 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '@/plugins/preview.client.js',
-    '@/plugins/sanity.server.js',
+    // '@/plugins/sanity.server.js',
     '@/plugins/sanity-image-builder.js',
   ],
 
@@ -61,7 +72,7 @@ export default {
     // '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/sanity',
+    '@nuxtjs/sanity/module',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -73,13 +84,16 @@ export default {
   ],
 
   sanity: {
-    projectId: process.env.SANITY_PROJECT_ID,
-    // TODO: WORK WITH PROD AND DEVELOPEMENT DATASETS : MAYBE MOVE TO ENV VARIABLE
-    dataset:
-      process.env.NODE_ENV !== 'production' ? 'development' : 'development',
-    useCdn: false,
-    apiVersion: '2021-03-25',
+    ...sanityBaseConfig,
+    useCdn: true,
     withCredentials: true,
+    // additionalClients: {
+    //   previewClient: {
+    //     ...sanityBaseConfig,
+    //     useCdn: false,
+    //     withCredentials: true,
+    //   },
+    // },
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
