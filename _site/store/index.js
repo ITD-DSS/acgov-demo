@@ -78,8 +78,8 @@ const allOtherPageSlugs = groq`
       "pageId": _id,
       _type,
       _updatedAt,
-    }
-  }
+    } 
+  } | order(_updatedAt desc)
 `
 const sectionSlugs = groq`
   *[_type == 'storySection']{
@@ -88,7 +88,7 @@ const sectionSlugs = groq`
       _updatedAt,
       "label": sectionName,
       "slug": slug.current,
-  }
+  } | order(_updatedAt desc)
 `
 
 export const actions = {

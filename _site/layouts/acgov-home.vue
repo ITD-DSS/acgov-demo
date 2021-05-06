@@ -16,11 +16,6 @@
     <acgov-header><nav-icons /></acgov-header>
 
     <Nuxt />
-    <!-- <modal-govdelivery /> -->
-    <!-- <translate-button /> -->
-    <!-- County Administrator's Office --------------------------------->
-    <!-- <modal-cao /> -->
-    <!-- <modal-bos /> -->
     <acgov-footer />
   </div>
 </template>
