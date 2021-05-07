@@ -3,13 +3,14 @@ import sanityClient from 'part:@sanity/base/client'
 const client = sanityClient.withConfig({apiVersion: '2021-03-25', withCredentials: true })
 
 export default function (document) {
+  const [previewUrl, setPreviewUrl] = useState('');
+
   const BasePreviewUrl = process.env.NODE_ENV === "development"
   ? "http://localhost:3000"
   : "https://acgov-demo.netlify.app";
 
   const previewQuery = '?preview=true'
 
-  const [previewUrl, setPreviewUrl] = useState('');
   
   // HANDLE document State
   const { draft , displayed } = document
@@ -33,6 +34,33 @@ export default function (document) {
         
         break;
       case 'page':
+        async function fetchRoute(documentState){
+          console.log("PAGE-ROUTE ==> :", documentState)
+          /**
+           * Since draft docs don't have access to parent references
+           * this checks for drafts and returns parent reference with a strippedId
+           */
+          // if document Id begins with "drafts" return strippedId
+          // else return id
+          const isDraft = documentState["_id"].startsWith('drafts.')
+          const trimmedPageId = isDraft ? documentState._id.replace('drafts.', '') : documentState._id
+          // debugger
+        
+          const query = `*[references($pageId)][0]{"slug": slug_custom_format.current}`
+          const params = { pageId: trimmedPageId }
+          try {
+            const pageSlugResult = await client.fetch(query, params)
+            
+            console.log('ROUTE SLUG FOR PAGE =>', pageSlugResult)
+            if(pageSlugResult.slug === 'index'){
+              setPreviewUrl(`${BasePreviewUrl}${previewQuery}`)
+            } else {
+              setPreviewUrl(`${BasePreviewUrl}/${pageSlugResult.slug}${previewQuery}`)
+            }
+          } catch (error) {
+            console.error(error)
+          }
+        }
         const pageSlug = fetchRoute(documentState)
         setPreviewUrl(pageSlug)
         break;
@@ -43,7 +71,19 @@ export default function (document) {
         
         break;
       case 'story':
+        async function fetchStorySlug(documentState){
+          try {
+            const storySlug = `${documentState.slug.current}`
+            const query = `*[_type == 'storySection' && _id == $sectionId ][0]{"slug": slug.current}`
+            const params = {sectionId: documentState.storySectionRef._ref}
+            const section = await client.fetch(query, params)
         
+            console.log('SECTION SLUG =>', section)
+            setPreviewUrl(`${BasePreviewUrl}/government/news/${section.slug}#${storySlug}${previewQuery}`)
+          } catch (error) {
+            console.error(error)
+          }
+        }
         // console.log("STORY =>", documentState)
         const storySlug = fetchStorySlug(documentState)
         setPreviewUrl(storySlug)
@@ -53,45 +93,8 @@ export default function (document) {
         setPreviewUrl(null)
         break;
     }   
-  })
+  }, [documentState, documentType])
 
   return previewUrl
 
-}
-
-async function fetchRoute(documentState){
-  console.log("PAGE-ROUTE ==> :", documentState)
-  // if document Id begins with drafts return strippedId
-  // else return id
-  const isDraft = documentState._id.startsWith('draft.')
-  debugger
-  // const trimmedPageId = 
-
-  const query = `*[references($pageId)][0]{"slug": slug_custom_format.current}`
-  const params = {pageId: documentState.page._ref}
-  try {
-    const pageSlugResult = await client.fetch(query, params)
-    
-    console.log('ROUTE SLUG FOR PAGE =>', pageSlugResult?.slug)
-    if(pageSlug.slug === 'index'){
-      setPreviewUrl(`${BasePreviewUrl}${previewQuery}`)
-    } else {
-      setPreviewUrl(`${BasePreviewUrl}/${pageSlugResult.slug}${previewQuery}`)
-    }
-  } catch (error) {
-    console.error(error)
-  }
-}
-async function fetchStorySlug(documentState){
-  try {
-    const storySlug = `${documentState.slug.current}`
-    const query = `*[_type == 'storySection' && _id == $sectionId ][0]{"slug": slug.current}`
-    const params = {sectionId: documentState.storySectionRef._ref}
-    const section = await client.fetch(query, params)
-
-    console.log('SECTION SLUG =>', section)
-    setPreviewUrl(`${BasePreviewUrl}/government/news/${section.slug}#${storySlug}${previewQuery}`)
-  } catch (error) {
-    console.error(error)
-  }
 }
