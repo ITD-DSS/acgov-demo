@@ -86,7 +86,7 @@ export default {
       name: 'publishedAt',
       type: 'datetime',
       options: {
-        dateFormat: 'DD-MM-YYYY',
+        dateFormat: 'dd-MM-yyyy',
         timeFormat: 'HH:mm',
         calendarTodayLabel: 'Today'
       },

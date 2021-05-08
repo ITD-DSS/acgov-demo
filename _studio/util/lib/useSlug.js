@@ -25,14 +25,16 @@ export default function (document) {
 
     switch (documentType) {
       case 'route':
-        const routeSlug = documentState.slug_custom_format.current
+        const routeSlug = documentState.slug_custom_format?.current
         console.log('ROUTE SLUG:', routeSlug)
-        if(routeSlug === 'index'){
+       
+        if(routeSlug === 'index' || routeSlug === undefined){
           setPreviewUrl(`${BasePreviewUrl}${previewQuery}`)
+          break;
+        } else {
+          setPreviewUrl(`${BasePreviewUrl}/${routeSlug}${previewQuery}`)
+          break;
         }
-        setPreviewUrl(`${BasePreviewUrl}/${routeSlug}${previewQuery}`)
-        
-        break;
       case 'page':
         async function fetchRoute(documentState){
           console.log("PAGE-ROUTE ==> :", documentState)
@@ -93,7 +95,7 @@ export default function (document) {
         setPreviewUrl(null)
         break;
     }   
-  }, [documentState, documentType])
+  }, [document._id, documentType])
 
   return previewUrl
 
