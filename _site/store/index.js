@@ -71,6 +71,7 @@ const indexPageRouteSlug = groq`
 
 const allOtherPageSlugs = groq`
   *[_type == "route" && slug_custom_format.current != "index"]{
+    _id,
     routeLabel,
     "slug": slug_custom_format.current,
     ...page->{
@@ -123,6 +124,7 @@ export const actions = {
     const isPage = (page) => page.slug === payload
     return new Promise((resolve, reject) => {
       if (typeof payload === 'string') {
+        debugger
         resolve(pages.some(isPage))
       }
       reject(console.error('No Page Slug!'))

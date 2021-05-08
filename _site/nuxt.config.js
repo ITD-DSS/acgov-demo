@@ -87,13 +87,13 @@ export default {
     ...sanityBaseConfig,
     useCdn: true,
     withCredentials: true,
-    // additionalClients: {
-    //   previewClient: {
-    //     ...sanityBaseConfig,
-    //     useCdn: false,
-    //     withCredentials: true,
-    //   },
-    // },
+    additionalClients: {
+      previewClient: {
+        ...sanityBaseConfig,
+        useCdn: false,
+        withCredentials: true,
+      },
+    },
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)

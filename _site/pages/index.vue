@@ -51,9 +51,32 @@ export default {
   layout: 'acgov-home',
   fetchKey: 'acgov-index',
   fetchOnServer: true,
-  async asyncData({ $sanity, store }) {
-    const params = { routeId: store.getters.indexRouteId }
-    const sections = await $sanity.fetch(indexQuery, params)
+  async asyncData({ $sanity, query, store, error }) {
+    const queryOptions = { routeId: store.getters.indexRouteId }
+    let sections
+    if (query.preview === 'true') {
+      console.log('USING PREVIEW CLIENT----->>>')
+      try {
+        const previewSections = await $sanity.previewClient.fetch(
+          indexQuery,
+          queryOptions
+        )
+        sections = previewSections
+        return sections
+      } catch (error) {
+        error(error)
+      }
+    } else if (store.getters.indexRouteId.startsWith('drafts.')) {
+      error({ statusCode: 404, message: `REQUEST REFUSED` })
+    } else {
+      try {
+        sections = await $sanity.fetch(indexQuery, queryOptions)
+        return sections
+      } catch (error) {
+        error(error)
+      }
+    }
+    sections = await $sanity.fetch(indexQuery, queryOptions)
     return sections
   },
   head() {

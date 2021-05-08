@@ -22,6 +22,7 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity'
+// const PREVIEW_QUERY = `*[_type == "page" && _id == $pageId]`
 const pageQuery = groq`
   *[_type == "page" && _id == $pageId]{
       _id,
@@ -37,6 +38,8 @@ const pageQuery = groq`
           "cta": ctas[0]{
             // ...,
             _key,
+            title,
+            link,
             title,
             route->{
               _id,
@@ -56,7 +59,19 @@ const pageQuery = groq`
           _type,
           heading,
           image,
-          text
+          text,
+          "cta": ctas[0]{
+            // ...,
+            _key,
+            title,
+            link,
+            title,
+            route->{
+              _id,
+              routeLabel,
+              "slug": slug_custom_format.current
+            },
+          }
         },
         _type == 'reference' => {
           // ...,
@@ -108,14 +123,34 @@ export default {
     const isValid = () => store.dispatch('validPage', params.pathMatch)
     return query.preview === 'true' || isValid()
   },
-  async asyncData({ store, params, $sanity }) {
+  async asyncData({ store, query, params, $sanity, error }) {
+    // Page Content that was prefetched by the vuex store
     const page = store.state.urlValidationMap.pages.find(
       (page) => page.slug === params.pathMatch
     )
     const queryOptions = { pageId: page.pageId }
 
-    const pageContent = await $sanity.fetch(pageQuery, queryOptions)
-    return { meta: page, [page._type]: pageContent[0] }
+    if (query.preview === 'true' || page.pageId.startsWith('drafts.')) {
+      console.log('USING PREVIEW CLIENT----->>>')
+      try {
+        const previewPageContent = await $sanity.previewClient.fetch(
+          pageQuery,
+          queryOptions
+        )
+        return { meta: page, [page._type]: previewPageContent[0] }
+      } catch (error) {
+        error(error)
+      }
+    } else if (page.pageId.startsWith('drafts.')) {
+      error({ statusCode: 404, message: `REQUEST REFUSED` })
+    } else {
+      try {
+        const pageContent = await $sanity.fetch(pageQuery, queryOptions)
+        return { meta: page, [page._type]: pageContent[0] }
+      } catch (error) {
+        error(error)
+      }
+    }
   },
   computed: {
     getSections() {

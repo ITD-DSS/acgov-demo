@@ -3,13 +3,23 @@
     <div class="absolute text-white text-4xl m-40">
       <h2>{{ heading }}</h2>
       <SanityContent class="text-lg" :blocks="tagline" />
-      <NuxtLink :to="ctaSlug">
-        <button class="bg-green-400">
-          <span>{{ ctaTitle }}</span>
-        </button>
-      </NuxtLink>
-    </div>
 
+      <div v-if="hasCta">
+        <NuxtLink v-if="ctaSlug" :to="ctaSlug">
+          <button class="bg-green-400">
+            <span>{{ ctaTitle }}</span>
+          </button>
+        </NuxtLink>
+        <div v-else-if="ctaLink">
+          <button class="bg-green-400">
+            <span>
+              <a :href="ctaLink">{{ ctaTitle }}</a>
+            </span>
+          </button>
+        </div>
+        <span v-else></span>
+      </div>
+    </div>
     <img class="w-full" :src="imgSrc" alt="" />
   </section>
 </template>
@@ -30,26 +40,38 @@ export default {
     },
     tagline() {
       const tagline = this.$attrs.tagline
-      if (tagline.length !== 0) {
+      if (tagline) {
         return tagline
       }
       return ''
     },
     ctaTitle() {
-      const cta = this.$attrs.cta
-      if (cta.title) {
-        return cta.title
+      const title = this.$attrs.cta?.title
+      if (title) {
+        return title
+      }
+      return 'DEFAULT TITLE'
+    },
+    ctaSlug() {
+      const slug = this.$attrs.cta.route?.slug
+      if (slug) {
+        return slug === 'index' ? '/' : slug
       }
       return ''
     },
-    ctaSlug() {
-      const slug = this.$attrs.cta.route.slug
-      if (slug === 'index') {
-        return '/'
-      } else if (slug === '') {
-        return '/'
+    ctaLink() {
+      const link = this.$attrs.cta.link
+      if (link) {
+        return link.startsWith('https://') ? link : '#'
       }
-      return slug
+      return ''
+    },
+    hasCta() {
+      const CTA = this.$attrs.cta
+      if (CTA) {
+        return true
+      }
+      return false
     },
   },
 }
