@@ -1,16 +1,8 @@
 import dotenv from 'dotenv'
-// import find from 'find-up'
-// export const findEnv = () => find.sync(process.env.ENV_FILE || '.env')
-
+import dynamicPages from './lib/dynamicPages.js'
 dotenv.config()
-
-const sanityBaseConfig = {
-  projectId: process.env.SANITY_PROJECT_ID,
-  apiVersion: '2021-03-25',
-  // TODO: WORK WITH PROD AND DEVELOPEMENT DATASETS : MAYBE MOVE TO ENV VARIABLE
-  dataset:
-    process.env.NODE_ENV !== 'production' ? 'development' : 'development',
-}
+// eslint-disable-next-line import/first
+import sanityBaseConfig from './lib/sanityBaseConfig.js'
 
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
@@ -85,12 +77,9 @@ export default {
 
   sanity: {
     ...sanityBaseConfig,
-    useCdn: true,
-    withCredentials: true,
     additionalClients: {
       previewClient: {
         ...sanityBaseConfig,
-        useCdn: false,
         withCredentials: true,
       },
     },
@@ -100,6 +89,8 @@ export default {
   content: {},
   generate: {
     fallback: true,
+    crawler: false,
+    routes: dynamicPages,
   },
   // buildDir: 'ece-test',
   // Build Configuration (https://go.nuxtjs.dev/config-build)
